@@ -1,11 +1,66 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/StructureLanguage/src-gen" creationIcons="false"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/StructureLanguage/src-gen" creationIcons="false"
     editDirectory="/StructureLanguage.edit/src-gen" editorDirectory="/StructureLanguage.editor/src-gen"
     modelPluginID="StructureLanguage" modelName="StructureLanguage" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     codeFormatting="true" importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0"
     copyrightFields="false" operationReflection="true" importOrganizing="true">
   <foreignModel>structureLanguage.ecore</foreignModel>
   <testsDirectory xsi:nil="true"/>
-  <genPackages prefix="StructureLanguage" disposableProviderFactory="true" ecorePackage="structureLanguage.ecore#/"/>
+  <genPackages prefix="StructureLanguage" disposableProviderFactory="true" ecorePackage="structureLanguage.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="structureLanguage.ecore#//ClassType">
+      <genEnumLiterals ecoreEnumLiteral="structureLanguage.ecore#//ClassType/ABSTRACT"/>
+      <genEnumLiterals ecoreEnumLiteral="structureLanguage.ecore#//ClassType/ENUMERATE"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="structureLanguage.ecore#//AccessType">
+      <genEnumLiterals ecoreEnumLiteral="structureLanguage.ecore#//AccessType/PUBLIC"/>
+      <genEnumLiterals ecoreEnumLiteral="structureLanguage.ecore#//AccessType/PROTECTED"/>
+      <genEnumLiterals ecoreEnumLiteral="structureLanguage.ecore#//AccessType/PRIVATE"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="structureLanguage.ecore#//PrimitiveType">
+      <genEnumLiterals ecoreEnumLiteral="structureLanguage.ecore#//PrimitiveType/BYTE"/>
+      <genEnumLiterals ecoreEnumLiteral="structureLanguage.ecore#//PrimitiveType/SHORT"/>
+      <genEnumLiterals ecoreEnumLiteral="structureLanguage.ecore#//PrimitiveType/INT"/>
+      <genEnumLiterals ecoreEnumLiteral="structureLanguage.ecore#//PrimitiveType/LONG"/>
+      <genEnumLiterals ecoreEnumLiteral="structureLanguage.ecore#//PrimitiveType/FLOAT"/>
+      <genEnumLiterals ecoreEnumLiteral="structureLanguage.ecore#//PrimitiveType/DOUBLE"/>
+      <genEnumLiterals ecoreEnumLiteral="structureLanguage.ecore#//PrimitiveType/BOOLEAN"/>
+      <genEnumLiterals ecoreEnumLiteral="structureLanguage.ecore#//PrimitiveType/CHAR"/>
+      <genEnumLiterals ecoreEnumLiteral="structureLanguage.ecore#//PrimitiveType/STRING"/>
+    </genEnums>
+    <genClasses ecoreClass="structureLanguage.ecore#//Program">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute structureLanguage.ecore#//Program/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference structureLanguage.ecore#//Program/class"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference structureLanguage.ecore#//Program/interface"/>
+    </genClasses>
+    <genClasses ecoreClass="structureLanguage.ecore#//Class">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute structureLanguage.ecore#//Class/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute structureLanguage.ecore#//Class/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute structureLanguage.ecore#//Class/accessType"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference structureLanguage.ecore#//Class/variable"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference structureLanguage.ecore#//Class/method"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference structureLanguage.ecore#//Class/inherated"/>
+    </genClasses>
+    <genClasses ecoreClass="structureLanguage.ecore#//Interface">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute structureLanguage.ecore#//Interface/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference structureLanguage.ecore#//Interface/method"/>
+    </genClasses>
+    <genClasses ecoreClass="structureLanguage.ecore#//Variable">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute structureLanguage.ecore#//Variable/name"/>
+    </genClasses>
+    <genClasses ecoreClass="structureLanguage.ecore#//Method">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute structureLanguage.ecore#//Method/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute structureLanguage.ecore#//Method/accessType"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference structureLanguage.ecore#//Method/variable"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference structureLanguage.ecore#//Method/return"/>
+    </genClasses>
+    <genClasses ecoreClass="structureLanguage.ecore#//Primative">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute structureLanguage.ecore#//Primative/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute structureLanguage.ecore#//Primative/accessType"/>
+    </genClasses>
+    <genClasses ecoreClass="structureLanguage.ecore#//Complex">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference structureLanguage.ecore#//Complex/class"/>
+    </genClasses>
+  </genPackages>
 </genmodel:GenModel>

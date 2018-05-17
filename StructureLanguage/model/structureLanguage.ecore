@@ -1,4 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
-    name="structureLanguage" nsURI="http://www.example.org/structureLanguage"
-    nsPrefix="structureLanguage"/>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="structureLanguage" nsURI="http://www.example.org/structureLanguage"
+    nsPrefix="structureLanguage">
+  <eClassifiers xsi:type="ecore:EClass" name="Program">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="class" upperBound="-1"
+        eType="#//Class" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="interface" upperBound="-1"
+        eType="#//Interface" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Class">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//ClassType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="accessType" eType="#//AccessType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="variable" upperBound="-1"
+        eType="#//Variable" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="method" upperBound="-1"
+        eType="#//Method" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="inherated" eType="#//Class"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Interface">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="method" upperBound="-1"
+        eType="#//Method" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Variable">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Method">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="accessType" eType="#//AccessType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="variable" upperBound="-1"
+        eType="#//Variable"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="return" eType="#//Variable"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Primative" eSuperTypes="#//Variable">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//PrimitiveType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="accessType" eType="#//AccessType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Complex" eSuperTypes="#//Variable">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="class" lowerBound="1" eType="#//Class"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ClassType">
+    <eLiterals name="ABSTRACT"/>
+    <eLiterals name="ENUMERATE" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="AccessType">
+    <eLiterals name="PUBLIC" literal="public"/>
+    <eLiterals name="PROTECTED" value="1" literal="protected"/>
+    <eLiterals name="PRIVATE" value="2" literal="private"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="PrimitiveType">
+    <eLiterals name="BYTE" literal="byte"/>
+    <eLiterals name="SHORT" value="1" literal="short"/>
+    <eLiterals name="INT" value="2" literal="int"/>
+    <eLiterals name="LONG" value="3" literal="long"/>
+    <eLiterals name="FLOAT" value="4" literal="float"/>
+    <eLiterals name="DOUBLE" value="5" literal="double"/>
+    <eLiterals name="BOOLEAN" value="6" literal="boolean"/>
+    <eLiterals name="CHAR" value="7" literal="char"/>
+    <eLiterals name="STRING" value="8" literal="string"/>
+  </eClassifiers>
+</ecore:EPackage>
