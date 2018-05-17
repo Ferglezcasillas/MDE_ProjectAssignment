@@ -1,4 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
-    name="behaviourLanguage" nsURI="http://www.example.org/behaviourLanguage"
-    nsPrefix="behaviourLanguage"/>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="behaviourLanguage" nsURI="http://www.example.org/behaviourLanguage"
+    nsPrefix="behaviourLanguage">
+  <eClassifiers xsi:type="ecore:EClass" name="Function">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="expression" upperBound="-1"
+        eType="#//Expression" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="statement" upperBound="-1"
+        eType="#//Statement" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Expression" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Statement" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Assignment" eSuperTypes="#//Expression"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Operation" abstract="true" eSuperTypes="#//Expression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="leftInput" eType="#//Expression"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rightInput" eType="#//Expression"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CallFunction" eSuperTypes="#//Expression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="function" eType="#//Function"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="for" eSuperTypes="#//Statement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="while" eSuperTypes="#//Statement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="if" eSuperTypes="#//Statement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="condition" lowerBound="1"
+        eType="#//Logical"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="dowhile" eSuperTypes="#//Statement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Math" eSuperTypes="#//Operation">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//MathOperator"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Logical" eSuperTypes="#//Operation">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//LogicalOperator"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="MathOperator">
+    <eLiterals name="+"/>
+    <eLiterals name="*" value="1"/>
+    <eLiterals name="/" value="2"/>
+    <eLiterals name="-" value="3"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="LogicalOperator">
+    <eLiterals name="&lt;"/>
+    <eLiterals name=">" value="1"/>
+    <eLiterals name="=" value="2"/>
+    <eLiterals name=">=" value="3"/>
+    <eLiterals name="&lt;=" value="4"/>
+    <eLiterals name="&amp;" value="5"/>
+    <eLiterals name="|" value="6"/>
+    <eLiterals name="!" value="7"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="unp"/>
+</ecore:EPackage>
