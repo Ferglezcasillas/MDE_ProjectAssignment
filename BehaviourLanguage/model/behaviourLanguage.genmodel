@@ -16,34 +16,56 @@
       <genEnumLiterals ecoreEnumLiteral="behaviourLanguage.ecore#//MathOperator/-"/>
     </genEnums>
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="behaviourLanguage.ecore#//LogicalOperator">
-      <genEnumLiterals ecoreEnumLiteral="behaviourLanguage.ecore#//LogicalOperator/%3C"/>
-      <genEnumLiterals ecoreEnumLiteral="behaviourLanguage.ecore#//LogicalOperator/%3E"/>
-      <genEnumLiterals ecoreEnumLiteral="behaviourLanguage.ecore#//LogicalOperator/="/>
-      <genEnumLiterals ecoreEnumLiteral="behaviourLanguage.ecore#//LogicalOperator/%3E="/>
-      <genEnumLiterals ecoreEnumLiteral="behaviourLanguage.ecore#//LogicalOperator/%3C="/>
       <genEnumLiterals ecoreEnumLiteral="behaviourLanguage.ecore#//LogicalOperator/%26"/>
       <genEnumLiterals ecoreEnumLiteral="behaviourLanguage.ecore#//LogicalOperator/|"/>
-      <genEnumLiterals ecoreEnumLiteral="behaviourLanguage.ecore#//LogicalOperator/!"/>
+      <genEnumLiterals ecoreEnumLiteral="behaviourLanguage.ecore#//LogicalOperator/sd"/>
     </genEnums>
-    <genClasses ecoreClass="behaviourLanguage.ecore#//Function">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference behaviourLanguage.ecore#//Function/expression"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference behaviourLanguage.ecore#//Function/statement"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute behaviourLanguage.ecore#//Function/name"/>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="behaviourLanguage.ecore#//ComparationOperator">
+      <genEnumLiterals ecoreEnumLiteral="behaviourLanguage.ecore#//ComparationOperator/%3C"/>
+      <genEnumLiterals ecoreEnumLiteral="behaviourLanguage.ecore#//ComparationOperator/%3E"/>
+      <genEnumLiterals ecoreEnumLiteral="behaviourLanguage.ecore#//ComparationOperator/="/>
+      <genEnumLiterals ecoreEnumLiteral="behaviourLanguage.ecore#//ComparationOperator/%3E="/>
+      <genEnumLiterals ecoreEnumLiteral="behaviourLanguage.ecore#//ComparationOperator/%3C="/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="behaviourLanguage.ecore#//PrimitiveType">
+      <genEnumLiterals ecoreEnumLiteral="behaviourLanguage.ecore#//PrimitiveType/BYTE"/>
+      <genEnumLiterals ecoreEnumLiteral="behaviourLanguage.ecore#//PrimitiveType/SHORT"/>
+      <genEnumLiterals ecoreEnumLiteral="behaviourLanguage.ecore#//PrimitiveType/INT"/>
+      <genEnumLiterals ecoreEnumLiteral="behaviourLanguage.ecore#//PrimitiveType/LONG"/>
+      <genEnumLiterals ecoreEnumLiteral="behaviourLanguage.ecore#//PrimitiveType/FLOAT"/>
+      <genEnumLiterals ecoreEnumLiteral="behaviourLanguage.ecore#//PrimitiveType/DOUBLE"/>
+      <genEnumLiterals ecoreEnumLiteral="behaviourLanguage.ecore#//PrimitiveType/BOOLEAN"/>
+      <genEnumLiterals ecoreEnumLiteral="behaviourLanguage.ecore#//PrimitiveType/CHAR"/>
+      <genEnumLiterals ecoreEnumLiteral="behaviourLanguage.ecore#//PrimitiveType/STRING"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="behaviourLanguage.ecore#//AccessType">
+      <genEnumLiterals ecoreEnumLiteral="behaviourLanguage.ecore#//AccessType/PUBLIC"/>
+      <genEnumLiterals ecoreEnumLiteral="behaviourLanguage.ecore#//AccessType/PROTECTED"/>
+      <genEnumLiterals ecoreEnumLiteral="behaviourLanguage.ecore#//AccessType/PRIVATE"/>
+    </genEnums>
+    <genClasses ecoreClass="behaviourLanguage.ecore#//BlockOfCode">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference behaviourLanguage.ecore#//BlockOfCode/things"/>
     </genClasses>
-    <genClasses ecoreClass="behaviourLanguage.ecore#//Expression"/>
-    <genClasses ecoreClass="behaviourLanguage.ecore#//Statement"/>
-    <genClasses ecoreClass="behaviourLanguage.ecore#//Assignment"/>
+    <genClasses ecoreClass="behaviourLanguage.ecore#//Expression">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference behaviourLanguage.ecore#//Expression/assign"/>
+    </genClasses>
+    <genClasses ecoreClass="behaviourLanguage.ecore#//Statement">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference behaviourLanguage.ecore#//Statement/body"/>
+    </genClasses>
     <genClasses ecoreClass="behaviourLanguage.ecore#//Operation">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference behaviourLanguage.ecore#//Operation/leftInput"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference behaviourLanguage.ecore#//Operation/rightInput"/>
     </genClasses>
-    <genClasses ecoreClass="behaviourLanguage.ecore#//CallFunction">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference behaviourLanguage.ecore#//CallFunction/function"/>
+    <genClasses ecoreClass="behaviourLanguage.ecore#//CallFunction"/>
+    <genClasses ecoreClass="behaviourLanguage.ecore#//for">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference behaviourLanguage.ecore#//for/comparator"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference behaviourLanguage.ecore#//for/variable"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute behaviourLanguage.ecore#//for/inc"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute behaviourLanguage.ecore#//for/updateValue"/>
     </genClasses>
-    <genClasses ecoreClass="behaviourLanguage.ecore#//for"/>
     <genClasses ecoreClass="behaviourLanguage.ecore#//while"/>
     <genClasses ecoreClass="behaviourLanguage.ecore#//if">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference behaviourLanguage.ecore#//if/condition"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference behaviourLanguage.ecore#//if/else"/>
     </genClasses>
     <genClasses ecoreClass="behaviourLanguage.ecore#//dowhile"/>
     <genClasses ecoreClass="behaviourLanguage.ecore#//Math">
@@ -52,6 +74,33 @@
     <genClasses ecoreClass="behaviourLanguage.ecore#//Logical">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute behaviourLanguage.ecore#//Logical/type"/>
     </genClasses>
-    <genClasses ecoreClass="behaviourLanguage.ecore#//unp"/>
+    <genClasses ecoreClass="behaviourLanguage.ecore#//Variable">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute behaviourLanguage.ecore#//Variable/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute behaviourLanguage.ecore#//Variable/type"/>
+    </genClasses>
+    <genClasses ecoreClass="behaviourLanguage.ecore#//else"/>
+    <genClasses ecoreClass="behaviourLanguage.ecore#//Function">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference behaviourLanguage.ecore#//Function/blockofcode"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute behaviourLanguage.ecore#//Function/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute behaviourLanguage.ecore#//Function/accessType"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference behaviourLanguage.ecore#//Function/parameters"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference behaviourLanguage.ecore#//Function/return"/>
+    </genClasses>
+    <genClasses ecoreClass="behaviourLanguage.ecore#//ConditionalStatement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference behaviourLanguage.ecore#//ConditionalStatement/statement"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference behaviourLanguage.ecore#//ConditionalStatement/condition"/>
+    </genClasses>
+    <genClasses ecoreClass="behaviourLanguage.ecore#//Comparation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute behaviourLanguage.ecore#//Comparation/type"/>
+    </genClasses>
+    <genClasses ecoreClass="behaviourLanguage.ecore#//NotOperation">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference behaviourLanguage.ecore#//NotOperation/input"/>
+    </genClasses>
+    <genClasses ecoreClass="behaviourLanguage.ecore#//System_Input"/>
+    <genClasses ecoreClass="behaviourLanguage.ecore#//System_Output"/>
+    <genClasses ecoreClass="behaviourLanguage.ecore#//userDefinedFunction">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference behaviourLanguage.ecore#//userDefinedFunction/function"/>
+    </genClasses>
+    <genClasses ecoreClass="behaviourLanguage.ecore#//generalItem"/>
   </genPackages>
 </genmodel:GenModel>
