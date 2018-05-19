@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<behaviourLanguage:Function xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:behaviourLanguage="http://www.example.org/behaviourLanguage" name="evaluate">
+  <blockofcode>
+    <things xsi:type="behaviourLanguage:Variable" name="n" type="int"/>
+    <things xsi:type="behaviourLanguage:Variable" name="i" type="int"/>
+    <things xsi:type="behaviourLanguage:Variable" name="exponent" type="int"/>
+    <things xsi:type="behaviourLanguage:for_" variable="//@blockofcode/@things.1" inc="true" updateValue="1"/>
+    <things xsi:type="behaviourLanguage:Comparation" leftInput="//@blockofcode/@things.1" rightInput="//@blockofcode/@things.2"/>
+  </blockofcode>
+</behaviourLanguage:Function>

@@ -24,15 +24,15 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="method" upperBound="-1"
         eType="#//Method" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Variable">
+  <eClassifiers xsi:type="ecore:EClass" name="Variable" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Method">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="accessType" eType="#//AccessType"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="variable" upperBound="-1"
-        eType="#//Variable"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="return" eType="#//Variable"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="variable" upperBound="-1"
+        eType="#//Class"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Primative" eSuperTypes="#//Variable">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//PrimitiveType"/>
@@ -44,6 +44,7 @@
   <eClassifiers xsi:type="ecore:EEnum" name="ClassType">
     <eLiterals name="ABSTRACT"/>
     <eLiterals name="ENUMERATE" value="1"/>
+    <eLiterals name="STANDARD" value="2"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="AccessType">
     <eLiterals name="PUBLIC" literal="public"/>
@@ -60,5 +61,11 @@
     <eLiterals name="BOOLEAN" value="6" literal="boolean"/>
     <eLiterals name="CHAR" value="7" literal="char"/>
     <eLiterals name="STRING" value="8" literal="string"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="List" eSuperTypes="#//Variable">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="complex" upperBound="-1"
+        eType="#//Complex" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="primative" upperBound="-1"
+        eType="#//Primative" containment="true"/>
   </eClassifiers>
 </ecore:EPackage>

@@ -12,6 +12,7 @@
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="structureLanguage.ecore#//ClassType">
       <genEnumLiterals ecoreEnumLiteral="structureLanguage.ecore#//ClassType/ABSTRACT"/>
       <genEnumLiterals ecoreEnumLiteral="structureLanguage.ecore#//ClassType/ENUMERATE"/>
+      <genEnumLiterals ecoreEnumLiteral="structureLanguage.ecore#//ClassType/STANDARD"/>
     </genEnums>
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="structureLanguage.ecore#//AccessType">
       <genEnumLiterals ecoreEnumLiteral="structureLanguage.ecore#//AccessType/PUBLIC"/>
@@ -52,8 +53,8 @@
     <genClasses ecoreClass="structureLanguage.ecore#//Method">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute structureLanguage.ecore#//Method/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute structureLanguage.ecore#//Method/accessType"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference structureLanguage.ecore#//Method/variable"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference structureLanguage.ecore#//Method/return"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference structureLanguage.ecore#//Method/variable"/>
     </genClasses>
     <genClasses ecoreClass="structureLanguage.ecore#//Primative">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute structureLanguage.ecore#//Primative/type"/>
@@ -61,6 +62,10 @@
     </genClasses>
     <genClasses ecoreClass="structureLanguage.ecore#//Complex">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference structureLanguage.ecore#//Complex/class"/>
+    </genClasses>
+    <genClasses ecoreClass="structureLanguage.ecore#//List">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference structureLanguage.ecore#//List/complex"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference structureLanguage.ecore#//List/primative"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated structureLanguage -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="structureLanguage.presentation.StructureLanguageModelWizardID"
+            name="%_UI_StructureLanguageModelWizard_label"
+            class="structureLanguage.presentation.StructureLanguageModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/StructureLanguageModelFile.gif">
+         <description>%_UI_StructureLanguageModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated structureLanguage -->
+      <editor
+            id="structureLanguage.presentation.StructureLanguageEditorID"
+            name="%_UI_StructureLanguageEditor_label"
+            icon="icons/full/obj16/StructureLanguageModelFile.gif"
+            extensions="structurelanguage"
+            class="structureLanguage.presentation.StructureLanguageEditor"
+            contributorClass="structureLanguage.presentation.StructureLanguageActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

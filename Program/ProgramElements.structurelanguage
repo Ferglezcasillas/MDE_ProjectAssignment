@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<structureLanguage:Program xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:structureLanguage="http://www.example.org/structureLanguage" name="FactoryManagement">
+  <class name="Factory" type="STANDARD">
+    <variable xsi:type="structureLanguage:Primative" name="name" type="string"/>
+    <variable xsi:type="structureLanguage:Primative" name="address" type="string"/>
+    <variable xsi:type="structureLanguage:List" name="workers"/>
+    <variable xsi:type="structureLanguage:List" name="machine"/>
+    <method name="assignMachine" variable="//@class.3 //@class.2"/>
+  </class>
+  <class name="Person">
+    <variable xsi:type="structureLanguage:Primative" name="name" type="string"/>
+    <variable xsi:type="structureLanguage:Primative" name="surname" type="string"/>
+  </class>
+  <class name="Worker" type="STANDARD" inherated="//@class.1">
+    <variable xsi:type="structureLanguage:Primative" name="position" type="string"/>
+    <variable xsi:type="structureLanguage:Primative" name=""/>
+    <variable xsi:type="structureLanguage:Complex" name="machineAssigned" class="//@class.3"/>
+  </class>
+  <class name="Machine" type="STANDARD">
+    <variable xsi:type="structureLanguage:Primative" name="name" type="string"/>
+    <variable xsi:type="structureLanguage:Primative" name="MinWorkersNeed" type="int"/>
+  </class>
+</structureLanguage:Program>

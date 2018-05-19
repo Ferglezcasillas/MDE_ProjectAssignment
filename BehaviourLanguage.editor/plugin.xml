@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated behaviourLanguage -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="behaviourLanguage.presentation.BehaviourLanguageModelWizardID"
+            name="%_UI_BehaviourLanguageModelWizard_label"
+            class="behaviourLanguage.presentation.BehaviourLanguageModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/BehaviourLanguageModelFile.gif">
+         <description>%_UI_BehaviourLanguageModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated behaviourLanguage -->
+      <editor
+            id="behaviourLanguage.presentation.BehaviourLanguageEditorID"
+            name="%_UI_BehaviourLanguageEditor_label"
+            icon="icons/full/obj16/BehaviourLanguageModelFile.gif"
+            extensions="behaviourlanguage"
+            class="behaviourLanguage.presentation.BehaviourLanguageEditor"
+            contributorClass="behaviourLanguage.presentation.BehaviourLanguageActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>
