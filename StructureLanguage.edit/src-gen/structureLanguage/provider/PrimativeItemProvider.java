@@ -22,7 +22,7 @@ import structureLanguage.StructureLanguagePackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class PrimativeItemProvider extends VariableItemProvider {
+public class PrimativeItemProvider extends VariableCItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -45,7 +45,6 @@ public class PrimativeItemProvider extends VariableItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addTypePropertyDescriptor(object);
-			addAccessTypePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -63,22 +62,6 @@ public class PrimativeItemProvider extends VariableItemProvider {
 						getString("_UI_PropertyDescriptor_description", "_UI_Primative_type_feature",
 								"_UI_Primative_type"),
 						StructureLanguagePackage.Literals.PRIMATIVE__TYPE, true, false, false,
-						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Access Type feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addAccessTypePropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Primative_accessType_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Primative_accessType_feature",
-								"_UI_Primative_type"),
-						StructureLanguagePackage.Literals.PRIMATIVE__ACCESS_TYPE, true, false, false,
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
@@ -129,7 +112,6 @@ public class PrimativeItemProvider extends VariableItemProvider {
 
 		switch (notification.getFeatureID(Primative.class)) {
 		case StructureLanguagePackage.PRIMATIVE__TYPE:
-		case StructureLanguagePackage.PRIMATIVE__ACCESS_TYPE:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		}

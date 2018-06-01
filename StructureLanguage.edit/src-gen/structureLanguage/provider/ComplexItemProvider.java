@@ -20,7 +20,7 @@ import structureLanguage.StructureLanguagePackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ComplexItemProvider extends VariableItemProvider {
+public class ComplexItemProvider extends VariableCItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

@@ -20,26 +20,26 @@ package behaviourLanguage;
  */
 public interface Statement extends generalItem {
 	/**
-	 * Returns the value of the '<em><b>Body</b></em>' reference.
+	 * Returns the value of the '<em><b>Body</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Body</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Body</em>' reference.
+	 * @return the value of the '<em>Body</em>' containment reference.
 	 * @see #setBody(BlockOfCode)
 	 * @see behaviourLanguage.BehaviourLanguagePackage#getStatement_Body()
-	 * @model
+	 * @model containment="true" required="true"
 	 * @generated
 	 */
 	BlockOfCode getBody();
 
 	/**
-	 * Sets the value of the '{@link behaviourLanguage.Statement#getBody <em>Body</em>}' reference.
+	 * Sets the value of the '{@link behaviourLanguage.Statement#getBody <em>Body</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Body</em>' reference.
+	 * @param value the new value of the '<em>Body</em>' containment reference.
 	 * @see #getBody()
 	 * @generated
 	 */

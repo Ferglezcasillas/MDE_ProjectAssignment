@@ -13,7 +13,6 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link structureLanguage.List#getComplex <em>Complex</em>}</li>
  *   <li>{@link structureLanguage.List#getPrimative <em>Primative</em>}</li>
  * </ul>
  *
@@ -21,23 +20,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface List extends Variable {
-	/**
-	 * Returns the value of the '<em><b>Complex</b></em>' containment reference list.
-	 * The list contents are of type {@link structureLanguage.Complex}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Complex</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Complex</em>' containment reference list.
-	 * @see structureLanguage.StructureLanguagePackage#getList_Complex()
-	 * @model containment="true"
-	 * @generated
-	 */
-	EList<Complex> getComplex();
-
+public interface List extends VariableC {
 	/**
 	 * Returns the value of the '<em><b>Primative</b></em>' containment reference list.
 	 * The list contents are of type {@link structureLanguage.Primative}.

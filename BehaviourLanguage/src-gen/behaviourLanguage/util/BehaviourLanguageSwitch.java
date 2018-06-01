@@ -7,6 +7,7 @@ import behaviourLanguage.BlockOfCode;
 import behaviourLanguage.CallFunction;
 import behaviourLanguage.Comparation;
 import behaviourLanguage.ConditionalStatement;
+import behaviourLanguage.Container;
 import behaviourLanguage.Expression;
 import behaviourLanguage.Function;
 import behaviourLanguage.Logical;
@@ -17,7 +18,6 @@ import behaviourLanguage.System_Input;
 import behaviourLanguage.System_Output;
 import behaviourLanguage.Variable;
 import behaviourLanguage.dowhile_;
-import behaviourLanguage.else_;
 import behaviourLanguage.for_;
 import behaviourLanguage.generalItem;
 import behaviourLanguage.if_;
@@ -150,6 +150,10 @@ public class BehaviourLanguageSwitch<T> extends Switch<T> {
 			if (result == null)
 				result = caseConditionalStatement(while_);
 			if (result == null)
+				result = caseStatement(while_);
+			if (result == null)
+				result = casegeneralItem(while_);
+			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
 		}
@@ -159,6 +163,10 @@ public class BehaviourLanguageSwitch<T> extends Switch<T> {
 			if (result == null)
 				result = caseConditionalStatement(if_);
 			if (result == null)
+				result = caseStatement(if_);
+			if (result == null)
+				result = casegeneralItem(if_);
+			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
 		}
@@ -167,6 +175,10 @@ public class BehaviourLanguageSwitch<T> extends Switch<T> {
 			T result = casedowhile_(dowhile_);
 			if (result == null)
 				result = caseConditionalStatement(dowhile_);
+			if (result == null)
+				result = caseStatement(dowhile_);
+			if (result == null)
+				result = casegeneralItem(dowhile_);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -208,17 +220,6 @@ public class BehaviourLanguageSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case BehaviourLanguagePackage.ELSE_: {
-			else_ else_ = (else_) theEObject;
-			T result = caseelse_(else_);
-			if (result == null)
-				result = caseStatement(else_);
-			if (result == null)
-				result = casegeneralItem(else_);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
 		case BehaviourLanguagePackage.FUNCTION: {
 			Function function = (Function) theEObject;
 			T result = caseFunction(function);
@@ -229,6 +230,10 @@ public class BehaviourLanguageSwitch<T> extends Switch<T> {
 		case BehaviourLanguagePackage.CONDITIONAL_STATEMENT: {
 			ConditionalStatement conditionalStatement = (ConditionalStatement) theEObject;
 			T result = caseConditionalStatement(conditionalStatement);
+			if (result == null)
+				result = caseStatement(conditionalStatement);
+			if (result == null)
+				result = casegeneralItem(conditionalStatement);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -299,6 +304,13 @@ public class BehaviourLanguageSwitch<T> extends Switch<T> {
 		case BehaviourLanguagePackage.GENERAL_ITEM: {
 			generalItem generalItem = (generalItem) theEObject;
 			T result = casegeneralItem(generalItem);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case BehaviourLanguagePackage.CONTAINER: {
+			Container container = (Container) theEObject;
+			T result = caseContainer(container);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -489,21 +501,6 @@ public class BehaviourLanguageSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>else </em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>else </em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseelse_(else_ object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Function</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -620,6 +617,21 @@ public class BehaviourLanguageSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T casegeneralItem(generalItem object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Container</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Container</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseContainer(Container object) {
 		return null;
 	}
 

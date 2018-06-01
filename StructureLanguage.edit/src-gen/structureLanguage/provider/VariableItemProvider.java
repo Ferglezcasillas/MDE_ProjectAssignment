@@ -22,7 +22,7 @@ import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import structureLanguage.StructureLanguagePackage;
-import structureLanguage.Variable;
+import structureLanguage.VariableC;
 
 /**
  * This is the item provider adapter for a {@link structureLanguage.Variable} object.
@@ -54,6 +54,7 @@ public class VariableItemProvider extends ItemProviderAdapter implements IEditin
 			super.getPropertyDescriptors(object);
 
 			addNamePropertyDescriptor(object);
+			addAccessTypePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -70,7 +71,23 @@ public class VariableItemProvider extends ItemProviderAdapter implements IEditin
 						getResourceLocator(), getString("_UI_Variable_name_feature"),
 						getString("_UI_PropertyDescriptor_description", "_UI_Variable_name_feature",
 								"_UI_Variable_type"),
-						StructureLanguagePackage.Literals.VARIABLE__NAME, true, false, false,
+						StructureLanguagePackage.Literals.VARIABLE_C__NAME, true, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Access Type feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addAccessTypePropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Variable_accessType_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Variable_accessType_feature",
+								"_UI_Variable_type"),
+						StructureLanguagePackage.Literals.VARIABLE_C__ACCESS_TYPE, true, false, false,
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
@@ -103,7 +120,7 @@ public class VariableItemProvider extends ItemProviderAdapter implements IEditin
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Variable) object).getName();
+		String label = ((VariableC) object).getName();
 		return label == null || label.length() == 0 ? getString("_UI_Variable_type")
 				: getString("_UI_Variable_type") + " " + label;
 	}
@@ -119,8 +136,9 @@ public class VariableItemProvider extends ItemProviderAdapter implements IEditin
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(Variable.class)) {
-		case StructureLanguagePackage.VARIABLE__NAME:
+		switch (notification.getFeatureID(VariableC.class)) {
+		case StructureLanguagePackage.VARIABLE_C__NAME:
+		case StructureLanguagePackage.VARIABLE_C__ACCESS_TYPE:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		}

@@ -94,15 +94,6 @@ public interface BehaviourLanguageFactory extends EFactory {
 	Variable createVariable();
 
 	/**
-	 * Returns a new object of class '<em>else </em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>else </em>'.
-	 * @generated
-	 */
-	else_ createelse_();
-
-	/**
 	 * Returns a new object of class '<em>Function</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -155,6 +146,15 @@ public interface BehaviourLanguageFactory extends EFactory {
 	 * @generated
 	 */
 	userDefinedFunction createuserDefinedFunction();
+
+	/**
+	 * Returns a new object of class '<em>Container</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Container</em>'.
+	 * @generated
+	 */
+	Container createContainer();
 
 	/**
 	 * Returns the package supported by this factory.

@@ -11,10 +11,10 @@ package behaviourLanguage;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link behaviourLanguage.for_#getComparator <em>Comparator</em>}</li>
  *   <li>{@link behaviourLanguage.for_#getVariable <em>Variable</em>}</li>
  *   <li>{@link behaviourLanguage.for_#isInc <em>Inc</em>}</li>
  *   <li>{@link behaviourLanguage.for_#getUpdateValue <em>Update Value</em>}</li>
+ *   <li>{@link behaviourLanguage.for_#getComparation <em>Comparation</em>}</li>
  * </ul>
  *
  * @see behaviourLanguage.BehaviourLanguagePackage#getfor_()
@@ -22,32 +22,6 @@ package behaviourLanguage;
  * @generated
  */
 public interface for_ extends Statement {
-	/**
-	 * Returns the value of the '<em><b>Comparator</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Comparator</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Comparator</em>' reference.
-	 * @see #setComparator(Comparation)
-	 * @see behaviourLanguage.BehaviourLanguagePackage#getfor__Comparator()
-	 * @model
-	 * @generated
-	 */
-	Comparation getComparator();
-
-	/**
-	 * Sets the value of the '{@link behaviourLanguage.for_#getComparator <em>Comparator</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Comparator</em>' reference.
-	 * @see #getComparator()
-	 * @generated
-	 */
-	void setComparator(Comparation value);
-
 	/**
 	 * Returns the value of the '<em><b>Variable</b></em>' reference.
 	 * <!-- begin-user-doc -->
@@ -125,5 +99,31 @@ public interface for_ extends Statement {
 	 * @generated
 	 */
 	void setUpdateValue(int value);
+
+	/**
+	 * Returns the value of the '<em><b>Comparation</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Comparation</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Comparation</em>' containment reference.
+	 * @see #setComparation(Comparation)
+	 * @see behaviourLanguage.BehaviourLanguagePackage#getfor__Comparation()
+	 * @model containment="true" required="true"
+	 * @generated
+	 */
+	Comparation getComparation();
+
+	/**
+	 * Sets the value of the '{@link behaviourLanguage.for_#getComparation <em>Comparation</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Comparation</em>' containment reference.
+	 * @see #getComparation()
+	 * @generated
+	 */
+	void setComparation(Comparation value);
 
 } // for_

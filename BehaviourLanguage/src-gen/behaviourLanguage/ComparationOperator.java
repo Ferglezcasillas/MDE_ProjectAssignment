@@ -46,7 +46,7 @@ public enum ComparationOperator implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	EQUAL(2, "Equal", "="),
+	EQUAL(2, "Equal", "=="),
 
 	/**
 	 * The '<em><b>Major Equal</b></em>' literal object.
@@ -107,7 +107,7 @@ public enum ComparationOperator implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #EQUAL
-	 * @model name="Equal" literal="="
+	 * @model name="Equal" literal="=="
 	 * @generated
 	 * @ordered
 	 */

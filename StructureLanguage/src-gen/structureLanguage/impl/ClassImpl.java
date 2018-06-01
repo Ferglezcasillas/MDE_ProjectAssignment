@@ -20,9 +20,10 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 import structureLanguage.AccessType;
 import structureLanguage.ClassType;
+import structureLanguage.Interface;
 import structureLanguage.Method;
 import structureLanguage.StructureLanguagePackage;
-import structureLanguage.Variable;
+import structureLanguage.VariableC;
 
 /**
  * <!-- begin-user-doc -->
@@ -38,6 +39,7 @@ import structureLanguage.Variable;
  *   <li>{@link structureLanguage.impl.ClassImpl#getVariable <em>Variable</em>}</li>
  *   <li>{@link structureLanguage.impl.ClassImpl#getMethod <em>Method</em>}</li>
  *   <li>{@link structureLanguage.impl.ClassImpl#getInherated <em>Inherated</em>}</li>
+ *   <li>{@link structureLanguage.impl.ClassImpl#getImplements <em>Implements</em>}</li>
  * </ul>
  *
  * @generated
@@ -111,7 +113,7 @@ public class ClassImpl extends MinimalEObjectImpl.Container implements structure
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Variable> variable;
+	protected EList<VariableC> variable;
 
 	/**
 	 * The cached value of the '{@link #getMethod() <em>Method</em>}' containment reference list.
@@ -132,6 +134,16 @@ public class ClassImpl extends MinimalEObjectImpl.Container implements structure
 	 * @ordered
 	 */
 	protected structureLanguage.Class inherated;
+
+	/**
+	 * The cached value of the '{@link #getImplements() <em>Implements</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getImplements()
+	 * @generated
+	 * @ordered
+	 */
+	protected Interface implements_;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -221,9 +233,9 @@ public class ClassImpl extends MinimalEObjectImpl.Container implements structure
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Variable> getVariable() {
+	public EList<VariableC> getVariable() {
 		if (variable == null) {
-			variable = new EObjectContainmentEList<Variable>(Variable.class, this,
+			variable = new EObjectContainmentEList<VariableC>(VariableC.class, this,
 					StructureLanguagePackage.CLASS__VARIABLE);
 		}
 		return variable;
@@ -286,6 +298,46 @@ public class ClassImpl extends MinimalEObjectImpl.Container implements structure
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Interface getImplements() {
+		if (implements_ != null && implements_.eIsProxy()) {
+			InternalEObject oldImplements = (InternalEObject) implements_;
+			implements_ = (Interface) eResolveProxy(oldImplements);
+			if (implements_ != oldImplements) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
+							StructureLanguagePackage.CLASS__IMPLEMENTS, oldImplements, implements_));
+			}
+		}
+		return implements_;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Interface basicGetImplements() {
+		return implements_;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setImplements(Interface newImplements) {
+		Interface oldImplements = implements_;
+		implements_ = newImplements;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, StructureLanguagePackage.CLASS__IMPLEMENTS,
+					oldImplements, implements_));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -319,6 +371,10 @@ public class ClassImpl extends MinimalEObjectImpl.Container implements structure
 			if (resolve)
 				return getInherated();
 			return basicGetInherated();
+		case StructureLanguagePackage.CLASS__IMPLEMENTS:
+			if (resolve)
+				return getImplements();
+			return basicGetImplements();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -343,7 +399,7 @@ public class ClassImpl extends MinimalEObjectImpl.Container implements structure
 			return;
 		case StructureLanguagePackage.CLASS__VARIABLE:
 			getVariable().clear();
-			getVariable().addAll((Collection<? extends Variable>) newValue);
+			getVariable().addAll((Collection<? extends VariableC>) newValue);
 			return;
 		case StructureLanguagePackage.CLASS__METHOD:
 			getMethod().clear();
@@ -351,6 +407,9 @@ public class ClassImpl extends MinimalEObjectImpl.Container implements structure
 			return;
 		case StructureLanguagePackage.CLASS__INHERATED:
 			setInherated((structureLanguage.Class) newValue);
+			return;
+		case StructureLanguagePackage.CLASS__IMPLEMENTS:
+			setImplements((Interface) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -382,6 +441,9 @@ public class ClassImpl extends MinimalEObjectImpl.Container implements structure
 		case StructureLanguagePackage.CLASS__INHERATED:
 			setInherated((structureLanguage.Class) null);
 			return;
+		case StructureLanguagePackage.CLASS__IMPLEMENTS:
+			setImplements((Interface) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -406,6 +468,8 @@ public class ClassImpl extends MinimalEObjectImpl.Container implements structure
 			return method != null && !method.isEmpty();
 		case StructureLanguagePackage.CLASS__INHERATED:
 			return inherated != null;
+		case StructureLanguagePackage.CLASS__IMPLEMENTS:
+			return implements_ != null;
 		}
 		return super.eIsSet(featureID);
 	}

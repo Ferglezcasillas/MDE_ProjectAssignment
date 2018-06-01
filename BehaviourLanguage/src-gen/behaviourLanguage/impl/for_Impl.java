@@ -9,6 +9,7 @@ import behaviourLanguage.for_;
 
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
@@ -22,25 +23,15 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link behaviourLanguage.impl.for_Impl#getComparator <em>Comparator</em>}</li>
  *   <li>{@link behaviourLanguage.impl.for_Impl#getVariable <em>Variable</em>}</li>
  *   <li>{@link behaviourLanguage.impl.for_Impl#isInc <em>Inc</em>}</li>
  *   <li>{@link behaviourLanguage.impl.for_Impl#getUpdateValue <em>Update Value</em>}</li>
+ *   <li>{@link behaviourLanguage.impl.for_Impl#getComparation <em>Comparation</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class for_Impl extends StatementImpl implements for_ {
-	/**
-	 * The cached value of the '{@link #getComparator() <em>Comparator</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getComparator()
-	 * @generated
-	 * @ordered
-	 */
-	protected Comparation comparator;
-
 	/**
 	 * The cached value of the '{@link #getVariable() <em>Variable</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -92,6 +83,16 @@ public class for_Impl extends StatementImpl implements for_ {
 	protected int updateValue = UPDATE_VALUE_EDEFAULT;
 
 	/**
+	 * The cached value of the '{@link #getComparation() <em>Comparation</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getComparation()
+	 * @generated
+	 * @ordered
+	 */
+	protected Comparation comparation;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -108,46 +109,6 @@ public class for_Impl extends StatementImpl implements for_ {
 	@Override
 	protected EClass eStaticClass() {
 		return BehaviourLanguagePackage.Literals.FOR_;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Comparation getComparator() {
-		if (comparator != null && comparator.eIsProxy()) {
-			InternalEObject oldComparator = (InternalEObject) comparator;
-			comparator = (Comparation) eResolveProxy(oldComparator);
-			if (comparator != oldComparator) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BehaviourLanguagePackage.FOR___COMPARATOR,
-							oldComparator, comparator));
-			}
-		}
-		return comparator;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Comparation basicGetComparator() {
-		return comparator;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setComparator(Comparation newComparator) {
-		Comparation oldComparator = comparator;
-		comparator = newComparator;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BehaviourLanguagePackage.FOR___COMPARATOR,
-					oldComparator, comparator));
 	}
 
 	/**
@@ -238,13 +199,73 @@ public class for_Impl extends StatementImpl implements for_ {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Comparation getComparation() {
+		return comparation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetComparation(Comparation newComparation, NotificationChain msgs) {
+		Comparation oldComparation = comparation;
+		comparation = newComparation;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
+					BehaviourLanguagePackage.FOR___COMPARATION, oldComparation, newComparation);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setComparation(Comparation newComparation) {
+		if (newComparation != comparation) {
+			NotificationChain msgs = null;
+			if (comparation != null)
+				msgs = ((InternalEObject) comparation).eInverseRemove(this,
+						EOPPOSITE_FEATURE_BASE - BehaviourLanguagePackage.FOR___COMPARATION, null, msgs);
+			if (newComparation != null)
+				msgs = ((InternalEObject) newComparation).eInverseAdd(this,
+						EOPPOSITE_FEATURE_BASE - BehaviourLanguagePackage.FOR___COMPARATION, null, msgs);
+			msgs = basicSetComparation(newComparation, msgs);
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BehaviourLanguagePackage.FOR___COMPARATION,
+					newComparation, newComparation));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+		case BehaviourLanguagePackage.FOR___COMPARATION:
+			return basicSetComparation(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case BehaviourLanguagePackage.FOR___COMPARATOR:
-			if (resolve)
-				return getComparator();
-			return basicGetComparator();
 		case BehaviourLanguagePackage.FOR___VARIABLE:
 			if (resolve)
 				return getVariable();
@@ -253,6 +274,8 @@ public class for_Impl extends StatementImpl implements for_ {
 			return isInc();
 		case BehaviourLanguagePackage.FOR___UPDATE_VALUE:
 			return getUpdateValue();
+		case BehaviourLanguagePackage.FOR___COMPARATION:
+			return getComparation();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -265,9 +288,6 @@ public class for_Impl extends StatementImpl implements for_ {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case BehaviourLanguagePackage.FOR___COMPARATOR:
-			setComparator((Comparation) newValue);
-			return;
 		case BehaviourLanguagePackage.FOR___VARIABLE:
 			setVariable((Variable) newValue);
 			return;
@@ -276,6 +296,9 @@ public class for_Impl extends StatementImpl implements for_ {
 			return;
 		case BehaviourLanguagePackage.FOR___UPDATE_VALUE:
 			setUpdateValue((Integer) newValue);
+			return;
+		case BehaviourLanguagePackage.FOR___COMPARATION:
+			setComparation((Comparation) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -289,9 +312,6 @@ public class for_Impl extends StatementImpl implements for_ {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case BehaviourLanguagePackage.FOR___COMPARATOR:
-			setComparator((Comparation) null);
-			return;
 		case BehaviourLanguagePackage.FOR___VARIABLE:
 			setVariable((Variable) null);
 			return;
@@ -300,6 +320,9 @@ public class for_Impl extends StatementImpl implements for_ {
 			return;
 		case BehaviourLanguagePackage.FOR___UPDATE_VALUE:
 			setUpdateValue(UPDATE_VALUE_EDEFAULT);
+			return;
+		case BehaviourLanguagePackage.FOR___COMPARATION:
+			setComparation((Comparation) null);
 			return;
 		}
 		super.eUnset(featureID);
@@ -313,14 +336,14 @@ public class for_Impl extends StatementImpl implements for_ {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case BehaviourLanguagePackage.FOR___COMPARATOR:
-			return comparator != null;
 		case BehaviourLanguagePackage.FOR___VARIABLE:
 			return variable != null;
 		case BehaviourLanguagePackage.FOR___INC:
 			return inc != INC_EDEFAULT;
 		case BehaviourLanguagePackage.FOR___UPDATE_VALUE:
 			return updateValue != UPDATE_VALUE_EDEFAULT;
+		case BehaviourLanguagePackage.FOR___COMPARATION:
+			return comparation != null;
 		}
 		return super.eIsSet(featureID);
 	}

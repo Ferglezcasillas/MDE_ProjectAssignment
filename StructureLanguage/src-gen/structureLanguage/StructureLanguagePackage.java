@@ -177,13 +177,22 @@ public interface StructureLanguagePackage extends EPackage {
 	int CLASS__INHERATED = 5;
 
 	/**
+	 * The feature id for the '<em><b>Implements</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLASS__IMPLEMENTS = 6;
+
+	/**
 	 * The number of structural features of the '<em>Class</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CLASS_FEATURE_COUNT = 6;
+	int CLASS_FEATURE_COUNT = 7;
 
 	/**
 	 * The number of operations of the '<em>Class</em>' class.
@@ -241,14 +250,14 @@ public interface StructureLanguagePackage extends EPackage {
 	int INTERFACE_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link structureLanguage.impl.VariableImpl <em>Variable</em>}' class.
+	 * The meta object id for the '{@link structureLanguage.impl.VariableCImpl <em>Variable C</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see structureLanguage.impl.VariableImpl
-	 * @see structureLanguage.impl.StructureLanguagePackageImpl#getVariable()
+	 * @see structureLanguage.impl.VariableCImpl
+	 * @see structureLanguage.impl.StructureLanguagePackageImpl#getVariableC()
 	 * @generated
 	 */
-	int VARIABLE = 3;
+	int VARIABLE_C = 3;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -257,25 +266,34 @@ public interface StructureLanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VARIABLE__NAME = 0;
+	int VARIABLE_C__NAME = 0;
 
 	/**
-	 * The number of structural features of the '<em>Variable</em>' class.
+	 * The feature id for the '<em><b>Access Type</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VARIABLE_FEATURE_COUNT = 1;
+	int VARIABLE_C__ACCESS_TYPE = 1;
 
 	/**
-	 * The number of operations of the '<em>Variable</em>' class.
+	 * The number of structural features of the '<em>Variable C</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VARIABLE_OPERATION_COUNT = 0;
+	int VARIABLE_C_FEATURE_COUNT = 2;
+
+	/**
+	 * The number of operations of the '<em>Variable C</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VARIABLE_C_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link structureLanguage.impl.MethodImpl <em>Method</em>}' class.
@@ -315,13 +333,13 @@ public interface StructureLanguagePackage extends EPackage {
 	int METHOD__RETURN = 2;
 
 	/**
-	 * The feature id for the '<em><b>Variable</b></em>' reference list.
+	 * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int METHOD__VARIABLE = 3;
+	int METHOD__PARAMETERS = 3;
 
 	/**
 	 * The number of structural features of the '<em>Method</em>' class.
@@ -358,16 +376,7 @@ public interface StructureLanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRIMATIVE__NAME = VARIABLE__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Type</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PRIMATIVE__TYPE = VARIABLE_FEATURE_COUNT + 0;
+	int PRIMATIVE__NAME = VARIABLE_C__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Access Type</b></em>' attribute.
@@ -376,7 +385,16 @@ public interface StructureLanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRIMATIVE__ACCESS_TYPE = VARIABLE_FEATURE_COUNT + 1;
+	int PRIMATIVE__ACCESS_TYPE = VARIABLE_C__ACCESS_TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRIMATIVE__TYPE = VARIABLE_C_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Primative</em>' class.
@@ -385,7 +403,7 @@ public interface StructureLanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRIMATIVE_FEATURE_COUNT = VARIABLE_FEATURE_COUNT + 2;
+	int PRIMATIVE_FEATURE_COUNT = VARIABLE_C_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Primative</em>' class.
@@ -394,7 +412,7 @@ public interface StructureLanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRIMATIVE_OPERATION_COUNT = VARIABLE_OPERATION_COUNT + 0;
+	int PRIMATIVE_OPERATION_COUNT = VARIABLE_C_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link structureLanguage.impl.ComplexImpl <em>Complex</em>}' class.
@@ -413,7 +431,16 @@ public interface StructureLanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPLEX__NAME = VARIABLE__NAME;
+	int COMPLEX__NAME = VARIABLE_C__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Access Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPLEX__ACCESS_TYPE = VARIABLE_C__ACCESS_TYPE;
 
 	/**
 	 * The feature id for the '<em><b>Class</b></em>' reference.
@@ -422,7 +449,7 @@ public interface StructureLanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPLEX__CLASS = VARIABLE_FEATURE_COUNT + 0;
+	int COMPLEX__CLASS = VARIABLE_C_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Complex</em>' class.
@@ -431,7 +458,7 @@ public interface StructureLanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPLEX_FEATURE_COUNT = VARIABLE_FEATURE_COUNT + 1;
+	int COMPLEX_FEATURE_COUNT = VARIABLE_C_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Complex</em>' class.
@@ -440,7 +467,7 @@ public interface StructureLanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPLEX_OPERATION_COUNT = VARIABLE_OPERATION_COUNT + 0;
+	int COMPLEX_OPERATION_COUNT = VARIABLE_C_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link structureLanguage.impl.ListImpl <em>List</em>}' class.
@@ -459,16 +486,16 @@ public interface StructureLanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LIST__NAME = VARIABLE__NAME;
+	int LIST__NAME = VARIABLE_C__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Complex</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Access Type</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LIST__COMPLEX = VARIABLE_FEATURE_COUNT + 0;
+	int LIST__ACCESS_TYPE = VARIABLE_C__ACCESS_TYPE;
 
 	/**
 	 * The feature id for the '<em><b>Primative</b></em>' containment reference list.
@@ -477,7 +504,7 @@ public interface StructureLanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LIST__PRIMATIVE = VARIABLE_FEATURE_COUNT + 1;
+	int LIST__PRIMATIVE = VARIABLE_C_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>List</em>' class.
@@ -486,7 +513,7 @@ public interface StructureLanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LIST_FEATURE_COUNT = VARIABLE_FEATURE_COUNT + 2;
+	int LIST_FEATURE_COUNT = VARIABLE_C_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>List</em>' class.
@@ -495,7 +522,7 @@ public interface StructureLanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LIST_OPERATION_COUNT = VARIABLE_OPERATION_COUNT + 0;
+	int LIST_OPERATION_COUNT = VARIABLE_C_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link structureLanguage.ClassType <em>Class Type</em>}' enum.
@@ -647,6 +674,17 @@ public interface StructureLanguagePackage extends EPackage {
 	EReference getClass_Inherated();
 
 	/**
+	 * Returns the meta object for the reference '{@link structureLanguage.Class#getImplements <em>Implements</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Implements</em>'.
+	 * @see structureLanguage.Class#getImplements()
+	 * @see #getClass_()
+	 * @generated
+	 */
+	EReference getClass_Implements();
+
+	/**
 	 * Returns the meta object for class '{@link structureLanguage.Interface <em>Interface</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -679,25 +717,36 @@ public interface StructureLanguagePackage extends EPackage {
 	EReference getInterface_Method();
 
 	/**
-	 * Returns the meta object for class '{@link structureLanguage.Variable <em>Variable</em>}'.
+	 * Returns the meta object for class '{@link structureLanguage.VariableC <em>Variable C</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Variable</em>'.
-	 * @see structureLanguage.Variable
+	 * @return the meta object for class '<em>Variable C</em>'.
+	 * @see structureLanguage.VariableC
 	 * @generated
 	 */
-	EClass getVariable();
+	EClass getVariableC();
 
 	/**
-	 * Returns the meta object for the attribute '{@link structureLanguage.Variable#getName <em>Name</em>}'.
+	 * Returns the meta object for the attribute '{@link structureLanguage.VariableC#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see structureLanguage.Variable#getName()
-	 * @see #getVariable()
+	 * @see structureLanguage.VariableC#getName()
+	 * @see #getVariableC()
 	 * @generated
 	 */
-	EAttribute getVariable_Name();
+	EAttribute getVariableC_Name();
+
+	/**
+	 * Returns the meta object for the attribute '{@link structureLanguage.VariableC#getAccessType <em>Access Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Access Type</em>'.
+	 * @see structureLanguage.VariableC#getAccessType()
+	 * @see #getVariableC()
+	 * @generated
+	 */
+	EAttribute getVariableC_AccessType();
 
 	/**
 	 * Returns the meta object for class '{@link structureLanguage.Method <em>Method</em>}'.
@@ -732,17 +781,6 @@ public interface StructureLanguagePackage extends EPackage {
 	EAttribute getMethod_AccessType();
 
 	/**
-	 * Returns the meta object for the reference list '{@link structureLanguage.Method#getVariable <em>Variable</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Variable</em>'.
-	 * @see structureLanguage.Method#getVariable()
-	 * @see #getMethod()
-	 * @generated
-	 */
-	EReference getMethod_Variable();
-
-	/**
 	 * Returns the meta object for the reference '{@link structureLanguage.Method#getReturn <em>Return</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -752,6 +790,17 @@ public interface StructureLanguagePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getMethod_Return();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link structureLanguage.Method#getParameters <em>Parameters</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Parameters</em>'.
+	 * @see structureLanguage.Method#getParameters()
+	 * @see #getMethod()
+	 * @generated
+	 */
+	EReference getMethod_Parameters();
 
 	/**
 	 * Returns the meta object for class '{@link structureLanguage.Primative <em>Primative</em>}'.
@@ -773,17 +822,6 @@ public interface StructureLanguagePackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getPrimative_Type();
-
-	/**
-	 * Returns the meta object for the attribute '{@link structureLanguage.Primative#getAccessType <em>Access Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Access Type</em>'.
-	 * @see structureLanguage.Primative#getAccessType()
-	 * @see #getPrimative()
-	 * @generated
-	 */
-	EAttribute getPrimative_AccessType();
 
 	/**
 	 * Returns the meta object for class '{@link structureLanguage.Complex <em>Complex</em>}'.
@@ -815,17 +853,6 @@ public interface StructureLanguagePackage extends EPackage {
 	 * @generated
 	 */
 	EClass getList();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link structureLanguage.List#getComplex <em>Complex</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Complex</em>'.
-	 * @see structureLanguage.List#getComplex()
-	 * @see #getList()
-	 * @generated
-	 */
-	EReference getList_Complex();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link structureLanguage.List#getPrimative <em>Primative</em>}'.
@@ -984,6 +1011,14 @@ public interface StructureLanguagePackage extends EPackage {
 		EReference CLASS__INHERATED = eINSTANCE.getClass_Inherated();
 
 		/**
+		 * The meta object literal for the '<em><b>Implements</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CLASS__IMPLEMENTS = eINSTANCE.getClass_Implements();
+
+		/**
 		 * The meta object literal for the '{@link structureLanguage.impl.InterfaceImpl <em>Interface</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1010,14 +1045,14 @@ public interface StructureLanguagePackage extends EPackage {
 		EReference INTERFACE__METHOD = eINSTANCE.getInterface_Method();
 
 		/**
-		 * The meta object literal for the '{@link structureLanguage.impl.VariableImpl <em>Variable</em>}' class.
+		 * The meta object literal for the '{@link structureLanguage.impl.VariableCImpl <em>Variable C</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see structureLanguage.impl.VariableImpl
-		 * @see structureLanguage.impl.StructureLanguagePackageImpl#getVariable()
+		 * @see structureLanguage.impl.VariableCImpl
+		 * @see structureLanguage.impl.StructureLanguagePackageImpl#getVariableC()
 		 * @generated
 		 */
-		EClass VARIABLE = eINSTANCE.getVariable();
+		EClass VARIABLE_C = eINSTANCE.getVariableC();
 
 		/**
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -1025,7 +1060,15 @@ public interface StructureLanguagePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute VARIABLE__NAME = eINSTANCE.getVariable_Name();
+		EAttribute VARIABLE_C__NAME = eINSTANCE.getVariableC_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Access Type</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute VARIABLE_C__ACCESS_TYPE = eINSTANCE.getVariableC_AccessType();
 
 		/**
 		 * The meta object literal for the '{@link structureLanguage.impl.MethodImpl <em>Method</em>}' class.
@@ -1054,20 +1097,20 @@ public interface StructureLanguagePackage extends EPackage {
 		EAttribute METHOD__ACCESS_TYPE = eINSTANCE.getMethod_AccessType();
 
 		/**
-		 * The meta object literal for the '<em><b>Variable</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference METHOD__VARIABLE = eINSTANCE.getMethod_Variable();
-
-		/**
 		 * The meta object literal for the '<em><b>Return</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference METHOD__RETURN = eINSTANCE.getMethod_Return();
+
+		/**
+		 * The meta object literal for the '<em><b>Parameters</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference METHOD__PARAMETERS = eINSTANCE.getMethod_Parameters();
 
 		/**
 		 * The meta object literal for the '{@link structureLanguage.impl.PrimativeImpl <em>Primative</em>}' class.
@@ -1086,14 +1129,6 @@ public interface StructureLanguagePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute PRIMATIVE__TYPE = eINSTANCE.getPrimative_Type();
-
-		/**
-		 * The meta object literal for the '<em><b>Access Type</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute PRIMATIVE__ACCESS_TYPE = eINSTANCE.getPrimative_AccessType();
 
 		/**
 		 * The meta object literal for the '{@link structureLanguage.impl.ComplexImpl <em>Complex</em>}' class.
@@ -1122,14 +1157,6 @@ public interface StructureLanguagePackage extends EPackage {
 		 * @generated
 		 */
 		EClass LIST = eINSTANCE.getList();
-
-		/**
-		 * The meta object literal for the '<em><b>Complex</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference LIST__COMPLEX = eINSTANCE.getList_Complex();
 
 		/**
 		 * The meta object literal for the '<em><b>Primative</b></em>' containment reference list feature.

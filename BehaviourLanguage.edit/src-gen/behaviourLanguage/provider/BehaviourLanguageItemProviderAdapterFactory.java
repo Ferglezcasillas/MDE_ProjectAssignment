@@ -257,29 +257,6 @@ public class BehaviourLanguageItemProviderAdapterFactory extends BehaviourLangua
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link behaviourLanguage.else_} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected else_ItemProvider else_ItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link behaviourLanguage.else_}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createelse_Adapter() {
-		if (else_ItemProvider == null) {
-			else_ItemProvider = new else_ItemProvider(this);
-		}
-
-		return else_ItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link behaviourLanguage.Function} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -418,6 +395,29 @@ public class BehaviourLanguageItemProviderAdapterFactory extends BehaviourLangua
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link behaviourLanguage.Container} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ContainerItemProvider containerItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link behaviourLanguage.Container}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createContainerAdapter() {
+		if (containerItemProvider == null) {
+			containerItemProvider = new ContainerItemProvider(this);
+		}
+
+		return containerItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -532,8 +532,6 @@ public class BehaviourLanguageItemProviderAdapterFactory extends BehaviourLangua
 			logicalItemProvider.dispose();
 		if (variableItemProvider != null)
 			variableItemProvider.dispose();
-		if (else_ItemProvider != null)
-			else_ItemProvider.dispose();
 		if (functionItemProvider != null)
 			functionItemProvider.dispose();
 		if (comparationItemProvider != null)
@@ -546,6 +544,8 @@ public class BehaviourLanguageItemProviderAdapterFactory extends BehaviourLangua
 			system_OutputItemProvider.dispose();
 		if (userDefinedFunctionItemProvider != null)
 			userDefinedFunctionItemProvider.dispose();
+		if (containerItemProvider != null)
+			containerItemProvider.dispose();
 	}
 
 }

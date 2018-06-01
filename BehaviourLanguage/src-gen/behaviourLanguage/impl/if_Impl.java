@@ -3,11 +3,12 @@
 package behaviourLanguage.impl;
 
 import behaviourLanguage.BehaviourLanguagePackage;
-import behaviourLanguage.else_;
+import behaviourLanguage.BlockOfCode;
 import behaviourLanguage.if_;
 
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
@@ -21,21 +22,21 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link behaviourLanguage.impl.if_Impl#getElse <em>Else</em>}</li>
+ *   <li>{@link behaviourLanguage.impl.if_Impl#getElseBody <em>Else Body</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class if_Impl extends ConditionalStatementImpl implements if_ {
 	/**
-	 * The cached value of the '{@link #getElse() <em>Else</em>}' reference.
+	 * The cached value of the '{@link #getElseBody() <em>Else Body</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getElse()
+	 * @see #getElseBody()
 	 * @generated
 	 * @ordered
 	 */
-	protected else_ else_;
+	protected BlockOfCode elseBody;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -61,17 +62,27 @@ public class if_Impl extends ConditionalStatementImpl implements if_ {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public else_ getElse() {
-		if (else_ != null && else_.eIsProxy()) {
-			InternalEObject oldElse = (InternalEObject) else_;
-			else_ = (else_) eResolveProxy(oldElse);
-			if (else_ != oldElse) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BehaviourLanguagePackage.IF___ELSE,
-							oldElse, else_));
-			}
+	public BlockOfCode getElseBody() {
+		return elseBody;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetElseBody(BlockOfCode newElseBody, NotificationChain msgs) {
+		BlockOfCode oldElseBody = elseBody;
+		elseBody = newElseBody;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
+					BehaviourLanguagePackage.IF___ELSE_BODY, oldElseBody, newElseBody);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
 		}
-		return else_;
+		return msgs;
 	}
 
 	/**
@@ -79,8 +90,21 @@ public class if_Impl extends ConditionalStatementImpl implements if_ {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public else_ basicGetElse() {
-		return else_;
+	public void setElseBody(BlockOfCode newElseBody) {
+		if (newElseBody != elseBody) {
+			NotificationChain msgs = null;
+			if (elseBody != null)
+				msgs = ((InternalEObject) elseBody).eInverseRemove(this,
+						EOPPOSITE_FEATURE_BASE - BehaviourLanguagePackage.IF___ELSE_BODY, null, msgs);
+			if (newElseBody != null)
+				msgs = ((InternalEObject) newElseBody).eInverseAdd(this,
+						EOPPOSITE_FEATURE_BASE - BehaviourLanguagePackage.IF___ELSE_BODY, null, msgs);
+			msgs = basicSetElseBody(newElseBody, msgs);
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BehaviourLanguagePackage.IF___ELSE_BODY, newElseBody,
+					newElseBody));
 	}
 
 	/**
@@ -88,11 +112,13 @@ public class if_Impl extends ConditionalStatementImpl implements if_ {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setElse(else_ newElse) {
-		else_ oldElse = else_;
-		else_ = newElse;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BehaviourLanguagePackage.IF___ELSE, oldElse, else_));
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+		case BehaviourLanguagePackage.IF___ELSE_BODY:
+			return basicSetElseBody(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
@@ -103,10 +129,8 @@ public class if_Impl extends ConditionalStatementImpl implements if_ {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case BehaviourLanguagePackage.IF___ELSE:
-			if (resolve)
-				return getElse();
-			return basicGetElse();
+		case BehaviourLanguagePackage.IF___ELSE_BODY:
+			return getElseBody();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -119,8 +143,8 @@ public class if_Impl extends ConditionalStatementImpl implements if_ {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case BehaviourLanguagePackage.IF___ELSE:
-			setElse((else_) newValue);
+		case BehaviourLanguagePackage.IF___ELSE_BODY:
+			setElseBody((BlockOfCode) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -134,8 +158,8 @@ public class if_Impl extends ConditionalStatementImpl implements if_ {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case BehaviourLanguagePackage.IF___ELSE:
-			setElse((else_) null);
+		case BehaviourLanguagePackage.IF___ELSE_BODY:
+			setElseBody((BlockOfCode) null);
 			return;
 		}
 		super.eUnset(featureID);
@@ -149,8 +173,8 @@ public class if_Impl extends ConditionalStatementImpl implements if_ {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case BehaviourLanguagePackage.IF___ELSE:
-			return else_ != null;
+		case BehaviourLanguagePackage.IF___ELSE_BODY:
+			return elseBody != null;
 		}
 		return super.eIsSet(featureID);
 	}

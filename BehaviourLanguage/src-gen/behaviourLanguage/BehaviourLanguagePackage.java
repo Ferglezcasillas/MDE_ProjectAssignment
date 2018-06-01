@@ -102,7 +102,7 @@ public interface BehaviourLanguagePackage extends EPackage {
 	 * @see behaviourLanguage.impl.BehaviourLanguagePackageImpl#getgeneralItem()
 	 * @generated
 	 */
-	int GENERAL_ITEM = 20;
+	int GENERAL_ITEM = 19;
 
 	/**
 	 * The number of structural features of the '<em>general Item</em>' class.
@@ -170,7 +170,7 @@ public interface BehaviourLanguagePackage extends EPackage {
 	int STATEMENT = 2;
 
 	/**
-	 * The feature id for the '<em><b>Body</b></em>' reference.
+	 * The feature id for the '<em><b>Body</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -299,7 +299,7 @@ public interface BehaviourLanguagePackage extends EPackage {
 	int FOR_ = 5;
 
 	/**
-	 * The feature id for the '<em><b>Body</b></em>' reference.
+	 * The feature id for the '<em><b>Body</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -308,22 +308,13 @@ public interface BehaviourLanguagePackage extends EPackage {
 	int FOR___BODY = STATEMENT__BODY;
 
 	/**
-	 * The feature id for the '<em><b>Comparator</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FOR___COMPARATOR = STATEMENT_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Variable</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FOR___VARIABLE = STATEMENT_FEATURE_COUNT + 1;
+	int FOR___VARIABLE = STATEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Inc</b></em>' attribute.
@@ -332,7 +323,7 @@ public interface BehaviourLanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FOR___INC = STATEMENT_FEATURE_COUNT + 2;
+	int FOR___INC = STATEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Update Value</b></em>' attribute.
@@ -341,7 +332,16 @@ public interface BehaviourLanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FOR___UPDATE_VALUE = STATEMENT_FEATURE_COUNT + 3;
+	int FOR___UPDATE_VALUE = STATEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Comparation</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FOR___COMPARATION = STATEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>for </em>' class.
@@ -369,16 +369,16 @@ public interface BehaviourLanguagePackage extends EPackage {
 	 * @see behaviourLanguage.impl.BehaviourLanguagePackageImpl#getConditionalStatement()
 	 * @generated
 	 */
-	int CONDITIONAL_STATEMENT = 14;
+	int CONDITIONAL_STATEMENT = 13;
 
 	/**
-	 * The feature id for the '<em><b>Statement</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Body</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONDITIONAL_STATEMENT__STATEMENT = 0;
+	int CONDITIONAL_STATEMENT__BODY = STATEMENT__BODY;
 
 	/**
 	 * The feature id for the '<em><b>Condition</b></em>' containment reference.
@@ -387,7 +387,7 @@ public interface BehaviourLanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONDITIONAL_STATEMENT__CONDITION = 1;
+	int CONDITIONAL_STATEMENT__CONDITION = STATEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Conditional Statement</em>' class.
@@ -396,7 +396,7 @@ public interface BehaviourLanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONDITIONAL_STATEMENT_FEATURE_COUNT = 2;
+	int CONDITIONAL_STATEMENT_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Conditional Statement</em>' class.
@@ -405,7 +405,7 @@ public interface BehaviourLanguagePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONDITIONAL_STATEMENT_OPERATION_COUNT = 0;
+	int CONDITIONAL_STATEMENT_OPERATION_COUNT = STATEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link behaviourLanguage.impl.while_Impl <em>while </em>}' class.
@@ -418,13 +418,13 @@ public interface BehaviourLanguagePackage extends EPackage {
 	int WHILE_ = 6;
 
 	/**
-	 * The feature id for the '<em><b>Statement</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Body</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int WHILE___STATEMENT = CONDITIONAL_STATEMENT__STATEMENT;
+	int WHILE___BODY = CONDITIONAL_STATEMENT__BODY;
 
 	/**
 	 * The feature id for the '<em><b>Condition</b></em>' containment reference.
@@ -464,13 +464,13 @@ public interface BehaviourLanguagePackage extends EPackage {
 	int IF_ = 7;
 
 	/**
-	 * The feature id for the '<em><b>Statement</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Body</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IF___STATEMENT = CONDITIONAL_STATEMENT__STATEMENT;
+	int IF___BODY = CONDITIONAL_STATEMENT__BODY;
 
 	/**
 	 * The feature id for the '<em><b>Condition</b></em>' containment reference.
@@ -482,13 +482,13 @@ public interface BehaviourLanguagePackage extends EPackage {
 	int IF___CONDITION = CONDITIONAL_STATEMENT__CONDITION;
 
 	/**
-	 * The feature id for the '<em><b>Else</b></em>' reference.
+	 * The feature id for the '<em><b>Else Body</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IF___ELSE = CONDITIONAL_STATEMENT_FEATURE_COUNT + 0;
+	int IF___ELSE_BODY = CONDITIONAL_STATEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>if </em>' class.
@@ -519,13 +519,13 @@ public interface BehaviourLanguagePackage extends EPackage {
 	int DOWHILE_ = 8;
 
 	/**
-	 * The feature id for the '<em><b>Statement</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Body</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DOWHILE___STATEMENT = CONDITIONAL_STATEMENT__STATEMENT;
+	int DOWHILE___BODY = CONDITIONAL_STATEMENT__BODY;
 
 	/**
 	 * The feature id for the '<em><b>Condition</b></em>' containment reference.
@@ -720,13 +720,31 @@ public interface BehaviourLanguagePackage extends EPackage {
 	int VARIABLE__TYPE = EXPRESSION_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Initialization</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VARIABLE__INITIALIZATION = EXPRESSION_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Type Not Primitive</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VARIABLE__TYPE_NOT_PRIMITIVE = EXPRESSION_FEATURE_COUNT + 3;
+
+	/**
 	 * The number of structural features of the '<em>Variable</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VARIABLE_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 2;
+	int VARIABLE_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of operations of the '<em>Variable</em>' class.
@@ -738,43 +756,6 @@ public interface BehaviourLanguagePackage extends EPackage {
 	int VARIABLE_OPERATION_COUNT = EXPRESSION_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link behaviourLanguage.impl.else_Impl <em>else </em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see behaviourLanguage.impl.else_Impl
-	 * @see behaviourLanguage.impl.BehaviourLanguagePackageImpl#getelse_()
-	 * @generated
-	 */
-	int ELSE_ = 12;
-
-	/**
-	 * The feature id for the '<em><b>Body</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ELSE___BODY = STATEMENT__BODY;
-
-	/**
-	 * The number of structural features of the '<em>else </em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ELSE__FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>else </em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ELSE__OPERATION_COUNT = STATEMENT_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link behaviourLanguage.impl.FunctionImpl <em>Function</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -782,7 +763,7 @@ public interface BehaviourLanguagePackage extends EPackage {
 	 * @see behaviourLanguage.impl.BehaviourLanguagePackageImpl#getFunction()
 	 * @generated
 	 */
-	int FUNCTION = 13;
+	int FUNCTION = 12;
 
 	/**
 	 * The feature id for the '<em><b>Blockofcode</b></em>' containment reference.
@@ -855,7 +836,7 @@ public interface BehaviourLanguagePackage extends EPackage {
 	 * @see behaviourLanguage.impl.BehaviourLanguagePackageImpl#getComparation()
 	 * @generated
 	 */
-	int COMPARATION = 15;
+	int COMPARATION = 14;
 
 	/**
 	 * The feature id for the '<em><b>Assign</b></em>' reference.
@@ -919,7 +900,7 @@ public interface BehaviourLanguagePackage extends EPackage {
 	 * @see behaviourLanguage.impl.BehaviourLanguagePackageImpl#getNotOperation()
 	 * @generated
 	 */
-	int NOT_OPERATION = 16;
+	int NOT_OPERATION = 15;
 
 	/**
 	 * The feature id for the '<em><b>Assign</b></em>' reference.
@@ -965,7 +946,7 @@ public interface BehaviourLanguagePackage extends EPackage {
 	 * @see behaviourLanguage.impl.BehaviourLanguagePackageImpl#getSystem_Input()
 	 * @generated
 	 */
-	int SYSTEM_INPUT = 17;
+	int SYSTEM_INPUT = 16;
 
 	/**
 	 * The feature id for the '<em><b>Assign</b></em>' reference.
@@ -1002,7 +983,7 @@ public interface BehaviourLanguagePackage extends EPackage {
 	 * @see behaviourLanguage.impl.BehaviourLanguagePackageImpl#getSystem_Output()
 	 * @generated
 	 */
-	int SYSTEM_OUTPUT = 18;
+	int SYSTEM_OUTPUT = 17;
 
 	/**
 	 * The feature id for the '<em><b>Assign</b></em>' reference.
@@ -1014,13 +995,22 @@ public interface BehaviourLanguagePackage extends EPackage {
 	int SYSTEM_OUTPUT__ASSIGN = CALL_FUNCTION__ASSIGN;
 
 	/**
+	 * The feature id for the '<em><b>Parameters</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYSTEM_OUTPUT__PARAMETERS = CALL_FUNCTION_FEATURE_COUNT + 0;
+
+	/**
 	 * The number of structural features of the '<em>System Output</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SYSTEM_OUTPUT_FEATURE_COUNT = CALL_FUNCTION_FEATURE_COUNT + 0;
+	int SYSTEM_OUTPUT_FEATURE_COUNT = CALL_FUNCTION_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>System Output</em>' class.
@@ -1039,7 +1029,7 @@ public interface BehaviourLanguagePackage extends EPackage {
 	 * @see behaviourLanguage.impl.BehaviourLanguagePackageImpl#getuserDefinedFunction()
 	 * @generated
 	 */
-	int USER_DEFINED_FUNCTION = 19;
+	int USER_DEFINED_FUNCTION = 18;
 
 	/**
 	 * The feature id for the '<em><b>Assign</b></em>' reference.
@@ -1051,7 +1041,7 @@ public interface BehaviourLanguagePackage extends EPackage {
 	int USER_DEFINED_FUNCTION__ASSIGN = CALL_FUNCTION__ASSIGN;
 
 	/**
-	 * The feature id for the '<em><b>Function</b></em>' containment reference.
+	 * The feature id for the '<em><b>Function</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1076,6 +1066,43 @@ public interface BehaviourLanguagePackage extends EPackage {
 	 * @ordered
 	 */
 	int USER_DEFINED_FUNCTION_OPERATION_COUNT = CALL_FUNCTION_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link behaviourLanguage.impl.ContainerImpl <em>Container</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see behaviourLanguage.impl.ContainerImpl
+	 * @see behaviourLanguage.impl.BehaviourLanguagePackageImpl#getContainer()
+	 * @generated
+	 */
+	int CONTAINER = 20;
+
+	/**
+	 * The feature id for the '<em><b>Function</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTAINER__FUNCTION = 0;
+
+	/**
+	 * The number of structural features of the '<em>Container</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTAINER_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '<em>Container</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTAINER_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link behaviourLanguage.MathOperator <em>Math Operator</em>}' enum.
@@ -1180,10 +1207,10 @@ public interface BehaviourLanguagePackage extends EPackage {
 	EClass getStatement();
 
 	/**
-	 * Returns the meta object for the reference '{@link behaviourLanguage.Statement#getBody <em>Body</em>}'.
+	 * Returns the meta object for the containment reference '{@link behaviourLanguage.Statement#getBody <em>Body</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Body</em>'.
+	 * @return the meta object for the containment reference '<em>Body</em>'.
 	 * @see behaviourLanguage.Statement#getBody()
 	 * @see #getStatement()
 	 * @generated
@@ -1243,17 +1270,6 @@ public interface BehaviourLanguagePackage extends EPackage {
 	EClass getfor_();
 
 	/**
-	 * Returns the meta object for the reference '{@link behaviourLanguage.for_#getComparator <em>Comparator</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Comparator</em>'.
-	 * @see behaviourLanguage.for_#getComparator()
-	 * @see #getfor_()
-	 * @generated
-	 */
-	EReference getfor__Comparator();
-
-	/**
 	 * Returns the meta object for the reference '{@link behaviourLanguage.for_#getVariable <em>Variable</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1287,6 +1303,17 @@ public interface BehaviourLanguagePackage extends EPackage {
 	EAttribute getfor__UpdateValue();
 
 	/**
+	 * Returns the meta object for the containment reference '{@link behaviourLanguage.for_#getComparation <em>Comparation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Comparation</em>'.
+	 * @see behaviourLanguage.for_#getComparation()
+	 * @see #getfor_()
+	 * @generated
+	 */
+	EReference getfor__Comparation();
+
+	/**
 	 * Returns the meta object for class '{@link behaviourLanguage.while_ <em>while </em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1307,15 +1334,15 @@ public interface BehaviourLanguagePackage extends EPackage {
 	EClass getif_();
 
 	/**
-	 * Returns the meta object for the reference '{@link behaviourLanguage.if_#getElse <em>Else</em>}'.
+	 * Returns the meta object for the containment reference '{@link behaviourLanguage.if_#getElseBody <em>Else Body</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Else</em>'.
-	 * @see behaviourLanguage.if_#getElse()
+	 * @return the meta object for the containment reference '<em>Else Body</em>'.
+	 * @see behaviourLanguage.if_#getElseBody()
 	 * @see #getif_()
 	 * @generated
 	 */
-	EReference getif__Else();
+	EReference getif__ElseBody();
 
 	/**
 	 * Returns the meta object for class '{@link behaviourLanguage.dowhile_ <em>dowhile </em>}'.
@@ -1402,14 +1429,26 @@ public interface BehaviourLanguagePackage extends EPackage {
 	EAttribute getVariable_Type();
 
 	/**
-	 * Returns the meta object for class '{@link behaviourLanguage.else_ <em>else </em>}'.
+	 * Returns the meta object for the attribute '{@link behaviourLanguage.Variable#getInitialization <em>Initialization</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>else </em>'.
-	 * @see behaviourLanguage.else_
+	 * @return the meta object for the attribute '<em>Initialization</em>'.
+	 * @see behaviourLanguage.Variable#getInitialization()
+	 * @see #getVariable()
 	 * @generated
 	 */
-	EClass getelse_();
+	EAttribute getVariable_Initialization();
+
+	/**
+	 * Returns the meta object for the attribute '{@link behaviourLanguage.Variable#getTypeNotPrimitive <em>Type Not Primitive</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Type Not Primitive</em>'.
+	 * @see behaviourLanguage.Variable#getTypeNotPrimitive()
+	 * @see #getVariable()
+	 * @generated
+	 */
+	EAttribute getVariable_TypeNotPrimitive();
 
 	/**
 	 * Returns the meta object for class '{@link behaviourLanguage.Function <em>Function</em>}'.
@@ -1487,17 +1526,6 @@ public interface BehaviourLanguagePackage extends EPackage {
 	EClass getConditionalStatement();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link behaviourLanguage.ConditionalStatement#getStatement <em>Statement</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Statement</em>'.
-	 * @see behaviourLanguage.ConditionalStatement#getStatement()
-	 * @see #getConditionalStatement()
-	 * @generated
-	 */
-	EReference getConditionalStatement_Statement();
-
-	/**
 	 * Returns the meta object for the containment reference '{@link behaviourLanguage.ConditionalStatement#getCondition <em>Condition</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1571,6 +1599,17 @@ public interface BehaviourLanguagePackage extends EPackage {
 	EClass getSystem_Output();
 
 	/**
+	 * Returns the meta object for the reference list '{@link behaviourLanguage.System_Output#getParameters <em>Parameters</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Parameters</em>'.
+	 * @see behaviourLanguage.System_Output#getParameters()
+	 * @see #getSystem_Output()
+	 * @generated
+	 */
+	EReference getSystem_Output_Parameters();
+
+	/**
 	 * Returns the meta object for class '{@link behaviourLanguage.userDefinedFunction <em>user Defined Function</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1581,10 +1620,10 @@ public interface BehaviourLanguagePackage extends EPackage {
 	EClass getuserDefinedFunction();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link behaviourLanguage.userDefinedFunction#getFunction <em>Function</em>}'.
+	 * Returns the meta object for the reference '{@link behaviourLanguage.userDefinedFunction#getFunction <em>Function</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Function</em>'.
+	 * @return the meta object for the reference '<em>Function</em>'.
 	 * @see behaviourLanguage.userDefinedFunction#getFunction()
 	 * @see #getuserDefinedFunction()
 	 * @generated
@@ -1600,6 +1639,27 @@ public interface BehaviourLanguagePackage extends EPackage {
 	 * @generated
 	 */
 	EClass getgeneralItem();
+
+	/**
+	 * Returns the meta object for class '{@link behaviourLanguage.Container <em>Container</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Container</em>'.
+	 * @see behaviourLanguage.Container
+	 * @generated
+	 */
+	EClass getContainer();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link behaviourLanguage.Container#getFunction <em>Function</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Function</em>'.
+	 * @see behaviourLanguage.Container#getFunction()
+	 * @see #getContainer()
+	 * @generated
+	 */
+	EReference getContainer_Function();
 
 	/**
 	 * Returns the meta object for enum '{@link behaviourLanguage.MathOperator <em>Math Operator</em>}'.
@@ -1721,7 +1781,7 @@ public interface BehaviourLanguagePackage extends EPackage {
 		EClass STATEMENT = eINSTANCE.getStatement();
 
 		/**
-		 * The meta object literal for the '<em><b>Body</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Body</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1775,14 +1835,6 @@ public interface BehaviourLanguagePackage extends EPackage {
 		EClass FOR_ = eINSTANCE.getfor_();
 
 		/**
-		 * The meta object literal for the '<em><b>Comparator</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference FOR___COMPARATOR = eINSTANCE.getfor__Comparator();
-
-		/**
 		 * The meta object literal for the '<em><b>Variable</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1807,6 +1859,14 @@ public interface BehaviourLanguagePackage extends EPackage {
 		EAttribute FOR___UPDATE_VALUE = eINSTANCE.getfor__UpdateValue();
 
 		/**
+		 * The meta object literal for the '<em><b>Comparation</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference FOR___COMPARATION = eINSTANCE.getfor__Comparation();
+
+		/**
 		 * The meta object literal for the '{@link behaviourLanguage.impl.while_Impl <em>while </em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1827,12 +1887,12 @@ public interface BehaviourLanguagePackage extends EPackage {
 		EClass IF_ = eINSTANCE.getif_();
 
 		/**
-		 * The meta object literal for the '<em><b>Else</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Else Body</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference IF___ELSE = eINSTANCE.getif__Else();
+		EReference IF___ELSE_BODY = eINSTANCE.getif__ElseBody();
 
 		/**
 		 * The meta object literal for the '{@link behaviourLanguage.impl.dowhile_Impl <em>dowhile </em>}' class.
@@ -1907,14 +1967,20 @@ public interface BehaviourLanguagePackage extends EPackage {
 		EAttribute VARIABLE__TYPE = eINSTANCE.getVariable_Type();
 
 		/**
-		 * The meta object literal for the '{@link behaviourLanguage.impl.else_Impl <em>else </em>}' class.
+		 * The meta object literal for the '<em><b>Initialization</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see behaviourLanguage.impl.else_Impl
-		 * @see behaviourLanguage.impl.BehaviourLanguagePackageImpl#getelse_()
 		 * @generated
 		 */
-		EClass ELSE_ = eINSTANCE.getelse_();
+		EAttribute VARIABLE__INITIALIZATION = eINSTANCE.getVariable_Initialization();
+
+		/**
+		 * The meta object literal for the '<em><b>Type Not Primitive</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute VARIABLE__TYPE_NOT_PRIMITIVE = eINSTANCE.getVariable_TypeNotPrimitive();
 
 		/**
 		 * The meta object literal for the '{@link behaviourLanguage.impl.FunctionImpl <em>Function</em>}' class.
@@ -1975,14 +2041,6 @@ public interface BehaviourLanguagePackage extends EPackage {
 		 * @generated
 		 */
 		EClass CONDITIONAL_STATEMENT = eINSTANCE.getConditionalStatement();
-
-		/**
-		 * The meta object literal for the '<em><b>Statement</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference CONDITIONAL_STATEMENT__STATEMENT = eINSTANCE.getConditionalStatement_Statement();
 
 		/**
 		 * The meta object literal for the '<em><b>Condition</b></em>' containment reference feature.
@@ -2049,6 +2107,14 @@ public interface BehaviourLanguagePackage extends EPackage {
 		EClass SYSTEM_OUTPUT = eINSTANCE.getSystem_Output();
 
 		/**
+		 * The meta object literal for the '<em><b>Parameters</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SYSTEM_OUTPUT__PARAMETERS = eINSTANCE.getSystem_Output_Parameters();
+
+		/**
 		 * The meta object literal for the '{@link behaviourLanguage.impl.userDefinedFunctionImpl <em>user Defined Function</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2059,7 +2125,7 @@ public interface BehaviourLanguagePackage extends EPackage {
 		EClass USER_DEFINED_FUNCTION = eINSTANCE.getuserDefinedFunction();
 
 		/**
-		 * The meta object literal for the '<em><b>Function</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Function</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -2075,6 +2141,24 @@ public interface BehaviourLanguagePackage extends EPackage {
 		 * @generated
 		 */
 		EClass GENERAL_ITEM = eINSTANCE.getgeneralItem();
+
+		/**
+		 * The meta object literal for the '{@link behaviourLanguage.impl.ContainerImpl <em>Container</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see behaviourLanguage.impl.ContainerImpl
+		 * @see behaviourLanguage.impl.BehaviourLanguagePackageImpl#getContainer()
+		 * @generated
+		 */
+		EClass CONTAINER = eINSTANCE.getContainer();
+
+		/**
+		 * The meta object literal for the '<em><b>Function</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CONTAINER__FUNCTION = eINSTANCE.getContainer_Function();
 
 		/**
 		 * The meta object literal for the '{@link behaviourLanguage.MathOperator <em>Math Operator</em>}' enum.

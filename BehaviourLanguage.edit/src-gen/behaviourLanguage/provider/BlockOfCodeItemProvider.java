@@ -154,6 +154,15 @@ public class BlockOfCodeItemProvider extends ItemProviderAdapter implements IEdi
 				BehaviourLanguageFactory.eINSTANCE.createfor_()));
 
 		newChildDescriptors.add(createChildParameter(BehaviourLanguagePackage.Literals.BLOCK_OF_CODE__THINGS,
+				BehaviourLanguageFactory.eINSTANCE.createwhile_()));
+
+		newChildDescriptors.add(createChildParameter(BehaviourLanguagePackage.Literals.BLOCK_OF_CODE__THINGS,
+				BehaviourLanguageFactory.eINSTANCE.createif_()));
+
+		newChildDescriptors.add(createChildParameter(BehaviourLanguagePackage.Literals.BLOCK_OF_CODE__THINGS,
+				BehaviourLanguageFactory.eINSTANCE.createdowhile_()));
+
+		newChildDescriptors.add(createChildParameter(BehaviourLanguagePackage.Literals.BLOCK_OF_CODE__THINGS,
 				BehaviourLanguageFactory.eINSTANCE.createMath()));
 
 		newChildDescriptors.add(createChildParameter(BehaviourLanguagePackage.Literals.BLOCK_OF_CODE__THINGS,
@@ -161,9 +170,6 @@ public class BlockOfCodeItemProvider extends ItemProviderAdapter implements IEdi
 
 		newChildDescriptors.add(createChildParameter(BehaviourLanguagePackage.Literals.BLOCK_OF_CODE__THINGS,
 				BehaviourLanguageFactory.eINSTANCE.createVariable()));
-
-		newChildDescriptors.add(createChildParameter(BehaviourLanguagePackage.Literals.BLOCK_OF_CODE__THINGS,
-				BehaviourLanguageFactory.eINSTANCE.createelse_()));
 
 		newChildDescriptors.add(createChildParameter(BehaviourLanguagePackage.Literals.BLOCK_OF_CODE__THINGS,
 				BehaviourLanguageFactory.eINSTANCE.createComparation()));

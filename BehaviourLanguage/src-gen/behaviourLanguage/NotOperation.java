@@ -30,7 +30,7 @@ public interface NotOperation extends Expression {
 	 * @return the value of the '<em>Input</em>' reference.
 	 * @see #setInput(Variable)
 	 * @see behaviourLanguage.BehaviourLanguagePackage#getNotOperation_Input()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	Variable getInput();

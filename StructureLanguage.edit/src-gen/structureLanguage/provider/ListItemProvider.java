@@ -20,7 +20,7 @@ import structureLanguage.StructureLanguagePackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ListItemProvider extends VariableItemProvider {
+public class ListItemProvider extends VariableCItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -58,7 +58,6 @@ public class ListItemProvider extends VariableItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(StructureLanguagePackage.Literals.LIST__COMPLEX);
 			childrenFeatures.add(StructureLanguagePackage.Literals.LIST__PRIMATIVE);
 		}
 		return childrenFeatures;
@@ -123,7 +122,6 @@ public class ListItemProvider extends VariableItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(structureLanguage.List.class)) {
-		case StructureLanguagePackage.LIST__COMPLEX:
 		case StructureLanguagePackage.LIST__PRIMATIVE:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
@@ -141,9 +139,6 @@ public class ListItemProvider extends VariableItemProvider {
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-
-		newChildDescriptors.add(createChildParameter(StructureLanguagePackage.Literals.LIST__COMPLEX,
-				StructureLanguageFactory.eINSTANCE.createComplex()));
 
 		newChildDescriptors.add(createChildParameter(StructureLanguagePackage.Literals.LIST__PRIMATIVE,
 				StructureLanguageFactory.eINSTANCE.createPrimative()));

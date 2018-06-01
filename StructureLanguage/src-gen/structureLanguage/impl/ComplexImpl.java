@@ -25,7 +25,7 @@ import structureLanguage.StructureLanguagePackage;
  *
  * @generated
  */
-public class ComplexImpl extends VariableImpl implements Complex {
+public class ComplexImpl extends VariableCImpl implements Complex {
 	/**
 	 * The cached value of the '{@link #getClass_() <em>Class</em>}' reference.
 	 * <!-- begin-user-doc -->

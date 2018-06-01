@@ -106,7 +106,16 @@ public enum PrimitiveType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	STRING(8, "STRING", "string");
+	STRING(8, "STRING", "string"),
+	/**
+	 * The '<em><b>NOTPRIMITIVE</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #NOTPRIMITIVE_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	NOTPRIMITIVE(9, "NOTPRIMITIVE", "NOTPRIMITIVE");
 
 	/**
 	 * The '<em><b>BYTE</b></em>' literal value.
@@ -244,13 +253,28 @@ public enum PrimitiveType implements Enumerator {
 	public static final int STRING_VALUE = 8;
 
 	/**
+	 * The '<em><b>NOTPRIMITIVE</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>NOTPRIMITIVE</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @see #NOTPRIMITIVE
+	 * @model
+	 * @generated
+	 * @ordered
+	 */
+	public static final int NOTPRIMITIVE_VALUE = 9;
+
+	/**
 	 * An array of all the '<em><b>Primitive Type</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	private static final PrimitiveType[] VALUES_ARRAY = new PrimitiveType[] { BYTE, SHORT, INT, LONG, FLOAT, DOUBLE,
-			BOOLEAN, CHAR, STRING, };
+			BOOLEAN, CHAR, STRING, NOTPRIMITIVE, };
 
 	/**
 	 * A public read-only list of all the '<em><b>Primitive Type</b></em>' enumerators.
@@ -324,6 +348,8 @@ public enum PrimitiveType implements Enumerator {
 			return CHAR;
 		case STRING_VALUE:
 			return STRING;
+		case NOTPRIMITIVE_VALUE:
+			return NOTPRIMITIVE;
 		}
 		return null;
 	}

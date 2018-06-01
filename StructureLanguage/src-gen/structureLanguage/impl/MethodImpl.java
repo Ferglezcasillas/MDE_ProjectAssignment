@@ -6,6 +6,7 @@ import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
@@ -14,12 +15,12 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
-
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 import structureLanguage.AccessType;
 import structureLanguage.Method;
 import structureLanguage.StructureLanguagePackage;
-import structureLanguage.Variable;
+import structureLanguage.VariableC;
 
 /**
  * <!-- begin-user-doc -->
@@ -32,7 +33,7 @@ import structureLanguage.Variable;
  *   <li>{@link structureLanguage.impl.MethodImpl#getName <em>Name</em>}</li>
  *   <li>{@link structureLanguage.impl.MethodImpl#getAccessType <em>Access Type</em>}</li>
  *   <li>{@link structureLanguage.impl.MethodImpl#getReturn <em>Return</em>}</li>
- *   <li>{@link structureLanguage.impl.MethodImpl#getVariable <em>Variable</em>}</li>
+ *   <li>{@link structureLanguage.impl.MethodImpl#getParameters <em>Parameters</em>}</li>
  * </ul>
  *
  * @generated
@@ -86,17 +87,17 @@ public class MethodImpl extends MinimalEObjectImpl.Container implements Method {
 	 * @generated
 	 * @ordered
 	 */
-	protected Variable return_;
+	protected VariableC return_;
 
 	/**
-	 * The cached value of the '{@link #getVariable() <em>Variable</em>}' reference list.
+	 * The cached value of the '{@link #getParameters() <em>Parameters</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getVariable()
+	 * @see #getParameters()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<structureLanguage.Class> variable;
+	protected EList<VariableC> parameters;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -166,23 +167,10 @@ public class MethodImpl extends MinimalEObjectImpl.Container implements Method {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<structureLanguage.Class> getVariable() {
-		if (variable == null) {
-			variable = new EObjectResolvingEList<structureLanguage.Class>(structureLanguage.Class.class, this,
-					StructureLanguagePackage.METHOD__VARIABLE);
-		}
-		return variable;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Variable getReturn() {
+	public VariableC getReturn() {
 		if (return_ != null && return_.eIsProxy()) {
 			InternalEObject oldReturn = (InternalEObject) return_;
-			return_ = (Variable) eResolveProxy(oldReturn);
+			return_ = (VariableC) eResolveProxy(oldReturn);
 			if (return_ != oldReturn) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, StructureLanguagePackage.METHOD__RETURN,
@@ -197,7 +185,7 @@ public class MethodImpl extends MinimalEObjectImpl.Container implements Method {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Variable basicGetReturn() {
+	public VariableC basicGetReturn() {
 		return return_;
 	}
 
@@ -206,12 +194,39 @@ public class MethodImpl extends MinimalEObjectImpl.Container implements Method {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setReturn(Variable newReturn) {
-		Variable oldReturn = return_;
+	public void setReturn(VariableC newReturn) {
+		VariableC oldReturn = return_;
 		return_ = newReturn;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, StructureLanguagePackage.METHOD__RETURN, oldReturn,
 					return_));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<VariableC> getParameters() {
+		if (parameters == null) {
+			parameters = new EObjectContainmentEList<VariableC>(VariableC.class, this,
+					StructureLanguagePackage.METHOD__PARAMETERS);
+		}
+		return parameters;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+		case StructureLanguagePackage.METHOD__PARAMETERS:
+			return ((InternalEList<?>) getParameters()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
@@ -230,8 +245,8 @@ public class MethodImpl extends MinimalEObjectImpl.Container implements Method {
 			if (resolve)
 				return getReturn();
 			return basicGetReturn();
-		case StructureLanguagePackage.METHOD__VARIABLE:
-			return getVariable();
+		case StructureLanguagePackage.METHOD__PARAMETERS:
+			return getParameters();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -252,11 +267,11 @@ public class MethodImpl extends MinimalEObjectImpl.Container implements Method {
 			setAccessType((AccessType) newValue);
 			return;
 		case StructureLanguagePackage.METHOD__RETURN:
-			setReturn((Variable) newValue);
+			setReturn((VariableC) newValue);
 			return;
-		case StructureLanguagePackage.METHOD__VARIABLE:
-			getVariable().clear();
-			getVariable().addAll((Collection<? extends structureLanguage.Class>) newValue);
+		case StructureLanguagePackage.METHOD__PARAMETERS:
+			getParameters().clear();
+			getParameters().addAll((Collection<? extends VariableC>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -277,10 +292,10 @@ public class MethodImpl extends MinimalEObjectImpl.Container implements Method {
 			setAccessType(ACCESS_TYPE_EDEFAULT);
 			return;
 		case StructureLanguagePackage.METHOD__RETURN:
-			setReturn((Variable) null);
+			setReturn((VariableC) null);
 			return;
-		case StructureLanguagePackage.METHOD__VARIABLE:
-			getVariable().clear();
+		case StructureLanguagePackage.METHOD__PARAMETERS:
+			getParameters().clear();
 			return;
 		}
 		super.eUnset(featureID);
@@ -300,8 +315,8 @@ public class MethodImpl extends MinimalEObjectImpl.Container implements Method {
 			return accessType != ACCESS_TYPE_EDEFAULT;
 		case StructureLanguagePackage.METHOD__RETURN:
 			return return_ != null;
-		case StructureLanguagePackage.METHOD__VARIABLE:
-			return variable != null && !variable.isEmpty();
+		case StructureLanguagePackage.METHOD__PARAMETERS:
+			return parameters != null && !parameters.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

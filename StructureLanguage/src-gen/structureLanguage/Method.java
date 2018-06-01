@@ -18,7 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link structureLanguage.Method#getName <em>Name</em>}</li>
  *   <li>{@link structureLanguage.Method#getAccessType <em>Access Type</em>}</li>
  *   <li>{@link structureLanguage.Method#getReturn <em>Return</em>}</li>
- *   <li>{@link structureLanguage.Method#getVariable <em>Variable</em>}</li>
+ *   <li>{@link structureLanguage.Method#getParameters <em>Parameters</em>}</li>
  * </ul>
  *
  * @see structureLanguage.StructureLanguagePackage#getMethod()
@@ -82,22 +82,6 @@ public interface Method extends EObject {
 	void setAccessType(AccessType value);
 
 	/**
-	 * Returns the value of the '<em><b>Variable</b></em>' reference list.
-	 * The list contents are of type {@link structureLanguage.Class}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Variable</em>' reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Variable</em>' reference list.
-	 * @see structureLanguage.StructureLanguagePackage#getMethod_Variable()
-	 * @model
-	 * @generated
-	 */
-	EList<structureLanguage.Class> getVariable();
-
-	/**
 	 * Returns the value of the '<em><b>Return</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -106,12 +90,12 @@ public interface Method extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Return</em>' reference.
-	 * @see #setReturn(Variable)
+	 * @see #setReturn(VariableC)
 	 * @see structureLanguage.StructureLanguagePackage#getMethod_Return()
 	 * @model
 	 * @generated
 	 */
-	Variable getReturn();
+	VariableC getReturn();
 
 	/**
 	 * Sets the value of the '{@link structureLanguage.Method#getReturn <em>Return</em>}' reference.
@@ -121,6 +105,22 @@ public interface Method extends EObject {
 	 * @see #getReturn()
 	 * @generated
 	 */
-	void setReturn(Variable value);
+	void setReturn(VariableC value);
+
+	/**
+	 * Returns the value of the '<em><b>Parameters</b></em>' containment reference list.
+	 * The list contents are of type {@link structureLanguage.VariableC}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Parameters</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Parameters</em>' containment reference list.
+	 * @see structureLanguage.StructureLanguagePackage#getMethod_Parameters()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<VariableC> getParameters();
 
 } // Method

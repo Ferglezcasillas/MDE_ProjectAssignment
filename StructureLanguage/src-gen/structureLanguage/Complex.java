@@ -18,7 +18,7 @@ package structureLanguage;
  * @model
  * @generated
  */
-public interface Complex extends Variable {
+public interface Complex extends VariableC {
 	/**
 	 * Returns the value of the '<em><b>Class</b></em>' reference.
 	 * <!-- begin-user-doc -->

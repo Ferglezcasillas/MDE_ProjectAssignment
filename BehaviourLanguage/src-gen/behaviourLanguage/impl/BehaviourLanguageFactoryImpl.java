@@ -18,7 +18,6 @@ import behaviourLanguage.System_Input;
 import behaviourLanguage.System_Output;
 import behaviourLanguage.Variable;
 import behaviourLanguage.dowhile_;
-import behaviourLanguage.else_;
 import behaviourLanguage.for_;
 import behaviourLanguage.if_;
 import behaviourLanguage.userDefinedFunction;
@@ -93,8 +92,6 @@ public class BehaviourLanguageFactoryImpl extends EFactoryImpl implements Behavi
 			return createLogical();
 		case BehaviourLanguagePackage.VARIABLE:
 			return createVariable();
-		case BehaviourLanguagePackage.ELSE_:
-			return createelse_();
 		case BehaviourLanguagePackage.FUNCTION:
 			return createFunction();
 		case BehaviourLanguagePackage.COMPARATION:
@@ -107,6 +104,8 @@ public class BehaviourLanguageFactoryImpl extends EFactoryImpl implements Behavi
 			return createSystem_Output();
 		case BehaviourLanguagePackage.USER_DEFINED_FUNCTION:
 			return createuserDefinedFunction();
+		case BehaviourLanguagePackage.CONTAINER:
+			return createContainer();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -243,16 +242,6 @@ public class BehaviourLanguageFactoryImpl extends EFactoryImpl implements Behavi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public else_ createelse_() {
-		else_Impl else_ = new else_Impl();
-		return else_;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public Function createFunction() {
 		FunctionImpl function = new FunctionImpl();
 		return function;
@@ -306,6 +295,16 @@ public class BehaviourLanguageFactoryImpl extends EFactoryImpl implements Behavi
 	public userDefinedFunction createuserDefinedFunction() {
 		userDefinedFunctionImpl userDefinedFunction = new userDefinedFunctionImpl();
 		return userDefinedFunction;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public behaviourLanguage.Container createContainer() {
+		ContainerImpl container = new ContainerImpl();
+		return container;
 	}
 
 	/**

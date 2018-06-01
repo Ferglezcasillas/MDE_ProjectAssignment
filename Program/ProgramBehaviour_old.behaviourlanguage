@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<behaviourLanguage:Function xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:behaviourLanguage="http://www.example.org/behaviourLanguage" name="evaluate">
+  <blockofcode>
+    <things xsi:type="behaviourLanguage:Variable" name="a" type="int"/>
+    <things xsi:type="behaviourLanguage:Comparation" leftInput="//@blockofcode/@things.5" rightInput="//@blockofcode/@things.0"/>
+    <things xsi:type="behaviourLanguage:Variable" name="flag" type="boolean" initialization="true"/>
+    <things xsi:type="behaviourLanguage:System_Input" assign="//@blockofcode/@things.0"/>
+    <things xsi:type="behaviourLanguage:Math" assign="//@blockofcode/@things.0" leftInput="//@blockofcode/@things.0" rightInput="//@blockofcode/@things.0" type="*"/>
+    <things xsi:type="behaviourLanguage:Variable" name="i" type="int" initialization="0"/>
+    <things xsi:type="behaviourLanguage:for_" variable="//@blockofcode/@things.5" inc="true" updateValue="1">
+      <body>
+        <things xsi:type="behaviourLanguage:System_Output" parameters="//@blockofcode/@things.0"/>
+        <things xsi:type="behaviourLanguage:userDefinedFunction"/>
+      </body>
+      <comparation leftInput="//@blockofcode/@things.5" rightInput="//@blockofcode/@things.0"/>
+    </things>
+    <things xsi:type="behaviourLanguage:if_">
+      <body>
+        <things xsi:type="behaviourLanguage:userDefinedFunction"/>
+      </body>
+      <condition leftInput="//@blockofcode/@things.6/@comparation" rightInput="//@blockofcode/@things.2"/>
+      <elseBody>
+        <things xsi:type="behaviourLanguage:userDefinedFunction"/>
+      </elseBody>
+    </things>
+  </blockofcode>
+</behaviourLanguage:Function>

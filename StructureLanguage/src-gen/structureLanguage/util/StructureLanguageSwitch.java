@@ -14,7 +14,7 @@ import structureLanguage.Method;
 import structureLanguage.Primative;
 import structureLanguage.Program;
 import structureLanguage.StructureLanguagePackage;
-import structureLanguage.Variable;
+import structureLanguage.VariableC;
 
 /**
  * <!-- begin-user-doc -->
@@ -94,9 +94,9 @@ public class StructureLanguageSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case StructureLanguagePackage.VARIABLE: {
-			Variable variable = (Variable) theEObject;
-			T result = caseVariable(variable);
+		case StructureLanguagePackage.VARIABLE_C: {
+			VariableC variableC = (VariableC) theEObject;
+			T result = caseVariableC(variableC);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -112,7 +112,7 @@ public class StructureLanguageSwitch<T> extends Switch<T> {
 			Primative primative = (Primative) theEObject;
 			T result = casePrimative(primative);
 			if (result == null)
-				result = caseVariable(primative);
+				result = caseVariableC(primative);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -121,7 +121,7 @@ public class StructureLanguageSwitch<T> extends Switch<T> {
 			Complex complex = (Complex) theEObject;
 			T result = caseComplex(complex);
 			if (result == null)
-				result = caseVariable(complex);
+				result = caseVariableC(complex);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -130,7 +130,7 @@ public class StructureLanguageSwitch<T> extends Switch<T> {
 			List list = (List) theEObject;
 			T result = caseList(list);
 			if (result == null)
-				result = caseVariable(list);
+				result = caseVariableC(list);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -186,17 +186,17 @@ public class StructureLanguageSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Variable</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Variable C</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Variable</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Variable C</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseVariable(Variable object) {
+	public T caseVariableC(VariableC object) {
 		return null;
 	}
 

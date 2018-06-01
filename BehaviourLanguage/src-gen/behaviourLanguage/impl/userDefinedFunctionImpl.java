@@ -7,8 +7,6 @@ import behaviourLanguage.Function;
 import behaviourLanguage.userDefinedFunction;
 
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
@@ -29,7 +27,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  */
 public class userDefinedFunctionImpl extends CallFunctionImpl implements userDefinedFunction {
 	/**
-	 * The cached value of the '{@link #getFunction() <em>Function</em>}' containment reference.
+	 * The cached value of the '{@link #getFunction() <em>Function</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getFunction()
@@ -63,6 +61,15 @@ public class userDefinedFunctionImpl extends CallFunctionImpl implements userDef
 	 * @generated
 	 */
 	public Function getFunction() {
+		if (function != null && function.eIsProxy()) {
+			InternalEObject oldFunction = (InternalEObject) function;
+			function = (Function) eResolveProxy(oldFunction);
+			if (function != oldFunction) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
+							BehaviourLanguagePackage.USER_DEFINED_FUNCTION__FUNCTION, oldFunction, function));
+			}
+		}
 		return function;
 	}
 
@@ -71,18 +78,8 @@ public class userDefinedFunctionImpl extends CallFunctionImpl implements userDef
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetFunction(Function newFunction, NotificationChain msgs) {
-		Function oldFunction = function;
-		function = newFunction;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
-					BehaviourLanguagePackage.USER_DEFINED_FUNCTION__FUNCTION, oldFunction, newFunction);
-			if (msgs == null)
-				msgs = notification;
-			else
-				msgs.add(notification);
-		}
-		return msgs;
+	public Function basicGetFunction() {
+		return function;
 	}
 
 	/**
@@ -91,34 +88,11 @@ public class userDefinedFunctionImpl extends CallFunctionImpl implements userDef
 	 * @generated
 	 */
 	public void setFunction(Function newFunction) {
-		if (newFunction != function) {
-			NotificationChain msgs = null;
-			if (function != null)
-				msgs = ((InternalEObject) function).eInverseRemove(this,
-						EOPPOSITE_FEATURE_BASE - BehaviourLanguagePackage.USER_DEFINED_FUNCTION__FUNCTION, null, msgs);
-			if (newFunction != null)
-				msgs = ((InternalEObject) newFunction).eInverseAdd(this,
-						EOPPOSITE_FEATURE_BASE - BehaviourLanguagePackage.USER_DEFINED_FUNCTION__FUNCTION, null, msgs);
-			msgs = basicSetFunction(newFunction, msgs);
-			if (msgs != null)
-				msgs.dispatch();
-		} else if (eNotificationRequired())
+		Function oldFunction = function;
+		function = newFunction;
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET,
-					BehaviourLanguagePackage.USER_DEFINED_FUNCTION__FUNCTION, newFunction, newFunction));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-		case BehaviourLanguagePackage.USER_DEFINED_FUNCTION__FUNCTION:
-			return basicSetFunction(null, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
+					BehaviourLanguagePackage.USER_DEFINED_FUNCTION__FUNCTION, oldFunction, function));
 	}
 
 	/**
@@ -130,7 +104,9 @@ public class userDefinedFunctionImpl extends CallFunctionImpl implements userDef
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case BehaviourLanguagePackage.USER_DEFINED_FUNCTION__FUNCTION:
-			return getFunction();
+			if (resolve)
+				return getFunction();
+			return basicGetFunction();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}

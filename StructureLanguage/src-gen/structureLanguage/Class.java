@@ -21,6 +21,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link structureLanguage.Class#getVariable <em>Variable</em>}</li>
  *   <li>{@link structureLanguage.Class#getMethod <em>Method</em>}</li>
  *   <li>{@link structureLanguage.Class#getInherated <em>Inherated</em>}</li>
+ *   <li>{@link structureLanguage.Class#getImplements <em>Implements</em>}</li>
  * </ul>
  *
  * @see structureLanguage.StructureLanguagePackage#getClass_()
@@ -114,7 +115,7 @@ public interface Class extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Variable</b></em>' containment reference list.
-	 * The list contents are of type {@link structureLanguage.Variable}.
+	 * The list contents are of type {@link structureLanguage.VariableC}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Variable</em>' containment reference list isn't clear,
@@ -126,7 +127,7 @@ public interface Class extends EObject {
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<Variable> getVariable();
+	EList<VariableC> getVariable();
 
 	/**
 	 * Returns the value of the '<em><b>Method</b></em>' containment reference list.
@@ -169,5 +170,31 @@ public interface Class extends EObject {
 	 * @generated
 	 */
 	void setInherated(Class value);
+
+	/**
+	 * Returns the value of the '<em><b>Implements</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Implements</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Implements</em>' reference.
+	 * @see #setImplements(Interface)
+	 * @see structureLanguage.StructureLanguagePackage#getClass_Implements()
+	 * @model
+	 * @generated
+	 */
+	Interface getImplements();
+
+	/**
+	 * Sets the value of the '{@link structureLanguage.Class#getImplements <em>Implements</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Implements</em>' reference.
+	 * @see #getImplements()
+	 * @generated
+	 */
+	void setImplements(Interface value);
 
 } // Class

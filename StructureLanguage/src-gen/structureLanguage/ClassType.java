@@ -37,10 +37,11 @@ public enum ClassType implements Enumerator {
 	 * @ordered
 	 */
 	ENUMERATE(1, "ENUMERATE", "ENUMERATE"),
+
 	/**
 	 * The '<em><b>STANDARD</b></em>' literal object.
 	 * <!-- begin-user-doc -->
-	* <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see #STANDARD_VALUE
 	 * @generated
 	 * @ordered

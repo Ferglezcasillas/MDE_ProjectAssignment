@@ -8,7 +8,6 @@ import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import structureLanguage.AccessType;
 import structureLanguage.Primative;
 import structureLanguage.PrimitiveType;
 import structureLanguage.StructureLanguagePackage;
@@ -22,12 +21,11 @@ import structureLanguage.StructureLanguagePackage;
  * </p>
  * <ul>
  *   <li>{@link structureLanguage.impl.PrimativeImpl#getType <em>Type</em>}</li>
- *   <li>{@link structureLanguage.impl.PrimativeImpl#getAccessType <em>Access Type</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class PrimativeImpl extends VariableImpl implements Primative {
+public class PrimativeImpl extends VariableCImpl implements Primative {
 	/**
 	 * The default value of the '{@link #getType() <em>Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -47,26 +45,6 @@ public class PrimativeImpl extends VariableImpl implements Primative {
 	 * @ordered
 	 */
 	protected PrimitiveType type = TYPE_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getAccessType() <em>Access Type</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAccessType()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final AccessType ACCESS_TYPE_EDEFAULT = AccessType.PUBLIC;
-
-	/**
-	 * The cached value of the '{@link #getAccessType() <em>Access Type</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAccessType()
-	 * @generated
-	 * @ordered
-	 */
-	protected AccessType accessType = ACCESS_TYPE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -114,35 +92,11 @@ public class PrimativeImpl extends VariableImpl implements Primative {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public AccessType getAccessType() {
-		return accessType;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setAccessType(AccessType newAccessType) {
-		AccessType oldAccessType = accessType;
-		accessType = newAccessType == null ? ACCESS_TYPE_EDEFAULT : newAccessType;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StructureLanguagePackage.PRIMATIVE__ACCESS_TYPE,
-					oldAccessType, accessType));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case StructureLanguagePackage.PRIMATIVE__TYPE:
 			return getType();
-		case StructureLanguagePackage.PRIMATIVE__ACCESS_TYPE:
-			return getAccessType();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -157,9 +111,6 @@ public class PrimativeImpl extends VariableImpl implements Primative {
 		switch (featureID) {
 		case StructureLanguagePackage.PRIMATIVE__TYPE:
 			setType((PrimitiveType) newValue);
-			return;
-		case StructureLanguagePackage.PRIMATIVE__ACCESS_TYPE:
-			setAccessType((AccessType) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -176,9 +127,6 @@ public class PrimativeImpl extends VariableImpl implements Primative {
 		case StructureLanguagePackage.PRIMATIVE__TYPE:
 			setType(TYPE_EDEFAULT);
 			return;
-		case StructureLanguagePackage.PRIMATIVE__ACCESS_TYPE:
-			setAccessType(ACCESS_TYPE_EDEFAULT);
-			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -193,8 +141,6 @@ public class PrimativeImpl extends VariableImpl implements Primative {
 		switch (featureID) {
 		case StructureLanguagePackage.PRIMATIVE__TYPE:
 			return type != TYPE_EDEFAULT;
-		case StructureLanguagePackage.PRIMATIVE__ACCESS_TYPE:
-			return accessType != ACCESS_TYPE_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -212,8 +158,6 @@ public class PrimativeImpl extends VariableImpl implements Primative {
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (type: ");
 		result.append(type);
-		result.append(", accessType: ");
-		result.append(accessType);
 		result.append(')');
 		return result.toString();
 	}

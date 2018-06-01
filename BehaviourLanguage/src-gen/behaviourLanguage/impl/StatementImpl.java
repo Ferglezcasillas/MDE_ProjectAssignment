@@ -8,6 +8,7 @@ import behaviourLanguage.Statement;
 
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
@@ -28,7 +29,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  */
 public abstract class StatementImpl extends generalItemImpl implements Statement {
 	/**
-	 * The cached value of the '{@link #getBody() <em>Body</em>}' reference.
+	 * The cached value of the '{@link #getBody() <em>Body</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getBody()
@@ -62,15 +63,6 @@ public abstract class StatementImpl extends generalItemImpl implements Statement
 	 * @generated
 	 */
 	public BlockOfCode getBody() {
-		if (body != null && body.eIsProxy()) {
-			InternalEObject oldBody = (InternalEObject) body;
-			body = (BlockOfCode) eResolveProxy(oldBody);
-			if (body != oldBody) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BehaviourLanguagePackage.STATEMENT__BODY,
-							oldBody, body));
-			}
-		}
 		return body;
 	}
 
@@ -79,8 +71,18 @@ public abstract class StatementImpl extends generalItemImpl implements Statement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public BlockOfCode basicGetBody() {
-		return body;
+	public NotificationChain basicSetBody(BlockOfCode newBody, NotificationChain msgs) {
+		BlockOfCode oldBody = body;
+		body = newBody;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
+					BehaviourLanguagePackage.STATEMENT__BODY, oldBody, newBody);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
+		}
+		return msgs;
 	}
 
 	/**
@@ -89,11 +91,34 @@ public abstract class StatementImpl extends generalItemImpl implements Statement
 	 * @generated
 	 */
 	public void setBody(BlockOfCode newBody) {
-		BlockOfCode oldBody = body;
-		body = newBody;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BehaviourLanguagePackage.STATEMENT__BODY, oldBody,
-					body));
+		if (newBody != body) {
+			NotificationChain msgs = null;
+			if (body != null)
+				msgs = ((InternalEObject) body).eInverseRemove(this,
+						EOPPOSITE_FEATURE_BASE - BehaviourLanguagePackage.STATEMENT__BODY, null, msgs);
+			if (newBody != null)
+				msgs = ((InternalEObject) newBody).eInverseAdd(this,
+						EOPPOSITE_FEATURE_BASE - BehaviourLanguagePackage.STATEMENT__BODY, null, msgs);
+			msgs = basicSetBody(newBody, msgs);
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BehaviourLanguagePackage.STATEMENT__BODY, newBody,
+					newBody));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+		case BehaviourLanguagePackage.STATEMENT__BODY:
+			return basicSetBody(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
@@ -105,9 +130,7 @@ public abstract class StatementImpl extends generalItemImpl implements Statement
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case BehaviourLanguagePackage.STATEMENT__BODY:
-			if (resolve)
-				return getBody();
-			return basicGetBody();
+			return getBody();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}

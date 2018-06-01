@@ -2,12 +2,14 @@
  */
 package behaviourLanguage.provider;
 
+import behaviourLanguage.BehaviourLanguagePackage;
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
 /**
@@ -38,8 +40,25 @@ public class System_OutputItemProvider extends CallFunctionItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addParametersPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Parameters feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addParametersPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_System_Output_parameters_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_System_Output_parameters_feature",
+								"_UI_System_Output_type"),
+						BehaviourLanguagePackage.Literals.SYSTEM_OUTPUT__PARAMETERS, true, false, true, null, null,
+						null));
 	}
 
 	/**

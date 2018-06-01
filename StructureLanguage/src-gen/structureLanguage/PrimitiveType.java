@@ -106,7 +106,7 @@ public enum PrimitiveType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	STRING(8, "STRING", "string");
+	STRING(8, "STRING", "String");
 
 	/**
 	 * The '<em><b>BYTE</b></em>' literal value.
@@ -237,7 +237,7 @@ public enum PrimitiveType implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #STRING
-	 * @model literal="string"
+	 * @model literal="String"
 	 * @generated
 	 * @ordered
 	 */

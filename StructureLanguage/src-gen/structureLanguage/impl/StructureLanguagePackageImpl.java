@@ -21,7 +21,7 @@ import structureLanguage.PrimitiveType;
 import structureLanguage.Program;
 import structureLanguage.StructureLanguageFactory;
 import structureLanguage.StructureLanguagePackage;
-import structureLanguage.Variable;
+import structureLanguage.VariableC;
 
 /**
  * <!-- begin-user-doc -->
@@ -56,7 +56,7 @@ public class StructureLanguagePackageImpl extends EPackageImpl implements Struct
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass variableEClass = null;
+	private EClass variableCEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -274,6 +274,15 @@ public class StructureLanguagePackageImpl extends EPackageImpl implements Struct
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getClass_Implements() {
+		return (EReference) classEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getInterface() {
 		return interfaceEClass;
 	}
@@ -301,8 +310,8 @@ public class StructureLanguagePackageImpl extends EPackageImpl implements Struct
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getVariable() {
-		return variableEClass;
+	public EClass getVariableC() {
+		return variableCEClass;
 	}
 
 	/**
@@ -310,8 +319,17 @@ public class StructureLanguagePackageImpl extends EPackageImpl implements Struct
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getVariable_Name() {
-		return (EAttribute) variableEClass.getEStructuralFeatures().get(0);
+	public EAttribute getVariableC_Name() {
+		return (EAttribute) variableCEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getVariableC_AccessType() {
+		return (EAttribute) variableCEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -346,8 +364,8 @@ public class StructureLanguagePackageImpl extends EPackageImpl implements Struct
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getMethod_Variable() {
-		return (EReference) methodEClass.getEStructuralFeatures().get(3);
+	public EReference getMethod_Return() {
+		return (EReference) methodEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -355,8 +373,8 @@ public class StructureLanguagePackageImpl extends EPackageImpl implements Struct
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getMethod_Return() {
-		return (EReference) methodEClass.getEStructuralFeatures().get(2);
+	public EReference getMethod_Parameters() {
+		return (EReference) methodEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -375,15 +393,6 @@ public class StructureLanguagePackageImpl extends EPackageImpl implements Struct
 	 */
 	public EAttribute getPrimative_Type() {
 		return (EAttribute) primativeEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getPrimative_AccessType() {
-		return (EAttribute) primativeEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -418,17 +427,8 @@ public class StructureLanguagePackageImpl extends EPackageImpl implements Struct
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getList_Complex() {
-		return (EReference) listEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EReference getList_Primative() {
-		return (EReference) listEClass.getEStructuralFeatures().get(1);
+		return (EReference) listEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -499,29 +499,29 @@ public class StructureLanguagePackageImpl extends EPackageImpl implements Struct
 		createEReference(classEClass, CLASS__VARIABLE);
 		createEReference(classEClass, CLASS__METHOD);
 		createEReference(classEClass, CLASS__INHERATED);
+		createEReference(classEClass, CLASS__IMPLEMENTS);
 
 		interfaceEClass = createEClass(INTERFACE);
 		createEAttribute(interfaceEClass, INTERFACE__NAME);
 		createEReference(interfaceEClass, INTERFACE__METHOD);
 
-		variableEClass = createEClass(VARIABLE);
-		createEAttribute(variableEClass, VARIABLE__NAME);
+		variableCEClass = createEClass(VARIABLE_C);
+		createEAttribute(variableCEClass, VARIABLE_C__NAME);
+		createEAttribute(variableCEClass, VARIABLE_C__ACCESS_TYPE);
 
 		methodEClass = createEClass(METHOD);
 		createEAttribute(methodEClass, METHOD__NAME);
 		createEAttribute(methodEClass, METHOD__ACCESS_TYPE);
 		createEReference(methodEClass, METHOD__RETURN);
-		createEReference(methodEClass, METHOD__VARIABLE);
+		createEReference(methodEClass, METHOD__PARAMETERS);
 
 		primativeEClass = createEClass(PRIMATIVE);
 		createEAttribute(primativeEClass, PRIMATIVE__TYPE);
-		createEAttribute(primativeEClass, PRIMATIVE__ACCESS_TYPE);
 
 		complexEClass = createEClass(COMPLEX);
 		createEReference(complexEClass, COMPLEX__CLASS);
 
 		listEClass = createEClass(LIST);
-		createEReference(listEClass, LIST__COMPLEX);
 		createEReference(listEClass, LIST__PRIMATIVE);
 
 		// Create enums
@@ -559,9 +559,9 @@ public class StructureLanguagePackageImpl extends EPackageImpl implements Struct
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		primativeEClass.getESuperTypes().add(this.getVariable());
-		complexEClass.getESuperTypes().add(this.getVariable());
-		listEClass.getESuperTypes().add(this.getVariable());
+		primativeEClass.getESuperTypes().add(this.getVariableC());
+		complexEClass.getESuperTypes().add(this.getVariableC());
+		listEClass.getESuperTypes().add(this.getVariableC());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(programEClass, Program.class, "Program", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -583,13 +583,16 @@ public class StructureLanguagePackageImpl extends EPackageImpl implements Struct
 		initEAttribute(getClass_AccessType(), this.getAccessType(), "accessType", null, 0, 1,
 				structureLanguage.Class.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getClass_Variable(), this.getVariable(), null, "variable", null, 0, -1,
+		initEReference(getClass_Variable(), this.getVariableC(), null, "variable", null, 0, -1,
 				structureLanguage.Class.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
 				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getClass_Method(), this.getMethod(), null, "method", null, 0, -1, structureLanguage.Class.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getClass_Inherated(), this.getClass_(), null, "inherated", null, 0, 1,
+				structureLanguage.Class.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getClass_Implements(), this.getInterface(), null, "implements", null, 0, 1,
 				structureLanguage.Class.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
 				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -601,28 +604,29 @@ public class StructureLanguagePackageImpl extends EPackageImpl implements Struct
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(variableEClass, Variable.class, "Variable", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getVariable_Name(), ecorePackage.getEString(), "name", null, 0, 1, Variable.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(variableCEClass, VariableC.class, "VariableC", IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getVariableC_Name(), ecorePackage.getEString(), "name", null, 0, 1, VariableC.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getVariableC_AccessType(), this.getAccessType(), "accessType", null, 0, 1, VariableC.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(methodEClass, Method.class, "Method", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getMethod_Name(), ecorePackage.getEString(), "name", null, 0, 1, Method.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMethod_AccessType(), this.getAccessType(), "accessType", null, 0, 1, Method.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMethod_Return(), this.getVariable(), null, "return", null, 0, 1, Method.class, !IS_TRANSIENT,
+		initEReference(getMethod_Return(), this.getVariableC(), null, "return", null, 0, 1, Method.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
-		initEReference(getMethod_Variable(), this.getClass_(), null, "variable", null, 0, -1, Method.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+		initEReference(getMethod_Parameters(), this.getVariableC(), null, "parameters", null, 0, -1, Method.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(primativeEClass, Primative.class, "Primative", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getPrimative_Type(), this.getPrimitiveType(), "type", null, 0, 1, Primative.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getPrimative_AccessType(), this.getAccessType(), "accessType", null, 0, 1, Primative.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(complexEClass, Complex.class, "Complex", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getComplex_Class(), this.getClass_(), null, "class", null, 1, 1, Complex.class, !IS_TRANSIENT,
@@ -630,9 +634,6 @@ public class StructureLanguagePackageImpl extends EPackageImpl implements Struct
 				IS_ORDERED);
 
 		initEClass(listEClass, List.class, "List", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getList_Complex(), this.getComplex(), null, "complex", null, 0, -1, List.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
-				IS_ORDERED);
 		initEReference(getList_Primative(), this.getPrimative(), null, "primative", null, 0, -1, List.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

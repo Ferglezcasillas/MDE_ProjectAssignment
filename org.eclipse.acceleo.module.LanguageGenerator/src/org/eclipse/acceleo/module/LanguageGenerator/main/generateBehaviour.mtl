@@ -1,0 +1,111 @@
+[comment encoding = UTF-8 /]
+[**
+ * The documentation of the module generate.
+ */]
+[module generateBehaviour('http://www.example.org/behaviourLanguage', 'http://www.example.org/structureLanguage')]
+
+
+
+
+
+[**
+ * The documentation of the template GenerateLanguage.
+ * @param anAccessType
+ */]
+[template public GenerateBehaviour(container : behaviourLanguage::Container)]
+[comment @main/]
+[file ('functions.java', false, 'UTF-8')]
+[for (f : Function | container.function)][if (not f.blockofcode.oclIsUndefined())][getBlackOfCode(f.blockofcode)/][/if][/for]
+[/file]
+[/template]
+
+[template public getBlackOfCode(b : BlockOfCode)]
+{
+	[for (thing : generalItem | b.things)][if (thing.oclIsKindOf(Expression))]	[getExternalExpression(thing.oclAsType(Expression))/];[else]	[getStatement(thing.oclAsType(Statement))/] [/if]
+[/for]
+}
+[/template]
+
+[template public getExternalExpression(e : Expression)]
+[if (e.oclIsTypeOf(Variable) and not e.oclAsType(Variable).initialization.oclIsUndefined())]
+[getVariableType(e.oclAsType(Variable))/] [e.oclAsType(Variable).name/]=[e.oclAsType(Variable).initialization/][else]
+[if (not e.assign.oclIsUndefined())]
+[e.assign.name/]=[/if]
+[if (e.oclIsKindOf(Operation))][getOperation(e.oclAsType(Operation))/][/if][if (e.oclIsKindOf(CallFunction))][getFunction(e.oclAsType(CallFunction))/][/if][if (e.oclIsKindOf(Variable))][e.oclAsType(Variable).name/][/if][if (e.oclIsKindOf(NotOperation))]![e.oclAsType(NotOperation).input.name/][/if][/if]
+[/template]
+
+[template public getExpression(e : Expression)]
+[if (not e.assign.oclIsUndefined())]
+[e.assign.name/]=
+[/if]
+[if (e.oclIsKindOf(Operation))][getOperation(e.oclAsType(Operation))/][/if][if (e.oclIsTypeOf(CallFunction))][getFunction(e.oclAsType(CallFunction))/][/if][if (e.oclIsTypeOf(Variable))][e.oclAsType(Variable).name/][/if][if (e.oclIsTypeOf(NotOperation))]![e.oclAsType(NotOperation).input.name/][/if]
+[/template]
+
+
+[template public getStatement(s : Statement)]
+	[if (s.oclIsKindOf(for_))]
+for([s.oclAsType(for_).variable.name/]=[s.oclAsType(for_).variable.initialization/];[getOperation(s.oclAsType(for_).comparation)/];[s.oclAsType(for_).variable.name/][if (s.oclAsType(for_).inc)]++[else]--[/if])
+[getBlackOfCode(s._body)/]
+	[else]
+	[if (s.oclIsKindOf(while_))]
+while([getOperation(s.oclAsType(ConditionalStatement).condition)/])
+[getBlackOfCode(s._body)/]
+	[/if]
+	[if (s.oclIsKindOf(dowhile_))]
+do
+[getBlackOfCode(s._body)/]
+while([getOperation(s.oclAsType(ConditionalStatement).condition)/])
+	[/if]
+	[if (s.oclIsKindOf(if_))]
+if([getOperation(s.oclAsType(ConditionalStatement).condition)/])
+[getBlackOfCode(s._body)/][if (not s.oclAsType(if_).elseBody.oclIsUndefined())]
+else
+[getBlackOfCode(s.oclAsType(if_).elseBody)/]
+	[/if]
+	[/if]
+	[/if]
+[/template]
+
+
+[template public getOperation(o : Operation)]
+[if (o.oclIsTypeOf(Math))][getOperation(o.oclAsType(Math))/][/if]
+[if (o.oclIsTypeOf(Comparation))][getOperation(o.oclAsType(Comparation))/][/if]
+[if (o.oclIsTypeOf(Logical))][getOperation(o.oclAsType(Logical))/][/if]
+[/template]
+
+[template public getOperation(l : Logical)]
+([getExpression(l.leftInput)/][l.type/][getExpression(l.rightInput)/])
+[/template]
+
+[template public getOperation(c : Comparation)]
+([getExpression(c.leftInput)/][c.type/][getExpression(c.rightInput)/])
+[/template]
+
+[template public getOperation(m : Math)]
+([getExpression(m.leftInput)/][m.type/][getExpression(m.rightInput)/])
+[/template]
+
+[template public getFunction(f : CallFunction)]
+[if (f.oclIsTypeOf(System_Input))]System.input()[/if][if (f.oclIsTypeOf(System_Output))]System.output([getParameterFunction(f.oclAsType(System_Output).parameters)/])[/if][if (f.oclIsTypeOf(userDefinedFunction))]Functio...usert()[/if]
+[/template]
+
+[template public getParameterFunction(listP : OrderedSet(Variable))]
+[for (v : Variable | listP) separator(', ')][v.name/][/for]
+[/template]
+
+[template public getVariableType(v : Variable)]
+[if(v.type.toString()='NOTPRIMITIVE')][v.typeNotPrimitive/][else][v.type/][/if]
+[/template]
+
+[comment][template public getComparation(c : Comparation)]
+[getExpression(c.leftInput)/][c.type/][getExpression(c.rightInput)/]
+[/template]
+
+[template public getLogical(l : Logical)]
+[getExpression(l.leftInput)/][l.type/][getExpression(l.rightInput)/]
+[/template]
+
+[template public getMathOperation(m : Math)]
+[getExpression(m.leftInput)/][m.type/][getExpression(m.rightInput)/]
+[/template][/comment]
+

@@ -23,7 +23,6 @@ import behaviourLanguage.System_Input;
 import behaviourLanguage.System_Output;
 import behaviourLanguage.Variable;
 import behaviourLanguage.dowhile_;
-import behaviourLanguage.else_;
 import behaviourLanguage.for_;
 import behaviourLanguage.generalItem;
 import behaviourLanguage.if_;
@@ -136,13 +135,6 @@ public class BehaviourLanguagePackageImpl extends EPackageImpl implements Behavi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass else_EClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	private EClass functionEClass = null;
 
 	/**
@@ -193,6 +185,13 @@ public class BehaviourLanguagePackageImpl extends EPackageImpl implements Behavi
 	 * @generated
 	 */
 	private EClass generalItemEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass containerEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -399,7 +398,7 @@ public class BehaviourLanguagePackageImpl extends EPackageImpl implements Behavi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getfor__Comparator() {
+	public EReference getfor__Variable() {
 		return (EReference) for_EClass.getEStructuralFeatures().get(0);
 	}
 
@@ -408,17 +407,8 @@ public class BehaviourLanguagePackageImpl extends EPackageImpl implements Behavi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getfor__Variable() {
-		return (EReference) for_EClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EAttribute getfor__Inc() {
-		return (EAttribute) for_EClass.getEStructuralFeatures().get(2);
+		return (EAttribute) for_EClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -427,7 +417,16 @@ public class BehaviourLanguagePackageImpl extends EPackageImpl implements Behavi
 	 * @generated
 	 */
 	public EAttribute getfor__UpdateValue() {
-		return (EAttribute) for_EClass.getEStructuralFeatures().get(3);
+		return (EAttribute) for_EClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getfor__Comparation() {
+		return (EReference) for_EClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -453,7 +452,7 @@ public class BehaviourLanguagePackageImpl extends EPackageImpl implements Behavi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getif__Else() {
+	public EReference getif__ElseBody() {
 		return (EReference) if_EClass.getEStructuralFeatures().get(0);
 	}
 
@@ -534,8 +533,17 @@ public class BehaviourLanguagePackageImpl extends EPackageImpl implements Behavi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getelse_() {
-		return else_EClass;
+	public EAttribute getVariable_Initialization() {
+		return (EAttribute) variableEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getVariable_TypeNotPrimitive() {
+		return (EAttribute) variableEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -606,17 +614,8 @@ public class BehaviourLanguagePackageImpl extends EPackageImpl implements Behavi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getConditionalStatement_Statement() {
-		return (EReference) conditionalStatementEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EReference getConditionalStatement_Condition() {
-		return (EReference) conditionalStatementEClass.getEStructuralFeatures().get(1);
+		return (EReference) conditionalStatementEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -678,6 +677,15 @@ public class BehaviourLanguagePackageImpl extends EPackageImpl implements Behavi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getSystem_Output_Parameters() {
+		return (EReference) system_OutputEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getuserDefinedFunction() {
 		return userDefinedFunctionEClass;
 	}
@@ -698,6 +706,24 @@ public class BehaviourLanguagePackageImpl extends EPackageImpl implements Behavi
 	 */
 	public EClass getgeneralItem() {
 		return generalItemEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getContainer() {
+		return containerEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getContainer_Function() {
+		return (EReference) containerEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -790,15 +816,15 @@ public class BehaviourLanguagePackageImpl extends EPackageImpl implements Behavi
 		callFunctionEClass = createEClass(CALL_FUNCTION);
 
 		for_EClass = createEClass(FOR_);
-		createEReference(for_EClass, FOR___COMPARATOR);
 		createEReference(for_EClass, FOR___VARIABLE);
 		createEAttribute(for_EClass, FOR___INC);
 		createEAttribute(for_EClass, FOR___UPDATE_VALUE);
+		createEReference(for_EClass, FOR___COMPARATION);
 
 		while_EClass = createEClass(WHILE_);
 
 		if_EClass = createEClass(IF_);
-		createEReference(if_EClass, IF___ELSE);
+		createEReference(if_EClass, IF___ELSE_BODY);
 
 		dowhile_EClass = createEClass(DOWHILE_);
 
@@ -811,8 +837,8 @@ public class BehaviourLanguagePackageImpl extends EPackageImpl implements Behavi
 		variableEClass = createEClass(VARIABLE);
 		createEAttribute(variableEClass, VARIABLE__NAME);
 		createEAttribute(variableEClass, VARIABLE__TYPE);
-
-		else_EClass = createEClass(ELSE_);
+		createEAttribute(variableEClass, VARIABLE__INITIALIZATION);
+		createEAttribute(variableEClass, VARIABLE__TYPE_NOT_PRIMITIVE);
 
 		functionEClass = createEClass(FUNCTION);
 		createEReference(functionEClass, FUNCTION__BLOCKOFCODE);
@@ -822,7 +848,6 @@ public class BehaviourLanguagePackageImpl extends EPackageImpl implements Behavi
 		createEReference(functionEClass, FUNCTION__RETURN);
 
 		conditionalStatementEClass = createEClass(CONDITIONAL_STATEMENT);
-		createEReference(conditionalStatementEClass, CONDITIONAL_STATEMENT__STATEMENT);
 		createEReference(conditionalStatementEClass, CONDITIONAL_STATEMENT__CONDITION);
 
 		comparationEClass = createEClass(COMPARATION);
@@ -834,11 +859,15 @@ public class BehaviourLanguagePackageImpl extends EPackageImpl implements Behavi
 		system_InputEClass = createEClass(SYSTEM_INPUT);
 
 		system_OutputEClass = createEClass(SYSTEM_OUTPUT);
+		createEReference(system_OutputEClass, SYSTEM_OUTPUT__PARAMETERS);
 
 		userDefinedFunctionEClass = createEClass(USER_DEFINED_FUNCTION);
 		createEReference(userDefinedFunctionEClass, USER_DEFINED_FUNCTION__FUNCTION);
 
 		generalItemEClass = createEClass(GENERAL_ITEM);
+
+		containerEClass = createEClass(CONTAINER);
+		createEReference(containerEClass, CONTAINER__FUNCTION);
 
 		// Create enums
 		mathOperatorEEnum = createEEnum(MATH_OPERATOR);
@@ -892,7 +921,7 @@ public class BehaviourLanguagePackageImpl extends EPackageImpl implements Behavi
 		mathEClass.getESuperTypes().add(this.getOperation());
 		logicalEClass.getESuperTypes().add(this.getOperation());
 		variableEClass.getESuperTypes().add(this.getExpression());
-		else_EClass.getESuperTypes().add(this.getStatement());
+		conditionalStatementEClass.getESuperTypes().add(this.getStatement());
 		comparationEClass.getESuperTypes().add(this.getOperation());
 		notOperationEClass.getESuperTypes().add(this.getExpression());
 		system_InputEClass.getESuperTypes().add(this.getCallFunction());
@@ -914,8 +943,8 @@ public class BehaviourLanguagePackageImpl extends EPackageImpl implements Behavi
 
 		initEClass(statementEClass, Statement.class, "Statement", IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getStatement_Body(), this.getBlockOfCode(), null, "body", null, 0, 1, Statement.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+		initEReference(getStatement_Body(), this.getBlockOfCode(), null, "body", null, 1, 1, Statement.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(operationEClass, Operation.class, "Operation", IS_ABSTRACT, !IS_INTERFACE,
@@ -931,9 +960,6 @@ public class BehaviourLanguagePackageImpl extends EPackageImpl implements Behavi
 				IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(for_EClass, for_.class, "for_", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getfor__Comparator(), this.getComparation(), null, "comparator", null, 0, 1, for_.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
-				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getfor__Variable(), this.getVariable(), null, "variable", null, 0, 1, for_.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
@@ -941,12 +967,16 @@ public class BehaviourLanguagePackageImpl extends EPackageImpl implements Behavi
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getfor__UpdateValue(), ecorePackage.getEInt(), "updateValue", null, 0, 1, for_.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getfor__Comparation(), this.getComparation(), null, "comparation", null, 1, 1, for_.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(while_EClass, while_.class, "while_", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(if_EClass, if_.class, "if_", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getif__Else(), this.getelse_(), null, "else", null, 0, 1, if_.class, !IS_TRANSIENT, !IS_VOLATILE,
-				IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getif__ElseBody(), this.getBlockOfCode(), null, "elseBody", null, 0, 1, if_.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
 
 		initEClass(dowhile_EClass, dowhile_.class, "dowhile_", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
@@ -966,8 +996,12 @@ public class BehaviourLanguagePackageImpl extends EPackageImpl implements Behavi
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getVariable_Type(), this.getPrimitiveType(), "type", null, 0, 1, Variable.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(else_EClass, else_.class, "else_", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getVariable_Initialization(), ecorePackage.getEString(), "initialization", null, 0, 1,
+				Variable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+		initEAttribute(getVariable_TypeNotPrimitive(), theXMLTypePackage.getString(), "typeNotPrimitive", null, 0, 1,
+				Variable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
 
 		initEClass(functionEClass, Function.class, "Function", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
@@ -987,9 +1021,6 @@ public class BehaviourLanguagePackageImpl extends EPackageImpl implements Behavi
 
 		initEClass(conditionalStatementEClass, ConditionalStatement.class, "ConditionalStatement", IS_ABSTRACT,
 				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getConditionalStatement_Statement(), this.getStatement(), null, "statement", null, 0, -1,
-				ConditionalStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
-				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getConditionalStatement_Condition(), this.getLogical(), null, "condition", null, 1, 1,
 				ConditionalStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
 				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1001,7 +1032,7 @@ public class BehaviourLanguagePackageImpl extends EPackageImpl implements Behavi
 
 		initEClass(notOperationEClass, NotOperation.class, "NotOperation", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getNotOperation_Input(), this.getVariable(), null, "input", null, 0, 1, NotOperation.class,
+		initEReference(getNotOperation_Input(), this.getVariable(), null, "input", null, 1, 1, NotOperation.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -1010,15 +1041,24 @@ public class BehaviourLanguagePackageImpl extends EPackageImpl implements Behavi
 
 		initEClass(system_OutputEClass, System_Output.class, "System_Output", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getSystem_Output_Parameters(), this.getVariable(), null, "parameters", null, 0, -1,
+				System_Output.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(userDefinedFunctionEClass, userDefinedFunction.class, "userDefinedFunction", !IS_ABSTRACT,
 				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getuserDefinedFunction_Function(), this.getFunction(), null, "function", null, 1, 1,
-				userDefinedFunction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
-				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+				userDefinedFunction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(generalItemEClass, generalItem.class, "generalItem", IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(containerEClass, behaviourLanguage.Container.class, "Container", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getContainer_Function(), this.getFunction(), null, "function", null, 0, -1,
+				behaviourLanguage.Container.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
+				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(mathOperatorEEnum, MathOperator.class, "MathOperator");
@@ -1048,6 +1088,7 @@ public class BehaviourLanguagePackageImpl extends EPackageImpl implements Behavi
 		addEEnumLiteral(primitiveTypeEEnum, PrimitiveType.BOOLEAN);
 		addEEnumLiteral(primitiveTypeEEnum, PrimitiveType.CHAR);
 		addEEnumLiteral(primitiveTypeEEnum, PrimitiveType.STRING);
+		addEEnumLiteral(primitiveTypeEEnum, PrimitiveType.NOTPRIMITIVE);
 
 		initEEnum(accessTypeEEnum, AccessType.class, "AccessType");
 		addEEnumLiteral(accessTypeEEnum, AccessType.PUBLIC);

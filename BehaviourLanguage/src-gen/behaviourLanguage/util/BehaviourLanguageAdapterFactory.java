@@ -7,6 +7,7 @@ import behaviourLanguage.BlockOfCode;
 import behaviourLanguage.CallFunction;
 import behaviourLanguage.Comparation;
 import behaviourLanguage.ConditionalStatement;
+import behaviourLanguage.Container;
 import behaviourLanguage.Expression;
 import behaviourLanguage.Function;
 import behaviourLanguage.Logical;
@@ -17,7 +18,6 @@ import behaviourLanguage.System_Input;
 import behaviourLanguage.System_Output;
 import behaviourLanguage.Variable;
 import behaviourLanguage.dowhile_;
-import behaviourLanguage.else_;
 import behaviourLanguage.for_;
 import behaviourLanguage.generalItem;
 import behaviourLanguage.if_;
@@ -147,11 +147,6 @@ public class BehaviourLanguageAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseelse_(else_ object) {
-			return createelse_Adapter();
-		}
-
-		@Override
 		public Adapter caseFunction(Function object) {
 			return createFunctionAdapter();
 		}
@@ -189,6 +184,11 @@ public class BehaviourLanguageAdapterFactory extends AdapterFactoryImpl {
 		@Override
 		public Adapter casegeneralItem(generalItem object) {
 			return creategeneralItemAdapter();
+		}
+
+		@Override
+		public Adapter caseContainer(Container object) {
+			return createContainerAdapter();
 		}
 
 		@Override
@@ -379,20 +379,6 @@ public class BehaviourLanguageAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link behaviourLanguage.else_ <em>else </em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see behaviourLanguage.else_
-	 * @generated
-	 */
-	public Adapter createelse_Adapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link behaviourLanguage.Function <em>Function</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -501,6 +487,20 @@ public class BehaviourLanguageAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter creategeneralItemAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link behaviourLanguage.Container <em>Container</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see behaviourLanguage.Container
+	 * @generated
+	 */
+	public Adapter createContainerAdapter() {
 		return null;
 	}
 

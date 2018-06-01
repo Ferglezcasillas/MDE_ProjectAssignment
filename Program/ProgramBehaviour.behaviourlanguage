@@ -1,10 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<behaviourLanguage:Function xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:behaviourLanguage="http://www.example.org/behaviourLanguage" name="evaluate">
-  <blockofcode>
-    <things xsi:type="behaviourLanguage:Variable" name="n" type="int"/>
-    <things xsi:type="behaviourLanguage:Variable" name="i" type="int"/>
-    <things xsi:type="behaviourLanguage:Variable" name="exponent" type="int"/>
-    <things xsi:type="behaviourLanguage:for_" variable="//@blockofcode/@things.1" inc="true" updateValue="1"/>
-    <things xsi:type="behaviourLanguage:Comparation" leftInput="//@blockofcode/@things.1" rightInput="//@blockofcode/@things.2"/>
-  </blockofcode>
-</behaviourLanguage:Function>
+<behaviourLanguage:Container xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:behaviourLanguage="http://www.example.org/behaviourLanguage">
+  <function name="evaluate">
+    <blockofcode>
+      <things xsi:type="behaviourLanguage:Variable" name="a" type="int" initialization="2"/>
+      <things xsi:type="behaviourLanguage:Variable" name="exponent" initialization="4"/>
+      <things xsi:type="behaviourLanguage:Variable" name="i" initialization="1"/>
+      <things xsi:type="behaviourLanguage:for_" variable="//@function.0/@blockofcode/@things.2" inc="true" updateValue="1">
+        <body>
+          <things xsi:type="behaviourLanguage:Math" assign="//@function.0/@blockofcode/@things.0" leftInput="//@function.0/@blockofcode/@things.0" rightInput="//@function.0/@blockofcode/@things.0" type="*"/>
+        </body>
+        <comparation leftInput="//@function.0/@blockofcode/@things.2" rightInput="//@function.0/@blockofcode/@things.1"/>
+      </things>
+      <things xsi:type="behaviourLanguage:System_Output" parameters="//@function.0/@blockofcode/@things.0"/>
+      <things xsi:type="behaviourLanguage:Comparation" leftInput="//@function.0/@blockofcode/@things.0" rightInput="//@function.0/@blockofcode/@things.1" type="=="/>
+      <things xsi:type="behaviourLanguage:if_">
+        <body>
+          <things xsi:type="behaviourLanguage:Variable" name="per" type="NOTPRIMITIVE" initialization="new Person()" typeNotPrimitive="Person"/>
+        </body>
+        <condition leftInput="//@function.0/@blockofcode/@things.5" rightInput="//@function.0/@blockofcode/@things.3/@comparation"/>
+        <elseBody>
+          <things xsi:type="behaviourLanguage:while_">
+            <body>
+              <things xsi:type="behaviourLanguage:Math" assign="//@function.0/@blockofcode/@things.1" leftInput="//@function.0/@blockofcode/@things.2" rightInput="//@function.0/@blockofcode/@things.0"/>
+            </body>
+            <condition leftInput="//@function.0/@blockofcode/@things.0" rightInput="//@function.0/@blockofcode/@things.2"/>
+          </things>
+        </elseBody>
+      </things>
+    </blockofcode>
+  </function>
+</behaviourLanguage:Container>

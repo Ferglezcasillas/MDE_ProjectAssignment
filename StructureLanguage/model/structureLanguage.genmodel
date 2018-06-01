@@ -42,29 +42,29 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference structureLanguage.ecore#//Class/variable"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference structureLanguage.ecore#//Class/method"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference structureLanguage.ecore#//Class/inherated"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference structureLanguage.ecore#//Class/implements"/>
     </genClasses>
     <genClasses ecoreClass="structureLanguage.ecore#//Interface">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute structureLanguage.ecore#//Interface/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference structureLanguage.ecore#//Interface/method"/>
     </genClasses>
-    <genClasses ecoreClass="structureLanguage.ecore#//Variable">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute structureLanguage.ecore#//Variable/name"/>
+    <genClasses ecoreClass="structureLanguage.ecore#//VariableC">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute structureLanguage.ecore#//VariableC/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute structureLanguage.ecore#//VariableC/accessType"/>
     </genClasses>
     <genClasses ecoreClass="structureLanguage.ecore#//Method">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute structureLanguage.ecore#//Method/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute structureLanguage.ecore#//Method/accessType"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference structureLanguage.ecore#//Method/return"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference structureLanguage.ecore#//Method/variable"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference structureLanguage.ecore#//Method/parameters"/>
     </genClasses>
     <genClasses ecoreClass="structureLanguage.ecore#//Primative">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute structureLanguage.ecore#//Primative/type"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute structureLanguage.ecore#//Primative/accessType"/>
     </genClasses>
     <genClasses ecoreClass="structureLanguage.ecore#//Complex">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference structureLanguage.ecore#//Complex/class"/>
     </genClasses>
     <genClasses ecoreClass="structureLanguage.ecore#//List">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference structureLanguage.ecore#//List/complex"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference structureLanguage.ecore#//List/primative"/>
     </genClasses>
   </genPackages>

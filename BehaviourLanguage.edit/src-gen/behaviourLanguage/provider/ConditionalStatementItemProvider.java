@@ -11,17 +11,8 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
-import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.ecore.EStructuralFeature;
-import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
-import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.IItemPropertySource;
-import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
-import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
-import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
@@ -30,8 +21,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ConditionalStatementItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider,
-		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class ConditionalStatementItemProvider extends StatementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -69,7 +59,6 @@ public class ConditionalStatementItemProvider extends ItemProviderAdapter implem
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(BehaviourLanguagePackage.Literals.CONDITIONAL_STATEMENT__STATEMENT);
 			childrenFeatures.add(BehaviourLanguagePackage.Literals.CONDITIONAL_STATEMENT__CONDITION);
 		}
 		return childrenFeatures;
@@ -132,7 +121,6 @@ public class ConditionalStatementItemProvider extends ItemProviderAdapter implem
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ConditionalStatement.class)) {
-		case BehaviourLanguagePackage.CONDITIONAL_STATEMENT__STATEMENT:
 		case BehaviourLanguagePackage.CONDITIONAL_STATEMENT__CONDITION:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
@@ -151,25 +139,8 @@ public class ConditionalStatementItemProvider extends ItemProviderAdapter implem
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(BehaviourLanguagePackage.Literals.CONDITIONAL_STATEMENT__STATEMENT,
-				BehaviourLanguageFactory.eINSTANCE.createfor_()));
-
-		newChildDescriptors.add(createChildParameter(BehaviourLanguagePackage.Literals.CONDITIONAL_STATEMENT__STATEMENT,
-				BehaviourLanguageFactory.eINSTANCE.createelse_()));
-
 		newChildDescriptors.add(createChildParameter(BehaviourLanguagePackage.Literals.CONDITIONAL_STATEMENT__CONDITION,
 				BehaviourLanguageFactory.eINSTANCE.createLogical()));
-	}
-
-	/**
-	 * Return the resource locator for this item provider's resources.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public ResourceLocator getResourceLocator() {
-		return BehaviourLanguageEditPlugin.INSTANCE;
 	}
 
 }

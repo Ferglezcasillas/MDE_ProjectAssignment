@@ -46,6 +46,8 @@ public class VariableItemProvider extends ExpressionItemProvider {
 
 			addNamePropertyDescriptor(object);
 			addTypePropertyDescriptor(object);
+			addInitializationPropertyDescriptor(object);
+			addTypeNotPrimitivePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -79,6 +81,38 @@ public class VariableItemProvider extends ExpressionItemProvider {
 						getString("_UI_PropertyDescriptor_description", "_UI_Variable_type_feature",
 								"_UI_Variable_type"),
 						BehaviourLanguagePackage.Literals.VARIABLE__TYPE, true, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Initialization feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addInitializationPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Variable_initialization_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Variable_initialization_feature",
+								"_UI_Variable_type"),
+						BehaviourLanguagePackage.Literals.VARIABLE__INITIALIZATION, true, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Type Not Primitive feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addTypeNotPrimitivePropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Variable_typeNotPrimitive_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Variable_typeNotPrimitive_feature",
+								"_UI_Variable_type"),
+						BehaviourLanguagePackage.Literals.VARIABLE__TYPE_NOT_PRIMITIVE, true, false, false,
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
@@ -130,6 +164,8 @@ public class VariableItemProvider extends ExpressionItemProvider {
 		switch (notification.getFeatureID(Variable.class)) {
 		case BehaviourLanguagePackage.VARIABLE__NAME:
 		case BehaviourLanguagePackage.VARIABLE__TYPE:
+		case BehaviourLanguagePackage.VARIABLE__INITIALIZATION:
+		case BehaviourLanguagePackage.VARIABLE__TYPE_NOT_PRIMITIVE:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		}

@@ -16,7 +16,7 @@ import structureLanguage.Method;
 import structureLanguage.Primative;
 import structureLanguage.Program;
 import structureLanguage.StructureLanguagePackage;
-import structureLanguage.Variable;
+import structureLanguage.VariableC;
 
 /**
  * <!-- begin-user-doc -->
@@ -89,8 +89,8 @@ public class StructureLanguageAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseVariable(Variable object) {
-			return createVariableAdapter();
+		public Adapter caseVariableC(VariableC object) {
+			return createVariableCAdapter();
 		}
 
 		@Override
@@ -175,16 +175,16 @@ public class StructureLanguageAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link structureLanguage.Variable <em>Variable</em>}'.
+	 * Creates a new adapter for an object of class '{@link structureLanguage.VariableC <em>Variable C</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see structureLanguage.Variable
+	 * @see structureLanguage.VariableC
 	 * @generated
 	 */
-	public Adapter createVariableAdapter() {
+	public Adapter createVariableCAdapter() {
 		return null;
 	}
 

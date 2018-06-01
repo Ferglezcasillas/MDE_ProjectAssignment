@@ -1,0 +1,47 @@
+[comment encoding = UTF-8 /]
+[**
+ * The documentation of the module generate.
+ */]
+[module generate('http://www.example.org/behaviourLanguage', 'http://www.example.org/structureLanguage')]
+
+
+[**
+ * The documentation of the template GenerateLanguage.
+ * @param anAccessType
+ */]
+[template public GenerateLanguage(structure : structureLanguage::Program)]
+[comment @main/]
+[for (c : Class | structure.class)][generateClass(c)/][/for]
+[/template]
+
+[template public generateClass(class : Class)]
+[file (class.name+'.java', false, 'UTF-8')]
+[class.accessType/] class [class.name/][if (not class.implements.oclIsUndefined())] implements [class.implements.name/] [/if][if (not class.inherated.oclIsUndefined())] extends [class.inherated.name/][/if]
+{
+[for (v : VariableC | class.variable)][generateVariableCode(v)/];
+[/for]
+
+[for (m : Method | class.method)][generateMethodsCode(m)/]
+[/for]
+
+}
+[/file]
+[/template]
+
+[template public generateVariableCode(v : VariableC)]
+	[v.accessType /] [getTypeVariable(v)/] [v.name /]
+[/template]
+
+[template public generateMethodsCode(m : Method)]
+	[m.accessType /] [if (m.return.oclIsUndefined())]void [else][getTypeVariable(m.return)/] [/if] [m.name/] ([getParameterMethod(m.parameters)/])
+	{
+	}
+[/template]
+
+[template public getParameterMethod(listP : OrderedSet(VariableC))]
+[for (v : VariableC | listP) separator(', ')][getTypeVariable(v)/] [v.name/][/for]
+[/template]
+
+[template public getTypeVariable(v:VariableC)]
+[if (v.oclIsKindOf(Primative))][v.oclAsType(Primative).type/][/if][if (v.oclIsKindOf(List))]List<[v.oclAsType(List).primative.type/]>[/if][if (v.oclIsKindOf(Complex))][v.oclAsType(Complex).class.name/][/if]
+[/template]
