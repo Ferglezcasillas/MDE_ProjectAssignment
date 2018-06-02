@@ -2,6 +2,8 @@
  */
 package behaviourLanguage;
 
+import org.eclipse.emf.common.util.EList;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Operation</b></em>'.
@@ -11,8 +13,8 @@ package behaviourLanguage;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link behaviourLanguage.Operation#getLeftInput <em>Left Input</em>}</li>
  *   <li>{@link behaviourLanguage.Operation#getRightInput <em>Right Input</em>}</li>
+ *   <li>{@link behaviourLanguage.Operation#getLeftInput <em>Left Input</em>}</li>
  * </ul>
  *
  * @see behaviourLanguage.BehaviourLanguagePackage#getOperation()
@@ -21,55 +23,35 @@ package behaviourLanguage;
  */
 public interface Operation extends Expression {
 	/**
-	 * Returns the value of the '<em><b>Left Input</b></em>' reference.
+	 * Returns the value of the '<em><b>Left Input</b></em>' containment reference list.
+	 * The list contents are of type {@link behaviourLanguage.Expression}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Left Input</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Left Input</em>' reference.
-	 * @see #setLeftInput(Expression)
+	 * @return the value of the '<em>Left Input</em>' containment reference list.
 	 * @see behaviourLanguage.BehaviourLanguagePackage#getOperation_LeftInput()
-	 * @model
+	 * @model containment="true"
 	 * @generated
 	 */
-	Expression getLeftInput();
+	EList<Expression> getLeftInput();
 
 	/**
-	 * Sets the value of the '{@link behaviourLanguage.Operation#getLeftInput <em>Left Input</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Left Input</em>' reference.
-	 * @see #getLeftInput()
-	 * @generated
-	 */
-	void setLeftInput(Expression value);
-
-	/**
-	 * Returns the value of the '<em><b>Right Input</b></em>' reference.
+	 * Returns the value of the '<em><b>Right Input</b></em>' containment reference list.
+	 * The list contents are of type {@link behaviourLanguage.Expression}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Right Input</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Right Input</em>' reference.
-	 * @see #setRightInput(Expression)
+	 * @return the value of the '<em>Right Input</em>' containment reference list.
 	 * @see behaviourLanguage.BehaviourLanguagePackage#getOperation_RightInput()
-	 * @model
+	 * @model containment="true"
 	 * @generated
 	 */
-	Expression getRightInput();
-
-	/**
-	 * Sets the value of the '{@link behaviourLanguage.Operation#getRightInput <em>Right Input</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Right Input</em>' reference.
-	 * @see #getRightInput()
-	 * @generated
-	 */
-	void setRightInput(Expression value);
+	EList<Expression> getRightInput();
 
 } // Operation

@@ -53,8 +53,8 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference behaviourLanguage.ecore#//Statement/body"/>
     </genClasses>
     <genClasses ecoreClass="behaviourLanguage.ecore#//Operation">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference behaviourLanguage.ecore#//Operation/leftInput"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference behaviourLanguage.ecore#//Operation/rightInput"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference behaviourLanguage.ecore#//Operation/rightInput"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference behaviourLanguage.ecore#//Operation/leftInput"/>
     </genClasses>
     <genClasses ecoreClass="behaviourLanguage.ecore#//CallFunction"/>
     <genClasses ecoreClass="behaviourLanguage.ecore#//for_">

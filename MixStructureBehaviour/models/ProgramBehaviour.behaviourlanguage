@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<behaviourLanguage:Container xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:behaviourLanguage="http://www.example.org/behaviourLanguage">
+  <function name="evaluate">
+    <blockofcode>
+      <things xsi:type="behaviourLanguage:while_">
+        <body>
+          <things xsi:type="behaviourLanguage:while_"/>
+        </body>
+        <condition/>
+      </things>
+    </blockofcode>
+  </function>
+</behaviourLanguage:Container>

@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<trace:Trace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:trace="http:///www.eclipse.org/m2m/qvt/operational/trace.ecore">
+  <traceRecords>
+    <mappingOperation name="mapStructure" package="MixBS" module="MixBS"/>
+    <context>
+      <context name="self" type="Program">
+        <value>
+          <modelElement href="../MixStructureBehaviour/models/ProgramElements.structurelanguage#/"/>
+        </value>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="Program">
+        <value>
+          <modelElement href="Program.structureandbehaviour#/"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="mapInsideClass" package="MixBS" module="MixBS"/>
+    <context>
+      <context name="self" type="Class">
+        <value>
+          <modelElement href="../MixStructureBehaviour/models/ProgramElements.structurelanguage#//@class.0"/>
+        </value>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="Class">
+        <value>
+          <modelElement href="Program.structureandbehaviour#//@class.0"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="mapMethods" package="MixBS" module="MixBS"/>
+    <context>
+      <context name="self" type="Method">
+        <value>
+          <modelElement href="../MixStructureBehaviour/models/ProgramElements.structurelanguage#//@class.0/@method.0"/>
+        </value>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="Function">
+        <value>
+          <modelElement href="Program.structureandbehaviour#//@class.0/@method.0"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="mapMethods" package="MixBS" module="MixBS"/>
+    <context>
+      <context name="self" type="Method">
+        <value>
+          <modelElement href="../MixStructureBehaviour/models/ProgramElements.structurelanguage#//@class.0/@method.1"/>
+        </value>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="Function">
+        <value>
+          <modelElement href="Program.structureandbehaviour#//@class.0/@method.1"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="mapBlockOfCode" package="MixBS" module="MixBS"/>
+    <context>
+      <context name="self" type="BlockOfCode">
+        <value>
+          <modelElement href="../MixStructureBehaviour/models/ProgramBehaviour.behaviourlanguage#//@function.0/@blockofcode"/>
+        </value>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="BlockOfCode">
+        <value>
+          <modelElement href="Program.structureandbehaviour#//@class.0/@method.1/@blockofcode.0"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="mapBlockOfCode" package="MixBS" module="MixBS"/>
+    <context>
+      <context name="self" type="BlockOfCode">
+        <value>
+          <modelElement href="../MixStructureBehaviour/models/ProgramBehaviour.behaviourlanguage#//@function.0/@blockofcode/@things.0/@body"/>
+        </value>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="BlockOfCode">
+        <value>
+          <modelElement href="Program.structureandbehaviour#//@class.0/@method.1/@blockofcode.0/@things.0/@body.0"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="mapInsideClass" package="MixBS" module="MixBS"/>
+    <context>
+      <context name="self" type="Class">
+        <value>
+          <modelElement href="../MixStructureBehaviour/models/ProgramElements.structurelanguage#//@class.1"/>
+        </value>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="Class">
+        <value>
+          <modelElement href="Program.structureandbehaviour#//@class.1"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="mapInsideClass" package="MixBS" module="MixBS"/>
+    <context>
+      <context name="self" type="Class">
+        <value>
+          <modelElement href="../MixStructureBehaviour/models/ProgramElements.structurelanguage#//@class.2"/>
+        </value>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="Class">
+        <value>
+          <modelElement href="Program.structureandbehaviour#//@class.2"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="mapInsideClass" package="MixBS" module="MixBS"/>
+    <context>
+      <context name="self" type="Class">
+        <value>
+          <modelElement href="../MixStructureBehaviour/models/ProgramElements.structurelanguage#//@class.3"/>
+        </value>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="Class">
+        <value>
+          <modelElement href="Program.structureandbehaviour#//@class.3"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+</trace:Trace>

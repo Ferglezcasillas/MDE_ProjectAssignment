@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/StructureAndBehaviour/src-gen" creationIcons="false"
+    editDirectory="/StructureAndBehaviour.edit/src-gen" editorDirectory="/StructureAndBehaviour.editor/src-gen"
+    modelPluginID="StructureAndBehaviour" modelName="StructureAndBehaviour" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    codeFormatting="true" importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0"
+    copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>structureAndBehaviour.ecore</foreignModel>
+  <testsDirectory xsi:nil="true"/>
+  <genPackages prefix="StructureAndBehaviour" disposableProviderFactory="true" ecorePackage="structureAndBehaviour.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="structureAndBehaviour.ecore#//AccessType">
+      <genEnumLiterals ecoreEnumLiteral="structureAndBehaviour.ecore#//AccessType/PUBLIC"/>
+      <genEnumLiterals ecoreEnumLiteral="structureAndBehaviour.ecore#//AccessType/PROTECTED"/>
+      <genEnumLiterals ecoreEnumLiteral="structureAndBehaviour.ecore#//AccessType/PRIVATE"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="structureAndBehaviour.ecore#//ClassType">
+      <genEnumLiterals ecoreEnumLiteral="structureAndBehaviour.ecore#//ClassType/ABSTRACT"/>
+      <genEnumLiterals ecoreEnumLiteral="structureAndBehaviour.ecore#//ClassType/ENUMERATE"/>
+      <genEnumLiterals ecoreEnumLiteral="structureAndBehaviour.ecore#//ClassType/STANDARD"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="structureAndBehaviour.ecore#//PrimitiveType">
+      <genEnumLiterals ecoreEnumLiteral="structureAndBehaviour.ecore#//PrimitiveType/BYTE"/>
+      <genEnumLiterals ecoreEnumLiteral="structureAndBehaviour.ecore#//PrimitiveType/SHORT"/>
+      <genEnumLiterals ecoreEnumLiteral="structureAndBehaviour.ecore#//PrimitiveType/INT"/>
+      <genEnumLiterals ecoreEnumLiteral="structureAndBehaviour.ecore#//PrimitiveType/LONG"/>
+      <genEnumLiterals ecoreEnumLiteral="structureAndBehaviour.ecore#//PrimitiveType/FLOAT"/>
+      <genEnumLiterals ecoreEnumLiteral="structureAndBehaviour.ecore#//PrimitiveType/DOUBLE"/>
+      <genEnumLiterals ecoreEnumLiteral="structureAndBehaviour.ecore#//PrimitiveType/BOOLEAN"/>
+      <genEnumLiterals ecoreEnumLiteral="structureAndBehaviour.ecore#//PrimitiveType/CHAR"/>
+      <genEnumLiterals ecoreEnumLiteral="structureAndBehaviour.ecore#//PrimitiveType/STRING"/>
+      <genEnumLiterals ecoreEnumLiteral="structureAndBehaviour.ecore#//PrimitiveType/NOTPRIMITIVE"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="structureAndBehaviour.ecore#//MathOperator">
+      <genEnumLiterals ecoreEnumLiteral="structureAndBehaviour.ecore#//MathOperator/Addition"/>
+      <genEnumLiterals ecoreEnumLiteral="structureAndBehaviour.ecore#//MathOperator/Moltiplication"/>
+      <genEnumLiterals ecoreEnumLiteral="structureAndBehaviour.ecore#//MathOperator/Division"/>
+      <genEnumLiterals ecoreEnumLiteral="structureAndBehaviour.ecore#//MathOperator/Substraction"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="structureAndBehaviour.ecore#//ComparationOperator">
+      <genEnumLiterals ecoreEnumLiteral="structureAndBehaviour.ecore#//ComparationOperator/Minor"/>
+      <genEnumLiterals ecoreEnumLiteral="structureAndBehaviour.ecore#//ComparationOperator/Major"/>
+      <genEnumLiterals ecoreEnumLiteral="structureAndBehaviour.ecore#//ComparationOperator/Equal"/>
+      <genEnumLiterals ecoreEnumLiteral="structureAndBehaviour.ecore#//ComparationOperator/MajorEqual"/>
+      <genEnumLiterals ecoreEnumLiteral="structureAndBehaviour.ecore#//ComparationOperator/MinorEqual"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="structureAndBehaviour.ecore#//LogicalOperator">
+      <genEnumLiterals ecoreEnumLiteral="structureAndBehaviour.ecore#//LogicalOperator/AND"/>
+      <genEnumLiterals ecoreEnumLiteral="structureAndBehaviour.ecore#//LogicalOperator/OR"/>
+    </genEnums>
+    <genClasses ecoreClass="structureAndBehaviour.ecore#//Primative">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute structureAndBehaviour.ecore#//Primative/type"/>
+    </genClasses>
+    <genClasses ecoreClass="structureAndBehaviour.ecore#//Interface">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute structureAndBehaviour.ecore#//Interface/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference structureAndBehaviour.ecore#//Interface/method"/>
+    </genClasses>
+    <genClasses ecoreClass="structureAndBehaviour.ecore#//Program">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute structureAndBehaviour.ecore#//Program/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference structureAndBehaviour.ecore#//Program/class"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference structureAndBehaviour.ecore#//Program/interface"/>
+    </genClasses>
+    <genClasses ecoreClass="structureAndBehaviour.ecore#//Class">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute structureAndBehaviour.ecore#//Class/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute structureAndBehaviour.ecore#//Class/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute structureAndBehaviour.ecore#//Class/accessType"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference structureAndBehaviour.ecore#//Class/variable"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference structureAndBehaviour.ecore#//Class/method"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference structureAndBehaviour.ecore#//Class/inherated"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference structureAndBehaviour.ecore#//Class/implements"/>
+    </genClasses>
+    <genClasses ecoreClass="structureAndBehaviour.ecore#//Complex">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference structureAndBehaviour.ecore#//Complex/class"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="structureAndBehaviour.ecore#//CallFunction"/>
+    <genClasses image="false" ecoreClass="structureAndBehaviour.ecore#//ConditionalStatement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference structureAndBehaviour.ecore#//ConditionalStatement/condition"/>
+    </genClasses>
+    <genClasses ecoreClass="structureAndBehaviour.ecore#//dowhile_"/>
+    <genClasses image="false" ecoreClass="structureAndBehaviour.ecore#//generalItem"/>
+    <genClasses ecoreClass="structureAndBehaviour.ecore#//for_">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference structureAndBehaviour.ecore#//for_/variable"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute structureAndBehaviour.ecore#//for_/inc"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute structureAndBehaviour.ecore#//for_/updateValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference structureAndBehaviour.ecore#//for_/comparation"/>
+    </genClasses>
+    <genClasses ecoreClass="structureAndBehaviour.ecore#//Function">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference structureAndBehaviour.ecore#//Function/blockofcode"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute structureAndBehaviour.ecore#//Function/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute structureAndBehaviour.ecore#//Function/accessType"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference structureAndBehaviour.ecore#//Function/parameters"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference structureAndBehaviour.ecore#//Function/return"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="structureAndBehaviour.ecore#//Operation">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference structureAndBehaviour.ecore#//Operation/rightInput"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference structureAndBehaviour.ecore#//Operation/leftInput"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="structureAndBehaviour.ecore#//Statement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference structureAndBehaviour.ecore#//Statement/body"/>
+    </genClasses>
+    <genClasses ecoreClass="structureAndBehaviour.ecore#//Variable">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute structureAndBehaviour.ecore#//Variable/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute structureAndBehaviour.ecore#//Variable/initialization"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute structureAndBehaviour.ecore#//Variable/accessType"/>
+    </genClasses>
+    <genClasses ecoreClass="structureAndBehaviour.ecore#//System_Output">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference structureAndBehaviour.ecore#//System_Output/parameters"/>
+    </genClasses>
+    <genClasses ecoreClass="structureAndBehaviour.ecore#//NotOperation">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference structureAndBehaviour.ecore#//NotOperation/input"/>
+    </genClasses>
+    <genClasses ecoreClass="structureAndBehaviour.ecore#//List">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute structureAndBehaviour.ecore#//List/type"/>
+    </genClasses>
+    <genClasses ecoreClass="structureAndBehaviour.ecore#//Logical">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute structureAndBehaviour.ecore#//Logical/type"/>
+    </genClasses>
+    <genClasses ecoreClass="structureAndBehaviour.ecore#//Comparation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute structureAndBehaviour.ecore#//Comparation/type"/>
+    </genClasses>
+    <genClasses ecoreClass="structureAndBehaviour.ecore#//Math">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute structureAndBehaviour.ecore#//Math/type"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="structureAndBehaviour.ecore#//Expression">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference structureAndBehaviour.ecore#//Expression/assign"/>
+    </genClasses>
+    <genClasses ecoreClass="structureAndBehaviour.ecore#//while_"/>
+    <genClasses ecoreClass="structureAndBehaviour.ecore#//userDefinedFunction">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference structureAndBehaviour.ecore#//userDefinedFunction/function"/>
+    </genClasses>
+    <genClasses ecoreClass="structureAndBehaviour.ecore#//if_">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference structureAndBehaviour.ecore#//if_/elseBody"/>
+    </genClasses>
+    <genClasses ecoreClass="structureAndBehaviour.ecore#//System_Input"/>
+    <genClasses ecoreClass="structureAndBehaviour.ecore#//BlockOfCode">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference structureAndBehaviour.ecore#//BlockOfCode/things"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

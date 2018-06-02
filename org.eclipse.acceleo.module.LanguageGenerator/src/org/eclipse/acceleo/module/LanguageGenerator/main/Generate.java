@@ -116,15 +116,15 @@ public class Generate extends AbstractAcceleoGenerator {
      * 
      * @param args
      *            Arguments of the generation.
-     * @generated
+     * @generated NOT
      */
     public static void main(String[] args) {
         try {
-            if (args.length < 2) {
+            if (false) {
                 System.out.println("Arguments not valid : {model, folder}.");
             } else {
-                URI modelURI = URI.createFileURI(args[0]);
-                File folder = new File(args[1]);
+            	URI modelURI = URI.createFileURI(/*args[0]*/ "/home/morettini-simone/eclipse-workspace-modelling-tools/MDE_ProjectAssignment/Program/ProgramElements.structurelanguage");
+                File folder = new File("/home/morettini-simone/eclipse-workspace-modelling-tools/MDE_ProjectAssignment/Program");
                 
                 List<String> arguments = new ArrayList<String>();
                 

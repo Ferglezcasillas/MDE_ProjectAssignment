@@ -216,22 +216,22 @@ public interface BehaviourLanguagePackage extends EPackage {
 	int OPERATION__ASSIGN = EXPRESSION__ASSIGN;
 
 	/**
-	 * The feature id for the '<em><b>Left Input</b></em>' reference.
+	 * The feature id for the '<em><b>Right Input</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OPERATION__LEFT_INPUT = EXPRESSION_FEATURE_COUNT + 0;
+	int OPERATION__RIGHT_INPUT = EXPRESSION_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Right Input</b></em>' reference.
+	 * The feature id for the '<em><b>Left Input</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OPERATION__RIGHT_INPUT = EXPRESSION_FEATURE_COUNT + 1;
+	int OPERATION__LEFT_INPUT = EXPRESSION_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Operation</em>' class.
@@ -574,22 +574,22 @@ public interface BehaviourLanguagePackage extends EPackage {
 	int MATH__ASSIGN = OPERATION__ASSIGN;
 
 	/**
-	 * The feature id for the '<em><b>Left Input</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MATH__LEFT_INPUT = OPERATION__LEFT_INPUT;
-
-	/**
-	 * The feature id for the '<em><b>Right Input</b></em>' reference.
+	 * The feature id for the '<em><b>Right Input</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
 	int MATH__RIGHT_INPUT = OPERATION__RIGHT_INPUT;
+
+	/**
+	 * The feature id for the '<em><b>Left Input</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MATH__LEFT_INPUT = OPERATION__LEFT_INPUT;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -638,22 +638,22 @@ public interface BehaviourLanguagePackage extends EPackage {
 	int LOGICAL__ASSIGN = OPERATION__ASSIGN;
 
 	/**
-	 * The feature id for the '<em><b>Left Input</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LOGICAL__LEFT_INPUT = OPERATION__LEFT_INPUT;
-
-	/**
-	 * The feature id for the '<em><b>Right Input</b></em>' reference.
+	 * The feature id for the '<em><b>Right Input</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
 	int LOGICAL__RIGHT_INPUT = OPERATION__RIGHT_INPUT;
+
+	/**
+	 * The feature id for the '<em><b>Left Input</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOGICAL__LEFT_INPUT = OPERATION__LEFT_INPUT;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -848,22 +848,22 @@ public interface BehaviourLanguagePackage extends EPackage {
 	int COMPARATION__ASSIGN = OPERATION__ASSIGN;
 
 	/**
-	 * The feature id for the '<em><b>Left Input</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPARATION__LEFT_INPUT = OPERATION__LEFT_INPUT;
-
-	/**
-	 * The feature id for the '<em><b>Right Input</b></em>' reference.
+	 * The feature id for the '<em><b>Right Input</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
 	int COMPARATION__RIGHT_INPUT = OPERATION__RIGHT_INPUT;
+
+	/**
+	 * The feature id for the '<em><b>Left Input</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPARATION__LEFT_INPUT = OPERATION__LEFT_INPUT;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -1228,10 +1228,10 @@ public interface BehaviourLanguagePackage extends EPackage {
 	EClass getOperation();
 
 	/**
-	 * Returns the meta object for the reference '{@link behaviourLanguage.Operation#getLeftInput <em>Left Input</em>}'.
+	 * Returns the meta object for the containment reference list '{@link behaviourLanguage.Operation#getLeftInput <em>Left Input</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Left Input</em>'.
+	 * @return the meta object for the containment reference list '<em>Left Input</em>'.
 	 * @see behaviourLanguage.Operation#getLeftInput()
 	 * @see #getOperation()
 	 * @generated
@@ -1239,10 +1239,10 @@ public interface BehaviourLanguagePackage extends EPackage {
 	EReference getOperation_LeftInput();
 
 	/**
-	 * Returns the meta object for the reference '{@link behaviourLanguage.Operation#getRightInput <em>Right Input</em>}'.
+	 * Returns the meta object for the containment reference list '{@link behaviourLanguage.Operation#getRightInput <em>Right Input</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Right Input</em>'.
+	 * @return the meta object for the containment reference list '<em>Right Input</em>'.
 	 * @see behaviourLanguage.Operation#getRightInput()
 	 * @see #getOperation()
 	 * @generated
@@ -1799,7 +1799,7 @@ public interface BehaviourLanguagePackage extends EPackage {
 		EClass OPERATION = eINSTANCE.getOperation();
 
 		/**
-		 * The meta object literal for the '<em><b>Left Input</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Left Input</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1807,7 +1807,7 @@ public interface BehaviourLanguagePackage extends EPackage {
 		EReference OPERATION__LEFT_INPUT = eINSTANCE.getOperation_LeftInput();
 
 		/**
-		 * The meta object literal for the '<em><b>Right Input</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Right Input</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

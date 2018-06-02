@@ -1,0 +1,161 @@
+modeltype behaviour uses "http://www.example.org/behaviourLanguage";
+modeltype structure uses "http://www.example.org/structureLanguage";
+modeltype BandS uses "http://www.example.org/structureAndBehaviour";
+
+transformation MixBS(in srcB : behaviour, in srcS : structure, out tgtBS : BandS);
+
+
+main() {
+	srcS.rootObjects()[Program] -> map mapStructure();
+}
+
+mapping structure::Program::mapStructure() : BandS::Program {
+	//log("mapStructure");
+	name:=self.name;
+	result._class+= self._class[Class]->mapInsideClass();
+	//log("mapStructure_END");
+}
+
+mapping structure::Class::mapInsideClass() : structureAndBehaviour::Class {
+	//log("mapClass");
+	name:=self.name;
+	type:=self.type.toString();
+	accessType:=self.accessType.toString();
+	//TODOOOOO inherated=self.inherated;
+	result.method+= self.method[Method]->mapMethods();
+	//log("mapClass_END");
+}
+
+
+mapping structure::Method::mapMethods() :  BandS::Function {
+	log("mapMethods");
+	name:=self.name;
+	accessType:=self.accessType.toString();
+	//TODOOOOO _return:=self._return;
+	blockofcode:= srcB.objects()[Function]->select(f | f.name=self.name).blockofcode->mapBlockOfCode();
+	//srcB.objects()[Function]->select(f | f.name=self.name)->forEach(f){result.blockofcode-> f.blockofcode->mapBlockOfCode()};
+	//TODOOOO parameters
+	log("mapMethods_END");
+}
+
+mapping behaviour::BlockOfCode::mapBlockOfCode() : structureAndBehaviour::BlockOfCode {
+	log("mapBlockOfCode");
+	//things+=self.things->mapThings();
+	self.things->forEach(t){
+		if (t.oclIsKindOf(while_)) then {
+		 	var w= object structureAndBehaviour::while_{};
+		 	w.body+=t.oclAsType(while_).body->mapBlockOfCode();
+		 	w.condition:=t.oclAsType(while_).condition->mapLogical();
+			things+=w;
+		} endif;
+		if (t.oclIsKindOf(dowhile_)) then {
+			var w= object structureAndBehaviour::dowhile_{};
+		 	w.body+=t.oclAsType(dowhile_).body->mapBlockOfCode();
+		 	w.condition:=t.oclAsType(dowhile_).condition->mapLogical();
+			things+=w;
+		} endif;
+		if (t.oclIsKindOf(if_)) then {
+			var w= object structureAndBehaviour::if_{};
+		 	w.body+=t.oclAsType(if_).body->mapBlockOfCode();
+		 	w.condition:=t.oclAsType(if_).condition->mapLogical();
+			if (not t.oclAsType(if_).elseBody.oclIsUndefined()) then {
+		 		w.elseBody+=t.oclAsType(if_).elseBody->mapBlockOfCode();
+				
+			}  endif;
+			things+=w;
+		} endif;
+		if (t.oclIsKindOf(for_)) then {
+			var w= object structureAndBehaviour::for_{};
+		 	w.body+=t.oclAsType(for_).body->mapBlockOfCode();
+		 	w.comparation:=t.oclAsType(for_).comparation->mapComparation();
+		 	w.inc:=t.oclAsType(for_).inc;
+		 	w.updateValue:=t.oclAsType(for_).updateValue;
+		 //TODOOOO	w.variable:=t.oclAsType(for_).variable;
+			things+=w;
+		} endif;
+		
+		
+		if (t.oclIsKindOf(Operation)) then {
+			var o= object structureAndBehaviour::Operation{};
+			o.assign+=t.oclAsType(Operation).assign->mapVariable();
+			o.leftInput+=t.oclAsType(Operation).leftInput->mapExpression();
+			o.rightInput+=t.oclAsType(Operation).rightInput->mapExpression();
+			if (t.oclIsKindOf(Math)) then {
+				var m:= object structureAndBehaviour::Math{};
+				m:=o.oclAsType(structureAndBehaviour::Math);
+				m.type:=t.oclAsType(Math).type.toString();
+				things+=m;
+			}endif;
+			if (t.oclIsKindOf(Logical)) then {
+				var m:= object structureAndBehaviour::Logical{};
+				m:=o.oclAsType(structureAndBehaviour::Logical);
+				m.type:=t.oclAsType(Logical).type.toString();
+				things+=m;
+			}endif;
+			if (t.oclIsKindOf(Comparation)) then {
+				var m:= object structureAndBehaviour::Comparation{};
+				m:=o.oclAsType(structureAndBehaviour::Comparation);
+				m.type:=t.oclAsType(Comparation).type.toString();
+				things+=m;
+			}endif;
+
+		} endif;
+		if (t.oclIsKindOf(NotOperation)) then {
+				var m:= object structureAndBehaviour::NotOperation{};
+				m.input:=t.oclAsType(NotOperation).input->mapPrimative()->selectOne(v | true);
+				things+=m;
+			}endif;
+		if (t.oclIsKindOf(Variable)) then {
+			var v:= object structureAndBehaviour::Variable{};
+			v.name:=t.oclAsType(Variable).name;
+			v.initialization:=t.oclAsType(Variable).initialization;
+			v.accessType:=srcS.objects()[VariableC]->selectOne(vr | vr.name=t.oclAsType(Variable).name).accessType.toString();
+			
+			if (t.oclIsKindOf(Complex)) then {
+				var m:= object structureAndBehaviour::Complex{};
+				m:=v.oclAsType(structureAndBehaviour::Complex);
+				m._class:=tgtBS.objects()[structureAndBehaviour::Class]->selectOne(cl | cl.name=t.oclAsType(Complex)._class.name);
+				things+=m;
+			}endif;
+			if (t.oclIsKindOf(Primative)) then {
+				var m:= object structureAndBehaviour::Primative{};
+				m:=v.oclAsType(structureAndBehaviour::Primative);
+				m.type:=srcS.objects()[VariableC]->selectOne(vr | vr.name=t.oclAsType(Variable).name).oclAsType(Primative).type.toString();
+				things+=m;
+			}endif;
+			if (t.oclIsKindOf(_List)) then {
+				var m:= object structureAndBehaviour::_List{};
+				m:=v.oclAsType(structureAndBehaviour::_List);
+				m.type:=t.oclAsType(Variable).type.toString();
+				things+=m;
+			}endif;
+
+		} endif;
+		
+	};
+	log("mapBlockOfCode");
+}
+
+mapping behaviour::Logical::mapLogical() : structureAndBehaviour::Logical {
+	 
+	
+}
+
+mapping behaviour::Comparation::mapComparation() : structureAndBehaviour::Comparation {
+	 
+	
+}
+
+mapping behaviour::Logical::mapCondition() : structureAndBehaviour::Logical {
+
+}
+
+mapping behaviour::Variable::mapVariable() : structureAndBehaviour::Variable {
+
+}
+mapping behaviour::Variable::mapPrimative() : structureAndBehaviour::Primative {
+
+}
+mapping behaviour::Expression::mapExpression() : structureAndBehaviour::Expression {
+
+}

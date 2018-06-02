@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<structureAndBehaviour:Program xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:structureAndBehaviour="http://www.example.org/structureAndBehaviour" name="FactoryManagement">
+  <class name="Factory" type="STANDARD" accessType="public">
+    <method name="setNameFactory" accessType="public"/>
+    <method name="evaluate" accessType="public">
+      <blockofcode>
+        <things xsi:type="structureAndBehaviour:while_">
+          <body>
+            <things xsi:type="structureAndBehaviour:while_"/>
+          </body>
+        </things>
+      </blockofcode>
+    </method>
+  </class>
+  <class name="Person" type="ABSTRACT" accessType="public"/>
+  <class name="Worker" type="STANDARD" accessType="public"/>
+  <class name="Machine" type="STANDARD" accessType="public"/>
+</structureAndBehaviour:Program>

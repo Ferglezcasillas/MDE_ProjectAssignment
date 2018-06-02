@@ -6,12 +6,13 @@ import behaviourLanguage.BehaviourLanguagePackage;
 import behaviourLanguage.Expression;
 import behaviourLanguage.Operation;
 
-import org.eclipse.emf.common.notify.Notification;
-
+import java.util.Collection;
+import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,32 +22,32 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link behaviourLanguage.impl.OperationImpl#getLeftInput <em>Left Input</em>}</li>
  *   <li>{@link behaviourLanguage.impl.OperationImpl#getRightInput <em>Right Input</em>}</li>
+ *   <li>{@link behaviourLanguage.impl.OperationImpl#getLeftInput <em>Left Input</em>}</li>
  * </ul>
  *
  * @generated
  */
 public abstract class OperationImpl extends ExpressionImpl implements Operation {
 	/**
-	 * The cached value of the '{@link #getLeftInput() <em>Left Input</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getLeftInput()
-	 * @generated
-	 * @ordered
-	 */
-	protected Expression leftInput;
-
-	/**
-	 * The cached value of the '{@link #getRightInput() <em>Right Input</em>}' reference.
+	 * The cached value of the '{@link #getRightInput() <em>Right Input</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getRightInput()
 	 * @generated
 	 * @ordered
 	 */
-	protected Expression rightInput;
+	protected EList<Expression> rightInput;
+
+	/**
+	 * The cached value of the '{@link #getLeftInput() <em>Left Input</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLeftInput()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Expression> leftInput;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -72,15 +73,10 @@ public abstract class OperationImpl extends ExpressionImpl implements Operation 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Expression getLeftInput() {
-		if (leftInput != null && leftInput.eIsProxy()) {
-			InternalEObject oldLeftInput = (InternalEObject) leftInput;
-			leftInput = (Expression) eResolveProxy(oldLeftInput);
-			if (leftInput != oldLeftInput) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-							BehaviourLanguagePackage.OPERATION__LEFT_INPUT, oldLeftInput, leftInput));
-			}
+	public EList<Expression> getLeftInput() {
+		if (leftInput == null) {
+			leftInput = new EObjectContainmentEList<Expression>(Expression.class, this,
+					BehaviourLanguagePackage.OPERATION__LEFT_INPUT);
 		}
 		return leftInput;
 	}
@@ -90,8 +86,15 @@ public abstract class OperationImpl extends ExpressionImpl implements Operation 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Expression basicGetLeftInput() {
-		return leftInput;
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+		case BehaviourLanguagePackage.OPERATION__RIGHT_INPUT:
+			return ((InternalEList<?>) getRightInput()).basicRemove(otherEnd, msgs);
+		case BehaviourLanguagePackage.OPERATION__LEFT_INPUT:
+			return ((InternalEList<?>) getLeftInput()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
@@ -99,52 +102,12 @@ public abstract class OperationImpl extends ExpressionImpl implements Operation 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setLeftInput(Expression newLeftInput) {
-		Expression oldLeftInput = leftInput;
-		leftInput = newLeftInput;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BehaviourLanguagePackage.OPERATION__LEFT_INPUT,
-					oldLeftInput, leftInput));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Expression getRightInput() {
-		if (rightInput != null && rightInput.eIsProxy()) {
-			InternalEObject oldRightInput = (InternalEObject) rightInput;
-			rightInput = (Expression) eResolveProxy(oldRightInput);
-			if (rightInput != oldRightInput) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-							BehaviourLanguagePackage.OPERATION__RIGHT_INPUT, oldRightInput, rightInput));
-			}
+	public EList<Expression> getRightInput() {
+		if (rightInput == null) {
+			rightInput = new EObjectContainmentEList<Expression>(Expression.class, this,
+					BehaviourLanguagePackage.OPERATION__RIGHT_INPUT);
 		}
 		return rightInput;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Expression basicGetRightInput() {
-		return rightInput;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setRightInput(Expression newRightInput) {
-		Expression oldRightInput = rightInput;
-		rightInput = newRightInput;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BehaviourLanguagePackage.OPERATION__RIGHT_INPUT,
-					oldRightInput, rightInput));
 	}
 
 	/**
@@ -155,14 +118,10 @@ public abstract class OperationImpl extends ExpressionImpl implements Operation 
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case BehaviourLanguagePackage.OPERATION__LEFT_INPUT:
-			if (resolve)
-				return getLeftInput();
-			return basicGetLeftInput();
 		case BehaviourLanguagePackage.OPERATION__RIGHT_INPUT:
-			if (resolve)
-				return getRightInput();
-			return basicGetRightInput();
+			return getRightInput();
+		case BehaviourLanguagePackage.OPERATION__LEFT_INPUT:
+			return getLeftInput();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -172,14 +131,17 @@ public abstract class OperationImpl extends ExpressionImpl implements Operation 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case BehaviourLanguagePackage.OPERATION__LEFT_INPUT:
-			setLeftInput((Expression) newValue);
-			return;
 		case BehaviourLanguagePackage.OPERATION__RIGHT_INPUT:
-			setRightInput((Expression) newValue);
+			getRightInput().clear();
+			getRightInput().addAll((Collection<? extends Expression>) newValue);
+			return;
+		case BehaviourLanguagePackage.OPERATION__LEFT_INPUT:
+			getLeftInput().clear();
+			getLeftInput().addAll((Collection<? extends Expression>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -193,11 +155,11 @@ public abstract class OperationImpl extends ExpressionImpl implements Operation 
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case BehaviourLanguagePackage.OPERATION__LEFT_INPUT:
-			setLeftInput((Expression) null);
-			return;
 		case BehaviourLanguagePackage.OPERATION__RIGHT_INPUT:
-			setRightInput((Expression) null);
+			getRightInput().clear();
+			return;
+		case BehaviourLanguagePackage.OPERATION__LEFT_INPUT:
+			getLeftInput().clear();
 			return;
 		}
 		super.eUnset(featureID);
@@ -211,10 +173,10 @@ public abstract class OperationImpl extends ExpressionImpl implements Operation 
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case BehaviourLanguagePackage.OPERATION__LEFT_INPUT:
-			return leftInput != null;
 		case BehaviourLanguagePackage.OPERATION__RIGHT_INPUT:
-			return rightInput != null;
+			return rightInput != null && !rightInput.isEmpty();
+		case BehaviourLanguagePackage.OPERATION__LEFT_INPUT:
+			return leftInput != null && !leftInput.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

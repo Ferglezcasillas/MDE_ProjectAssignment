@@ -5,8 +5,17 @@
 [module generateBehaviour('http://www.example.org/behaviourLanguage', 'http://www.example.org/structureLanguage')]
 
 
-
-
+[**
+ * The documentation of the template GenerateLanguage.
+ * @param anAccessType
+ */]
+[template public GenerateBehaviour(container : behaviourLanguage::Container, structure : structureLanguage::Program)]
+[comment @main/]
+[file ('functions.java', false, 'UTF-8')]
+aaaaaaaaa
+[for (f : Function | container.function)][if (not f.blockofcode.oclIsUndefined())][getBlackOfCode(f.blockofcode)/][/if][/for]
+[/file]
+[/template]
 
 [**
  * The documentation of the template GenerateLanguage.
@@ -14,6 +23,7 @@
  */]
 [template public GenerateBehaviour(container : behaviourLanguage::Container)]
 [comment @main/]
+
 [file ('functions.java', false, 'UTF-8')]
 [for (f : Function | container.function)][if (not f.blockofcode.oclIsUndefined())][getBlackOfCode(f.blockofcode)/][/if][/for]
 [/file]
