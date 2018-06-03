@@ -1,18 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <structureAndBehaviour:Program xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:structureAndBehaviour="http://www.example.org/structureAndBehaviour" name="FactoryManagement">
   <class name="Factory" type="STANDARD" accessType="public">
-    <method name="setNameFactory" accessType="public"/>
+    <variable xsi:type="structureAndBehaviour:Primative" name="nameFactory" accessType="public" type="String"/>
+    <variable xsi:type="structureAndBehaviour:Primative" name="addressFactory" accessType="public" type="String"/>
+    <variable xsi:type="structureAndBehaviour:List" name="workers" accessType="public" type="String"/>
+    <variable xsi:type="structureAndBehaviour:List" name="machine" accessType="public" type="char"/>
     <method name="evaluate" accessType="public">
       <blockofcode>
         <things xsi:type="structureAndBehaviour:while_">
           <body>
-            <things xsi:type="structureAndBehaviour:while_"/>
+            <things xsi:type="structureAndBehaviour:Primative" assign="//@class.0/@method.0/@blockofcode.0/@things.0/@condition/@rightInput" name="abc" type="int"/>
           </body>
+          <condition type="&amp;">
+            <rightInput xsi:type="structureAndBehaviour:Primative" name="a" initialization="3" type="byte"/>
+            <leftInput xsi:type="structureAndBehaviour:Primative" name="b" initialization="" type="byte"/>
+          </condition>
         </things>
       </blockofcode>
     </method>
   </class>
-  <class name="Person" type="ABSTRACT" accessType="public"/>
-  <class name="Worker" type="STANDARD" accessType="public"/>
-  <class name="Machine" type="STANDARD" accessType="public"/>
+  <class name="Person" type="ABSTRACT" accessType="public">
+    <variable xsi:type="structureAndBehaviour:Primative" name="name" accessType="public" type="String"/>
+    <variable xsi:type="structureAndBehaviour:Primative" name="surname" accessType="public" type="String"/>
+  </class>
+  <class name="Machine" type="STANDARD" accessType="public">
+    <variable xsi:type="structureAndBehaviour:Primative" name="name" accessType="public" type="String"/>
+    <variable xsi:type="structureAndBehaviour:Primative" name="MinWorkersNeed" accessType="public" type="int"/>
+  </class>
+  <class name="Worker" type="STANDARD" accessType="public" inherated="//@class.1">
+    <variable xsi:type="structureAndBehaviour:Primative" name="position" accessType="public" type="String"/>
+    <variable xsi:type="structureAndBehaviour:Primative" name="id" accessType="public" type="byte"/>
+    <variable xsi:type="structureAndBehaviour:Complex" name="machineAssigned" accessType="public" class="//@class.2"/>
+  </class>
 </structureAndBehaviour:Program>

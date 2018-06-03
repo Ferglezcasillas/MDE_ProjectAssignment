@@ -2,18 +2,12 @@
  */
 package structureAndBehaviour.impl;
 
-import java.util.Collection;
-
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
-
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import structureAndBehaviour.Expression;
 import structureAndBehaviour.Operation;
 import structureAndBehaviour.StructureAndBehaviourPackage;
@@ -34,24 +28,24 @@ import structureAndBehaviour.StructureAndBehaviourPackage;
  */
 public class OperationImpl extends ExpressionImpl implements Operation {
 	/**
-	 * The cached value of the '{@link #getRightInput() <em>Right Input</em>}' containment reference list.
+	 * The cached value of the '{@link #getRightInput() <em>Right Input</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getRightInput()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Expression> rightInput;
+	protected Expression rightInput;
 
 	/**
-	 * The cached value of the '{@link #getLeftInput() <em>Left Input</em>}' containment reference list.
+	 * The cached value of the '{@link #getLeftInput() <em>Left Input</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getLeftInput()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Expression> leftInput;
+	protected Expression leftInput;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -77,11 +71,7 @@ public class OperationImpl extends ExpressionImpl implements Operation {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Expression> getRightInput() {
-		if (rightInput == null) {
-			rightInput = new EObjectContainmentEList<Expression>(Expression.class, this,
-					StructureAndBehaviourPackage.OPERATION__RIGHT_INPUT);
-		}
+	public Expression getRightInput() {
 		return rightInput;
 	}
 
@@ -90,12 +80,90 @@ public class OperationImpl extends ExpressionImpl implements Operation {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Expression> getLeftInput() {
-		if (leftInput == null) {
-			leftInput = new EObjectContainmentEList<Expression>(Expression.class, this,
-					StructureAndBehaviourPackage.OPERATION__LEFT_INPUT);
+	public NotificationChain basicSetRightInput(Expression newRightInput, NotificationChain msgs) {
+		Expression oldRightInput = rightInput;
+		rightInput = newRightInput;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
+					StructureAndBehaviourPackage.OPERATION__RIGHT_INPUT, oldRightInput, newRightInput);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
 		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setRightInput(Expression newRightInput) {
+		if (newRightInput != rightInput) {
+			NotificationChain msgs = null;
+			if (rightInput != null)
+				msgs = ((InternalEObject) rightInput).eInverseRemove(this,
+						EOPPOSITE_FEATURE_BASE - StructureAndBehaviourPackage.OPERATION__RIGHT_INPUT, null, msgs);
+			if (newRightInput != null)
+				msgs = ((InternalEObject) newRightInput).eInverseAdd(this,
+						EOPPOSITE_FEATURE_BASE - StructureAndBehaviourPackage.OPERATION__RIGHT_INPUT, null, msgs);
+			msgs = basicSetRightInput(newRightInput, msgs);
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, StructureAndBehaviourPackage.OPERATION__RIGHT_INPUT,
+					newRightInput, newRightInput));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Expression getLeftInput() {
 		return leftInput;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetLeftInput(Expression newLeftInput, NotificationChain msgs) {
+		Expression oldLeftInput = leftInput;
+		leftInput = newLeftInput;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
+					StructureAndBehaviourPackage.OPERATION__LEFT_INPUT, oldLeftInput, newLeftInput);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setLeftInput(Expression newLeftInput) {
+		if (newLeftInput != leftInput) {
+			NotificationChain msgs = null;
+			if (leftInput != null)
+				msgs = ((InternalEObject) leftInput).eInverseRemove(this,
+						EOPPOSITE_FEATURE_BASE - StructureAndBehaviourPackage.OPERATION__LEFT_INPUT, null, msgs);
+			if (newLeftInput != null)
+				msgs = ((InternalEObject) newLeftInput).eInverseAdd(this,
+						EOPPOSITE_FEATURE_BASE - StructureAndBehaviourPackage.OPERATION__LEFT_INPUT, null, msgs);
+			msgs = basicSetLeftInput(newLeftInput, msgs);
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, StructureAndBehaviourPackage.OPERATION__LEFT_INPUT,
+					newLeftInput, newLeftInput));
 	}
 
 	/**
@@ -107,9 +175,9 @@ public class OperationImpl extends ExpressionImpl implements Operation {
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case StructureAndBehaviourPackage.OPERATION__RIGHT_INPUT:
-			return ((InternalEList<?>) getRightInput()).basicRemove(otherEnd, msgs);
+			return basicSetRightInput(null, msgs);
 		case StructureAndBehaviourPackage.OPERATION__LEFT_INPUT:
-			return ((InternalEList<?>) getLeftInput()).basicRemove(otherEnd, msgs);
+			return basicSetLeftInput(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -140,12 +208,10 @@ public class OperationImpl extends ExpressionImpl implements Operation {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 		case StructureAndBehaviourPackage.OPERATION__RIGHT_INPUT:
-			getRightInput().clear();
-			getRightInput().addAll((Collection<? extends Expression>) newValue);
+			setRightInput((Expression) newValue);
 			return;
 		case StructureAndBehaviourPackage.OPERATION__LEFT_INPUT:
-			getLeftInput().clear();
-			getLeftInput().addAll((Collection<? extends Expression>) newValue);
+			setLeftInput((Expression) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -160,10 +226,10 @@ public class OperationImpl extends ExpressionImpl implements Operation {
 	public void eUnset(int featureID) {
 		switch (featureID) {
 		case StructureAndBehaviourPackage.OPERATION__RIGHT_INPUT:
-			getRightInput().clear();
+			setRightInput((Expression) null);
 			return;
 		case StructureAndBehaviourPackage.OPERATION__LEFT_INPUT:
-			getLeftInput().clear();
+			setLeftInput((Expression) null);
 			return;
 		}
 		super.eUnset(featureID);
@@ -178,9 +244,9 @@ public class OperationImpl extends ExpressionImpl implements Operation {
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 		case StructureAndBehaviourPackage.OPERATION__RIGHT_INPUT:
-			return rightInput != null && !rightInput.isEmpty();
+			return rightInput != null;
 		case StructureAndBehaviourPackage.OPERATION__LEFT_INPUT:
-			return leftInput != null && !leftInput.isEmpty();
+			return leftInput != null;
 		}
 		return super.eIsSet(featureID);
 	}

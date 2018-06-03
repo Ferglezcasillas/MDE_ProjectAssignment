@@ -4,9 +4,19 @@
     <blockofcode>
       <things xsi:type="behaviourLanguage:while_">
         <body>
-          <things xsi:type="behaviourLanguage:while_"/>
+          <things xsi:type="behaviourLanguage:Variable" name="abc" type="int"/>
+          <things xsi:type="behaviourLanguage:if_">
+            <condition>
+              <rightInput xsi:type="behaviourLanguage:Variable" name="ae" type="boolean" initialization=""/>
+              <leftInput xsi:type="behaviourLanguage:Variable" name="erf"/>
+            </condition>
+          </things>
+          <things xsi:type="behaviourLanguage:System_Output" parameters="//@function.0/@blockofcode/@things.0/@body/@things.0"/>
         </body>
-        <condition/>
+        <condition>
+          <rightInput xsi:type="behaviourLanguage:Variable" name="a"/>
+          <leftInput xsi:type="behaviourLanguage:Variable" name="b"/>
+        </condition>
       </things>
     </blockofcode>
   </function>

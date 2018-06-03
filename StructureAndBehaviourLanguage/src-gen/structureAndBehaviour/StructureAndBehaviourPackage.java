@@ -96,7 +96,7 @@ public interface StructureAndBehaviourPackage extends EPackage {
 	int EXPRESSION = 20;
 
 	/**
-	 * The feature id for the '<em><b>Assign</b></em>' reference list.
+	 * The feature id for the '<em><b>Assign</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -133,7 +133,7 @@ public interface StructureAndBehaviourPackage extends EPackage {
 	int VARIABLE = 13;
 
 	/**
-	 * The feature id for the '<em><b>Assign</b></em>' reference list.
+	 * The feature id for the '<em><b>Assign</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -169,13 +169,22 @@ public interface StructureAndBehaviourPackage extends EPackage {
 	int VARIABLE__ACCESS_TYPE = EXPRESSION_FEATURE_COUNT + 2;
 
 	/**
+	 * The feature id for the '<em><b>Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VARIABLE__TYPE = EXPRESSION_FEATURE_COUNT + 3;
+
+	/**
 	 * The number of structural features of the '<em>Variable</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VARIABLE_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 3;
+	int VARIABLE_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of operations of the '<em>Variable</em>' class.
@@ -197,7 +206,7 @@ public interface StructureAndBehaviourPackage extends EPackage {
 	int PRIMATIVE = 0;
 
 	/**
-	 * The feature id for the '<em><b>Assign</b></em>' reference list.
+	 * The feature id for the '<em><b>Assign</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -239,7 +248,7 @@ public interface StructureAndBehaviourPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRIMATIVE__TYPE = VARIABLE_FEATURE_COUNT + 0;
+	int PRIMATIVE__TYPE = VARIABLE__TYPE;
 
 	/**
 	 * The number of structural features of the '<em>Primative</em>' class.
@@ -248,7 +257,7 @@ public interface StructureAndBehaviourPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRIMATIVE_FEATURE_COUNT = VARIABLE_FEATURE_COUNT + 1;
+	int PRIMATIVE_FEATURE_COUNT = VARIABLE_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Primative</em>' class.
@@ -462,7 +471,7 @@ public interface StructureAndBehaviourPackage extends EPackage {
 	int COMPLEX = 4;
 
 	/**
-	 * The feature id for the '<em><b>Assign</b></em>' reference list.
+	 * The feature id for the '<em><b>Assign</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -496,6 +505,15 @@ public interface StructureAndBehaviourPackage extends EPackage {
 	 * @ordered
 	 */
 	int COMPLEX__ACCESS_TYPE = VARIABLE__ACCESS_TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPLEX__TYPE = VARIABLE__TYPE;
 
 	/**
 	 * The feature id for the '<em><b>Class</b></em>' reference.
@@ -535,7 +553,7 @@ public interface StructureAndBehaviourPackage extends EPackage {
 	int CALL_FUNCTION = 5;
 
 	/**
-	 * The feature id for the '<em><b>Assign</b></em>' reference list.
+	 * The feature id for the '<em><b>Assign</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -572,7 +590,7 @@ public interface StructureAndBehaviourPackage extends EPackage {
 	int STATEMENT = 12;
 
 	/**
-	 * The feature id for the '<em><b>Body</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Body</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -609,7 +627,7 @@ public interface StructureAndBehaviourPackage extends EPackage {
 	int CONDITIONAL_STATEMENT = 6;
 
 	/**
-	 * The feature id for the '<em><b>Body</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Body</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -618,7 +636,7 @@ public interface StructureAndBehaviourPackage extends EPackage {
 	int CONDITIONAL_STATEMENT__BODY = STATEMENT__BODY;
 
 	/**
-	 * The feature id for the '<em><b>Condition</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Condition</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -655,7 +673,7 @@ public interface StructureAndBehaviourPackage extends EPackage {
 	int DOWHILE_ = 7;
 
 	/**
-	 * The feature id for the '<em><b>Body</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Body</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -664,7 +682,7 @@ public interface StructureAndBehaviourPackage extends EPackage {
 	int DOWHILE___BODY = CONDITIONAL_STATEMENT__BODY;
 
 	/**
-	 * The feature id for the '<em><b>Condition</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Condition</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -701,7 +719,7 @@ public interface StructureAndBehaviourPackage extends EPackage {
 	int FOR_ = 9;
 
 	/**
-	 * The feature id for the '<em><b>Body</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Body</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -710,7 +728,7 @@ public interface StructureAndBehaviourPackage extends EPackage {
 	int FOR___BODY = STATEMENT__BODY;
 
 	/**
-	 * The feature id for the '<em><b>Variable</b></em>' reference list.
+	 * The feature id for the '<em><b>Variable</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -737,7 +755,7 @@ public interface StructureAndBehaviourPackage extends EPackage {
 	int FOR___UPDATE_VALUE = STATEMENT_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Comparation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Comparation</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -847,7 +865,7 @@ public interface StructureAndBehaviourPackage extends EPackage {
 	int OPERATION = 11;
 
 	/**
-	 * The feature id for the '<em><b>Assign</b></em>' reference list.
+	 * The feature id for the '<em><b>Assign</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -856,7 +874,7 @@ public interface StructureAndBehaviourPackage extends EPackage {
 	int OPERATION__ASSIGN = EXPRESSION__ASSIGN;
 
 	/**
-	 * The feature id for the '<em><b>Right Input</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Right Input</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -865,7 +883,7 @@ public interface StructureAndBehaviourPackage extends EPackage {
 	int OPERATION__RIGHT_INPUT = EXPRESSION_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Left Input</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Left Input</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -902,7 +920,7 @@ public interface StructureAndBehaviourPackage extends EPackage {
 	int SYSTEM_OUTPUT = 14;
 
 	/**
-	 * The feature id for the '<em><b>Assign</b></em>' reference list.
+	 * The feature id for the '<em><b>Assign</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -948,7 +966,7 @@ public interface StructureAndBehaviourPackage extends EPackage {
 	int NOT_OPERATION = 15;
 
 	/**
-	 * The feature id for the '<em><b>Assign</b></em>' reference list.
+	 * The feature id for the '<em><b>Assign</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -994,7 +1012,7 @@ public interface StructureAndBehaviourPackage extends EPackage {
 	int LIST = 16;
 
 	/**
-	 * The feature id for the '<em><b>Assign</b></em>' reference list.
+	 * The feature id for the '<em><b>Assign</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1036,7 +1054,7 @@ public interface StructureAndBehaviourPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LIST__TYPE = VARIABLE_FEATURE_COUNT + 0;
+	int LIST__TYPE = VARIABLE__TYPE;
 
 	/**
 	 * The number of structural features of the '<em>List</em>' class.
@@ -1045,7 +1063,7 @@ public interface StructureAndBehaviourPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LIST_FEATURE_COUNT = VARIABLE_FEATURE_COUNT + 1;
+	int LIST_FEATURE_COUNT = VARIABLE_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>List</em>' class.
@@ -1067,7 +1085,7 @@ public interface StructureAndBehaviourPackage extends EPackage {
 	int LOGICAL = 17;
 
 	/**
-	 * The feature id for the '<em><b>Assign</b></em>' reference list.
+	 * The feature id for the '<em><b>Assign</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1076,7 +1094,7 @@ public interface StructureAndBehaviourPackage extends EPackage {
 	int LOGICAL__ASSIGN = OPERATION__ASSIGN;
 
 	/**
-	 * The feature id for the '<em><b>Right Input</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Right Input</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1085,7 +1103,7 @@ public interface StructureAndBehaviourPackage extends EPackage {
 	int LOGICAL__RIGHT_INPUT = OPERATION__RIGHT_INPUT;
 
 	/**
-	 * The feature id for the '<em><b>Left Input</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Left Input</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1131,7 +1149,7 @@ public interface StructureAndBehaviourPackage extends EPackage {
 	int COMPARATION = 18;
 
 	/**
-	 * The feature id for the '<em><b>Assign</b></em>' reference list.
+	 * The feature id for the '<em><b>Assign</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1140,7 +1158,7 @@ public interface StructureAndBehaviourPackage extends EPackage {
 	int COMPARATION__ASSIGN = OPERATION__ASSIGN;
 
 	/**
-	 * The feature id for the '<em><b>Right Input</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Right Input</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1149,7 +1167,7 @@ public interface StructureAndBehaviourPackage extends EPackage {
 	int COMPARATION__RIGHT_INPUT = OPERATION__RIGHT_INPUT;
 
 	/**
-	 * The feature id for the '<em><b>Left Input</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Left Input</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1195,7 +1213,7 @@ public interface StructureAndBehaviourPackage extends EPackage {
 	int MATH = 19;
 
 	/**
-	 * The feature id for the '<em><b>Assign</b></em>' reference list.
+	 * The feature id for the '<em><b>Assign</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1204,7 +1222,7 @@ public interface StructureAndBehaviourPackage extends EPackage {
 	int MATH__ASSIGN = OPERATION__ASSIGN;
 
 	/**
-	 * The feature id for the '<em><b>Right Input</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Right Input</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1213,7 +1231,7 @@ public interface StructureAndBehaviourPackage extends EPackage {
 	int MATH__RIGHT_INPUT = OPERATION__RIGHT_INPUT;
 
 	/**
-	 * The feature id for the '<em><b>Left Input</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Left Input</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1259,7 +1277,7 @@ public interface StructureAndBehaviourPackage extends EPackage {
 	int WHILE_ = 21;
 
 	/**
-	 * The feature id for the '<em><b>Body</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Body</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1268,7 +1286,7 @@ public interface StructureAndBehaviourPackage extends EPackage {
 	int WHILE___BODY = CONDITIONAL_STATEMENT__BODY;
 
 	/**
-	 * The feature id for the '<em><b>Condition</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Condition</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1305,7 +1323,7 @@ public interface StructureAndBehaviourPackage extends EPackage {
 	int USER_DEFINED_FUNCTION = 22;
 
 	/**
-	 * The feature id for the '<em><b>Assign</b></em>' reference list.
+	 * The feature id for the '<em><b>Assign</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1351,7 +1369,7 @@ public interface StructureAndBehaviourPackage extends EPackage {
 	int IF_ = 23;
 
 	/**
-	 * The feature id for the '<em><b>Body</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Body</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1360,7 +1378,7 @@ public interface StructureAndBehaviourPackage extends EPackage {
 	int IF___BODY = CONDITIONAL_STATEMENT__BODY;
 
 	/**
-	 * The feature id for the '<em><b>Condition</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Condition</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1369,7 +1387,7 @@ public interface StructureAndBehaviourPackage extends EPackage {
 	int IF___CONDITION = CONDITIONAL_STATEMENT__CONDITION;
 
 	/**
-	 * The feature id for the '<em><b>Else Body</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Else Body</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1406,7 +1424,7 @@ public interface StructureAndBehaviourPackage extends EPackage {
 	int SYSTEM_INPUT = 24;
 
 	/**
-	 * The feature id for the '<em><b>Assign</b></em>' reference list.
+	 * The feature id for the '<em><b>Assign</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1538,17 +1556,6 @@ public interface StructureAndBehaviourPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getPrimative();
-
-	/**
-	 * Returns the meta object for the attribute '{@link structureAndBehaviour.Primative#getType <em>Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Type</em>'.
-	 * @see structureAndBehaviour.Primative#getType()
-	 * @see #getPrimative()
-	 * @generated
-	 */
-	EAttribute getPrimative_Type();
 
 	/**
 	 * Returns the meta object for class '{@link structureAndBehaviour.Interface <em>Interface</em>}'.
@@ -1754,10 +1761,10 @@ public interface StructureAndBehaviourPackage extends EPackage {
 	EClass getConditionalStatement();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link structureAndBehaviour.ConditionalStatement#getCondition <em>Condition</em>}'.
+	 * Returns the meta object for the containment reference '{@link structureAndBehaviour.ConditionalStatement#getCondition <em>Condition</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Condition</em>'.
+	 * @return the meta object for the containment reference '<em>Condition</em>'.
 	 * @see structureAndBehaviour.ConditionalStatement#getCondition()
 	 * @see #getConditionalStatement()
 	 * @generated
@@ -1795,10 +1802,10 @@ public interface StructureAndBehaviourPackage extends EPackage {
 	EClass getfor_();
 
 	/**
-	 * Returns the meta object for the reference list '{@link structureAndBehaviour.for_#getVariable <em>Variable</em>}'.
+	 * Returns the meta object for the reference '{@link structureAndBehaviour.for_#getVariable <em>Variable</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Variable</em>'.
+	 * @return the meta object for the reference '<em>Variable</em>'.
 	 * @see structureAndBehaviour.for_#getVariable()
 	 * @see #getfor_()
 	 * @generated
@@ -1828,10 +1835,10 @@ public interface StructureAndBehaviourPackage extends EPackage {
 	EAttribute getfor__UpdateValue();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link structureAndBehaviour.for_#getComparation <em>Comparation</em>}'.
+	 * Returns the meta object for the containment reference '{@link structureAndBehaviour.for_#getComparation <em>Comparation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Comparation</em>'.
+	 * @return the meta object for the containment reference '<em>Comparation</em>'.
 	 * @see structureAndBehaviour.for_#getComparation()
 	 * @see #getfor_()
 	 * @generated
@@ -1914,10 +1921,10 @@ public interface StructureAndBehaviourPackage extends EPackage {
 	EClass getOperation();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link structureAndBehaviour.Operation#getRightInput <em>Right Input</em>}'.
+	 * Returns the meta object for the containment reference '{@link structureAndBehaviour.Operation#getRightInput <em>Right Input</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Right Input</em>'.
+	 * @return the meta object for the containment reference '<em>Right Input</em>'.
 	 * @see structureAndBehaviour.Operation#getRightInput()
 	 * @see #getOperation()
 	 * @generated
@@ -1925,10 +1932,10 @@ public interface StructureAndBehaviourPackage extends EPackage {
 	EReference getOperation_RightInput();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link structureAndBehaviour.Operation#getLeftInput <em>Left Input</em>}'.
+	 * Returns the meta object for the containment reference '{@link structureAndBehaviour.Operation#getLeftInput <em>Left Input</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Left Input</em>'.
+	 * @return the meta object for the containment reference '<em>Left Input</em>'.
 	 * @see structureAndBehaviour.Operation#getLeftInput()
 	 * @see #getOperation()
 	 * @generated
@@ -1946,10 +1953,10 @@ public interface StructureAndBehaviourPackage extends EPackage {
 	EClass getStatement();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link structureAndBehaviour.Statement#getBody <em>Body</em>}'.
+	 * Returns the meta object for the containment reference '{@link structureAndBehaviour.Statement#getBody <em>Body</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Body</em>'.
+	 * @return the meta object for the containment reference '<em>Body</em>'.
 	 * @see structureAndBehaviour.Statement#getBody()
 	 * @see #getStatement()
 	 * @generated
@@ -1998,6 +2005,17 @@ public interface StructureAndBehaviourPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getVariable_AccessType();
+
+	/**
+	 * Returns the meta object for the attribute '{@link structureAndBehaviour.Variable#getType <em>Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Type</em>'.
+	 * @see structureAndBehaviour.Variable#getType()
+	 * @see #getVariable()
+	 * @generated
+	 */
+	EAttribute getVariable_Type();
 
 	/**
 	 * Returns the meta object for class '{@link structureAndBehaviour.System_Output <em>System Output</em>}'.
@@ -2050,17 +2068,6 @@ public interface StructureAndBehaviourPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getList();
-
-	/**
-	 * Returns the meta object for the attribute '{@link structureAndBehaviour.List#getType <em>Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Type</em>'.
-	 * @see structureAndBehaviour.List#getType()
-	 * @see #getList()
-	 * @generated
-	 */
-	EAttribute getList_Type();
 
 	/**
 	 * Returns the meta object for class '{@link structureAndBehaviour.Logical <em>Logical</em>}'.
@@ -2136,10 +2143,10 @@ public interface StructureAndBehaviourPackage extends EPackage {
 	EClass getExpression();
 
 	/**
-	 * Returns the meta object for the reference list '{@link structureAndBehaviour.Expression#getAssign <em>Assign</em>}'.
+	 * Returns the meta object for the reference '{@link structureAndBehaviour.Expression#getAssign <em>Assign</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Assign</em>'.
+	 * @return the meta object for the reference '<em>Assign</em>'.
 	 * @see structureAndBehaviour.Expression#getAssign()
 	 * @see #getExpression()
 	 * @generated
@@ -2188,10 +2195,10 @@ public interface StructureAndBehaviourPackage extends EPackage {
 	EClass getif_();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link structureAndBehaviour.if_#getElseBody <em>Else Body</em>}'.
+	 * Returns the meta object for the containment reference '{@link structureAndBehaviour.if_#getElseBody <em>Else Body</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Else Body</em>'.
+	 * @return the meta object for the containment reference '<em>Else Body</em>'.
 	 * @see structureAndBehaviour.if_#getElseBody()
 	 * @see #getif_()
 	 * @generated
@@ -2321,14 +2328,6 @@ public interface StructureAndBehaviourPackage extends EPackage {
 		 * @generated
 		 */
 		EClass PRIMATIVE = eINSTANCE.getPrimative();
-
-		/**
-		 * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute PRIMATIVE__TYPE = eINSTANCE.getPrimative_Type();
 
 		/**
 		 * The meta object literal for the '{@link structureAndBehaviour.impl.InterfaceImpl <em>Interface</em>}' class.
@@ -2495,7 +2494,7 @@ public interface StructureAndBehaviourPackage extends EPackage {
 		EClass CONDITIONAL_STATEMENT = eINSTANCE.getConditionalStatement();
 
 		/**
-		 * The meta object literal for the '<em><b>Condition</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Condition</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -2533,7 +2532,7 @@ public interface StructureAndBehaviourPackage extends EPackage {
 		EClass FOR_ = eINSTANCE.getfor_();
 
 		/**
-		 * The meta object literal for the '<em><b>Variable</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Variable</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -2557,7 +2556,7 @@ public interface StructureAndBehaviourPackage extends EPackage {
 		EAttribute FOR___UPDATE_VALUE = eINSTANCE.getfor__UpdateValue();
 
 		/**
-		 * The meta object literal for the '<em><b>Comparation</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Comparation</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -2625,7 +2624,7 @@ public interface StructureAndBehaviourPackage extends EPackage {
 		EClass OPERATION = eINSTANCE.getOperation();
 
 		/**
-		 * The meta object literal for the '<em><b>Right Input</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Right Input</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -2633,7 +2632,7 @@ public interface StructureAndBehaviourPackage extends EPackage {
 		EReference OPERATION__RIGHT_INPUT = eINSTANCE.getOperation_RightInput();
 
 		/**
-		 * The meta object literal for the '<em><b>Left Input</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Left Input</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -2651,7 +2650,7 @@ public interface StructureAndBehaviourPackage extends EPackage {
 		EClass STATEMENT = eINSTANCE.getStatement();
 
 		/**
-		 * The meta object literal for the '<em><b>Body</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Body</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -2691,6 +2690,14 @@ public interface StructureAndBehaviourPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute VARIABLE__ACCESS_TYPE = eINSTANCE.getVariable_AccessType();
+
+		/**
+		 * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute VARIABLE__TYPE = eINSTANCE.getVariable_Type();
 
 		/**
 		 * The meta object literal for the '{@link structureAndBehaviour.impl.System_OutputImpl <em>System Output</em>}' class.
@@ -2737,14 +2744,6 @@ public interface StructureAndBehaviourPackage extends EPackage {
 		 * @generated
 		 */
 		EClass LIST = eINSTANCE.getList();
-
-		/**
-		 * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute LIST__TYPE = eINSTANCE.getList_Type();
 
 		/**
 		 * The meta object literal for the '{@link structureAndBehaviour.impl.LogicalImpl <em>Logical</em>}' class.
@@ -2811,7 +2810,7 @@ public interface StructureAndBehaviourPackage extends EPackage {
 		EClass EXPRESSION = eINSTANCE.getExpression();
 
 		/**
-		 * The meta object literal for the '<em><b>Assign</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Assign</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -2857,7 +2856,7 @@ public interface StructureAndBehaviourPackage extends EPackage {
 		EClass IF_ = eINSTANCE.getif_();
 
 		/**
-		 * The meta object literal for the '<em><b>Else Body</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Else Body</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

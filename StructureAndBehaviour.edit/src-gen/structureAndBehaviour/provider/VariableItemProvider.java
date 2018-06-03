@@ -47,6 +47,7 @@ public class VariableItemProvider extends ExpressionItemProvider {
 			addNamePropertyDescriptor(object);
 			addInitializationPropertyDescriptor(object);
 			addAccessTypePropertyDescriptor(object);
+			addTypePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -100,6 +101,22 @@ public class VariableItemProvider extends ExpressionItemProvider {
 	}
 
 	/**
+	 * This adds a property descriptor for the Type feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addTypePropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Variable_type_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Variable_type_feature",
+								"_UI_Variable_type"),
+						StructureAndBehaviourPackage.Literals.VARIABLE__TYPE, true, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	}
+
+	/**
 	 * This returns Variable.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -148,6 +165,7 @@ public class VariableItemProvider extends ExpressionItemProvider {
 		case StructureAndBehaviourPackage.VARIABLE__NAME:
 		case StructureAndBehaviourPackage.VARIABLE__INITIALIZATION:
 		case StructureAndBehaviourPackage.VARIABLE__ACCESS_TYPE:
+		case StructureAndBehaviourPackage.VARIABLE__TYPE:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		}

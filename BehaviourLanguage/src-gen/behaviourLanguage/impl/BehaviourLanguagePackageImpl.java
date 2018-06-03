@@ -949,10 +949,10 @@ public class BehaviourLanguagePackageImpl extends EPackageImpl implements Behavi
 
 		initEClass(operationEClass, Operation.class, "Operation", IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getOperation_RightInput(), this.getExpression(), null, "rightInput", null, 0, -1,
-				Operation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getOperation_LeftInput(), this.getExpression(), null, "leftInput", null, 0, -1, Operation.class,
+		initEReference(getOperation_RightInput(), this.getExpression(), null, "rightInput", null, 0, 1, Operation.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getOperation_LeftInput(), this.getExpression(), null, "leftInput", null, 0, 1, Operation.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 

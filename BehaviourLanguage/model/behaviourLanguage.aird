@@ -1901,7 +1901,7 @@
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_fJ-c8GZCEeivWfrf1QIyIg" name="[0..*] rightInput" sourceNode="_KQYBYFnMEei718j1O5uMTA" targetNode="_Iya1oFnMEei718j1O5uMTA">
+    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_fJ-c8GZCEeivWfrf1QIyIg" name="[0..1] rightInput" sourceNode="_KQYBYFnMEei718j1O5uMTA" targetNode="_Iya1oFnMEei718j1O5uMTA">
       <target xmi:type="ecore:EReference" href="behaviourLanguage.ecore#//Operation/rightInput"/>
       <semanticElements xmi:type="ecore:EReference" href="behaviourLanguage.ecore#//Operation/rightInput"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_fJ_EAGZCEeivWfrf1QIyIg" description="_dFuWwVnMEei718j1O5uMTA" sourceArrow="FillDiamond" routingStyle="manhattan" strokeColor="0,0,0">
@@ -1914,7 +1914,7 @@
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_f2eWkGZCEeivWfrf1QIyIg" name="[0..*] leftInput" sourceNode="_KQYBYFnMEei718j1O5uMTA" targetNode="_Iya1oFnMEei718j1O5uMTA">
+    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_f2eWkGZCEeivWfrf1QIyIg" name="[0..1] leftInput" sourceNode="_KQYBYFnMEei718j1O5uMTA" targetNode="_Iya1oFnMEei718j1O5uMTA">
       <target xmi:type="ecore:EReference" href="behaviourLanguage.ecore#//Operation/leftInput"/>
       <semanticElements xmi:type="ecore:EReference" href="behaviourLanguage.ecore#//Operation/leftInput"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_f2eWkWZCEeivWfrf1QIyIg" description="_dFuWwVnMEei718j1O5uMTA" sourceArrow="FillDiamond" routingStyle="manhattan" strokeColor="0,0,0">

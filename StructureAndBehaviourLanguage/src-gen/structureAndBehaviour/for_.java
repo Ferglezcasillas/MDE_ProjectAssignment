@@ -2,8 +2,6 @@
  */
 package structureAndBehaviour;
 
-import org.eclipse.emf.common.util.EList;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>for </b></em>'.
@@ -25,20 +23,30 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface for_ extends Statement {
 	/**
-	 * Returns the value of the '<em><b>Variable</b></em>' reference list.
-	 * The list contents are of type {@link structureAndBehaviour.Primative}.
+	 * Returns the value of the '<em><b>Variable</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Variable</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Variable</em>' reference list.
+	 * @return the value of the '<em>Variable</em>' reference.
+	 * @see #setVariable(Primative)
 	 * @see structureAndBehaviour.StructureAndBehaviourPackage#getfor__Variable()
 	 * @model
 	 * @generated
 	 */
-	EList<Primative> getVariable();
+	Primative getVariable();
+
+	/**
+	 * Sets the value of the '{@link structureAndBehaviour.for_#getVariable <em>Variable</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Variable</em>' reference.
+	 * @see #getVariable()
+	 * @generated
+	 */
+	void setVariable(Primative value);
 
 	/**
 	 * Returns the value of the '<em><b>Inc</b></em>' attribute.
@@ -93,19 +101,29 @@ public interface for_ extends Statement {
 	void setUpdateValue(int value);
 
 	/**
-	 * Returns the value of the '<em><b>Comparation</b></em>' containment reference list.
-	 * The list contents are of type {@link structureAndBehaviour.Comparation}.
+	 * Returns the value of the '<em><b>Comparation</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Comparation</em>' containment reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Comparation</em>' containment reference list.
+	 * @return the value of the '<em>Comparation</em>' containment reference.
+	 * @see #setComparation(Comparation)
 	 * @see structureAndBehaviour.StructureAndBehaviourPackage#getfor__Comparation()
 	 * @model containment="true" required="true"
 	 * @generated
 	 */
-	EList<Comparation> getComparation();
+	Comparation getComparation();
+
+	/**
+	 * Sets the value of the '{@link structureAndBehaviour.for_#getComparation <em>Comparation</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Comparation</em>' containment reference.
+	 * @see #getComparation()
+	 * @generated
+	 */
+	void setComparation(Comparation value);
 
 } // for_

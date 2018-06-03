@@ -8,7 +8,7 @@
  * Contributors:
  *     Obeo - initial API and implementation
  *******************************************************************************/
-package org.eclipse.acceleo.module.LanguageGenerator.main;
+package org.eclipse.acceleo.MDE.LangGenerator.main;
 
 import java.io.File;
 import java.io.IOException;
@@ -35,14 +35,14 @@ public class Generate extends AbstractAcceleoGenerator {
      *
      * @generated
      */
-    public static final String MODULE_FILE_NAME = "/org/eclipse/acceleo/module/LanguageGenerator/main/generate";
+    public static final String MODULE_FILE_NAME = "/org/eclipse/acceleo/MDE/LangGenerator/main/generate";
     
     /**
      * The name of the templates that are to be generated.
      *
      * @generated
      */
-    public static final String[] TEMPLATE_NAMES = { "GenerateLanguage" };
+    public static final String[] TEMPLATE_NAMES = { "generateLan" };
     
     /**
      * The list of properties files from the launch parameters (Launch configuration).
@@ -340,11 +340,8 @@ public class Generate extends AbstractAcceleoGenerator {
     @Override
     public void registerPackages(ResourceSet resourceSet) {
         super.registerPackages(resourceSet);
-        if (!isInWorkspace(behaviourLanguage.BehaviourLanguagePackage.class)) {
-            resourceSet.getPackageRegistry().put(behaviourLanguage.BehaviourLanguagePackage.eINSTANCE.getNsURI(), behaviourLanguage.BehaviourLanguagePackage.eINSTANCE);
-        }
-        if (!isInWorkspace(structureLanguage.StructureLanguagePackage.class)) {
-            resourceSet.getPackageRegistry().put(structureLanguage.StructureLanguagePackage.eINSTANCE.getNsURI(), structureLanguage.StructureLanguagePackage.eINSTANCE);
+        if (!isInWorkspace(structureAndBehaviour.StructureAndBehaviourPackage.class)) {
+            resourceSet.getPackageRegistry().put(structureAndBehaviour.StructureAndBehaviourPackage.eINSTANCE.getNsURI(), structureAndBehaviour.StructureAndBehaviourPackage.eINSTANCE);
         }
         
         /*

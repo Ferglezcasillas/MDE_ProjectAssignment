@@ -18,13 +18,13 @@
     <variable xsi:type="structureLanguage:Primative" name="name" type="String"/>
     <variable xsi:type="structureLanguage:Primative" name="surname" type="String"/>
   </class>
-  <class name="Worker" type="STANDARD" inherated="//@class.1">
-    <variable xsi:type="structureLanguage:Primative" name="position" type="String"/>
-    <variable xsi:type="structureLanguage:Primative" name="id"/>
-    <variable xsi:type="structureLanguage:Complex" name="machineAssigned" class="//@class.3"/>
-  </class>
   <class name="Machine" type="STANDARD">
     <variable xsi:type="structureLanguage:Primative" name="name" type="String"/>
     <variable xsi:type="structureLanguage:Primative" name="MinWorkersNeed" type="int"/>
+  </class>
+  <class name="Worker" type="STANDARD" inherated="//@class.1">
+    <variable xsi:type="structureLanguage:Primative" name="position" type="String"/>
+    <variable xsi:type="structureLanguage:Primative" name="id"/>
+    <variable xsi:type="structureLanguage:Complex" name="machineAssigned" class="//@class.2"/>
   </class>
 </structureLanguage:Program>

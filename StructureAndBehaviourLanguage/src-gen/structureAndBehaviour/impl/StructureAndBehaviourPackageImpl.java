@@ -357,15 +357,6 @@ public class StructureAndBehaviourPackageImpl extends EPackageImpl implements St
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getPrimative_Type() {
-		return (EAttribute) primativeEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getInterface() {
 		return interfaceEClass;
 	}
@@ -744,6 +735,15 @@ public class StructureAndBehaviourPackageImpl extends EPackageImpl implements St
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getVariable_Type() {
+		return (EAttribute) variableEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getSystem_Output() {
 		return system_OutputEClass;
 	}
@@ -782,15 +782,6 @@ public class StructureAndBehaviourPackageImpl extends EPackageImpl implements St
 	 */
 	public EClass getList() {
 		return listEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getList_Type() {
-		return (EAttribute) listEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1021,7 +1012,6 @@ public class StructureAndBehaviourPackageImpl extends EPackageImpl implements St
 
 		// Create classes and their features
 		primativeEClass = createEClass(PRIMATIVE);
-		createEAttribute(primativeEClass, PRIMATIVE__TYPE);
 
 		interfaceEClass = createEClass(INTERFACE);
 		createEAttribute(interfaceEClass, INTERFACE__NAME);
@@ -1077,6 +1067,7 @@ public class StructureAndBehaviourPackageImpl extends EPackageImpl implements St
 		createEAttribute(variableEClass, VARIABLE__NAME);
 		createEAttribute(variableEClass, VARIABLE__INITIALIZATION);
 		createEAttribute(variableEClass, VARIABLE__ACCESS_TYPE);
+		createEAttribute(variableEClass, VARIABLE__TYPE);
 
 		system_OutputEClass = createEClass(SYSTEM_OUTPUT);
 		createEReference(system_OutputEClass, SYSTEM_OUTPUT__PARAMETERS);
@@ -1085,7 +1076,6 @@ public class StructureAndBehaviourPackageImpl extends EPackageImpl implements St
 		createEReference(notOperationEClass, NOT_OPERATION__INPUT);
 
 		listEClass = createEClass(LIST);
-		createEAttribute(listEClass, LIST__TYPE);
 
 		logicalEClass = createEClass(LOGICAL);
 		createEAttribute(logicalEClass, LOGICAL__TYPE);
@@ -1178,8 +1168,6 @@ public class StructureAndBehaviourPackageImpl extends EPackageImpl implements St
 		// Initialize classes, features, and operations; add parameters
 		initEClass(primativeEClass, Primative.class, "Primative", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getPrimative_Type(), ecorePackage.getEString(), "type", null, 0, 1, Primative.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(interfaceEClass, Interface.class, "Interface", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
@@ -1233,7 +1221,7 @@ public class StructureAndBehaviourPackageImpl extends EPackageImpl implements St
 
 		initEClass(conditionalStatementEClass, ConditionalStatement.class, "ConditionalStatement", !IS_ABSTRACT,
 				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getConditionalStatement_Condition(), this.getLogical(), null, "condition", null, 1, -1,
+		initEReference(getConditionalStatement_Condition(), this.getLogical(), null, "condition", null, 1, 1,
 				ConditionalStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
 				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -1244,14 +1232,14 @@ public class StructureAndBehaviourPackageImpl extends EPackageImpl implements St
 				IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(for_EClass, for_.class, "for_", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getfor__Variable(), this.getPrimative(), null, "variable", null, 0, -1, for_.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
-				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getfor__Variable(), this.getPrimative(), null, "variable", null, 0, 1, for_.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
 		initEAttribute(getfor__Inc(), theXMLTypePackage.getBoolean(), "inc", null, 0, 1, for_.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getfor__UpdateValue(), ecorePackage.getEInt(), "updateValue", null, 0, 1, for_.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getfor__Comparation(), this.getComparation(), null, "comparation", null, 1, -1, for_.class,
+		initEReference(getfor__Comparation(), this.getComparation(), null, "comparation", null, 1, 1, for_.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -1273,16 +1261,16 @@ public class StructureAndBehaviourPackageImpl extends EPackageImpl implements St
 
 		initEClass(operationEClass, Operation.class, "Operation", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getOperation_RightInput(), this.getExpression(), null, "rightInput", null, 0, -1,
-				Operation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getOperation_LeftInput(), this.getExpression(), null, "leftInput", null, 0, -1, Operation.class,
+		initEReference(getOperation_RightInput(), this.getExpression(), null, "rightInput", null, 0, 1, Operation.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getOperation_LeftInput(), this.getExpression(), null, "leftInput", null, 0, 1, Operation.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(statementEClass, Statement.class, "Statement", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getStatement_Body(), this.getBlockOfCode(), null, "body", null, 1, -1, Statement.class,
+		initEReference(getStatement_Body(), this.getBlockOfCode(), null, "body", null, 1, 1, Statement.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -1295,6 +1283,8 @@ public class StructureAndBehaviourPackageImpl extends EPackageImpl implements St
 				!IS_DERIVED, IS_ORDERED);
 		initEAttribute(getVariable_AccessType(), ecorePackage.getEString(), "accessType", null, 0, 1, Variable.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getVariable_Type(), ecorePackage.getEString(), "type", null, 0, 1, Variable.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(system_OutputEClass, System_Output.class, "System_Output", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
@@ -1309,8 +1299,6 @@ public class StructureAndBehaviourPackageImpl extends EPackageImpl implements St
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(listEClass, List.class, "List", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getList_Type(), ecorePackage.getEString(), "type", null, 0, 1, List.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(logicalEClass, Logical.class, "Logical", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getLogical_Type(), ecorePackage.getEString(), "type", null, 0, 1, Logical.class, !IS_TRANSIENT,
@@ -1328,7 +1316,7 @@ public class StructureAndBehaviourPackageImpl extends EPackageImpl implements St
 
 		initEClass(expressionEClass, Expression.class, "Expression", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getExpression_Assign(), this.getVariable(), null, "assign", null, 0, -1, Expression.class,
+		initEReference(getExpression_Assign(), this.getVariable(), null, "assign", null, 0, 1, Expression.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -1341,9 +1329,9 @@ public class StructureAndBehaviourPackageImpl extends EPackageImpl implements St
 				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(if_EClass, if_.class, "if_", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getif__ElseBody(), this.getBlockOfCode(), null, "elseBody", null, 0, -1, if_.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
-				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getif__ElseBody(), this.getBlockOfCode(), null, "elseBody", null, 0, 1, if_.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
 
 		initEClass(system_InputEClass, System_Input.class, "System_Input", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);

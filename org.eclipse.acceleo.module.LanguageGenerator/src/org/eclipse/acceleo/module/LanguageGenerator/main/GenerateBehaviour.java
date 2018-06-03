@@ -15,7 +15,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.eclipse.acceleo.common.utils.ModelUtils;
 import org.eclipse.acceleo.engine.event.IAcceleoTextGenerationListener;
 import org.eclipse.acceleo.engine.generation.strategy.IAcceleoGenerationStrategy;
 import org.eclipse.acceleo.engine.service.AbstractAcceleoGenerator;
@@ -117,15 +116,15 @@ public class GenerateBehaviour extends AbstractAcceleoGenerator {
      * 
      * @param args
      *            Arguments of the generation.
-     * @generated NOT
+     * @generated
      */
     public static void main(String[] args) {
         try {
-            if (false) {
+            if (args.length < 2) {
                 System.out.println("Arguments not valid : {model, folder}.");
             } else {
-            	URI modelURI = URI.createFileURI(/*args[0]*/ "/home/morettini-simone/eclipse-workspace-modelling-tools/MDE_ProjectAssignment/Program/ProgramBehaviour.behaviourlanguage");
-                File folder = new File("/home/morettini-simone/eclipse-workspace-modelling-tools/MDE_ProjectAssignment/Program");
+                URI modelURI = URI.createFileURI(args[0]);
+                File folder = new File(args[1]);
                 
                 List<String> arguments = new ArrayList<String>();
                 
@@ -330,13 +329,13 @@ public class GenerateBehaviour extends AbstractAcceleoGenerator {
     public String[] getTemplateNames() {
         return TEMPLATE_NAMES;
     }
-    EObject obj;
+    
     /**
      * This can be used to update the resource set's package registry with all needed EPackages.
      * 
      * @param resourceSet
      *            The resource set which registry has to be updated.
-     * @generated NOT
+     * @generated
      */
     @Override
     public void registerPackages(ResourceSet resourceSet) {
@@ -347,16 +346,6 @@ public class GenerateBehaviour extends AbstractAcceleoGenerator {
         if (!isInWorkspace(structureLanguage.StructureLanguagePackage.class)) {
             resourceSet.getPackageRegistry().put(structureLanguage.StructureLanguagePackage.eINSTANCE.getNsURI(), structureLanguage.StructureLanguagePackage.eINSTANCE);
         }
-        File file = new File("/home/morettini-simone/eclipse-workspace-modelling-tools/MDE_ProjectAssignment/Program/ProgramElements.structurelanguage"); 
-        
-		try {
-			obj = ModelUtils.load(file, resourceSet);
-			
-	        resourceSet.getPackageRegistry().put("http://www.example.org/structureLanguage", obj);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} 
         
         /*
          * If you want to change the content of this method, do NOT forget to change the "@generated"

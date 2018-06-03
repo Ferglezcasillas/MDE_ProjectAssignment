@@ -2,14 +2,11 @@
  */
 package structureAndBehaviour.impl;
 
-import java.util.Collection;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import structureAndBehaviour.BlockOfCode;
 import structureAndBehaviour.Statement;
 import structureAndBehaviour.StructureAndBehaviourPackage;
@@ -29,14 +26,14 @@ import structureAndBehaviour.StructureAndBehaviourPackage;
  */
 public class StatementImpl extends generalItemImpl implements Statement {
 	/**
-	 * The cached value of the '{@link #getBody() <em>Body</em>}' containment reference list.
+	 * The cached value of the '{@link #getBody() <em>Body</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getBody()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<BlockOfCode> body;
+	protected BlockOfCode body;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -62,12 +59,49 @@ public class StatementImpl extends generalItemImpl implements Statement {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<BlockOfCode> getBody() {
-		if (body == null) {
-			body = new EObjectContainmentEList<BlockOfCode>(BlockOfCode.class, this,
-					StructureAndBehaviourPackage.STATEMENT__BODY);
-		}
+	public BlockOfCode getBody() {
 		return body;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetBody(BlockOfCode newBody, NotificationChain msgs) {
+		BlockOfCode oldBody = body;
+		body = newBody;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
+					StructureAndBehaviourPackage.STATEMENT__BODY, oldBody, newBody);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setBody(BlockOfCode newBody) {
+		if (newBody != body) {
+			NotificationChain msgs = null;
+			if (body != null)
+				msgs = ((InternalEObject) body).eInverseRemove(this,
+						EOPPOSITE_FEATURE_BASE - StructureAndBehaviourPackage.STATEMENT__BODY, null, msgs);
+			if (newBody != null)
+				msgs = ((InternalEObject) newBody).eInverseAdd(this,
+						EOPPOSITE_FEATURE_BASE - StructureAndBehaviourPackage.STATEMENT__BODY, null, msgs);
+			msgs = basicSetBody(newBody, msgs);
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, StructureAndBehaviourPackage.STATEMENT__BODY, newBody,
+					newBody));
 	}
 
 	/**
@@ -79,7 +113,7 @@ public class StatementImpl extends generalItemImpl implements Statement {
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case StructureAndBehaviourPackage.STATEMENT__BODY:
-			return ((InternalEList<?>) getBody()).basicRemove(otherEnd, msgs);
+			return basicSetBody(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -108,8 +142,7 @@ public class StatementImpl extends generalItemImpl implements Statement {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 		case StructureAndBehaviourPackage.STATEMENT__BODY:
-			getBody().clear();
-			getBody().addAll((Collection<? extends BlockOfCode>) newValue);
+			setBody((BlockOfCode) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -124,7 +157,7 @@ public class StatementImpl extends generalItemImpl implements Statement {
 	public void eUnset(int featureID) {
 		switch (featureID) {
 		case StructureAndBehaviourPackage.STATEMENT__BODY:
-			getBody().clear();
+			setBody((BlockOfCode) null);
 			return;
 		}
 		super.eUnset(featureID);
@@ -139,7 +172,7 @@ public class StatementImpl extends generalItemImpl implements Statement {
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 		case StructureAndBehaviourPackage.STATEMENT__BODY:
-			return body != null && !body.isEmpty();
+			return body != null;
 		}
 		return super.eIsSet(featureID);
 	}

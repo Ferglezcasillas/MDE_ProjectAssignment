@@ -2,14 +2,11 @@
  */
 package structureAndBehaviour.impl;
 
-import java.util.Collection;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import structureAndBehaviour.BlockOfCode;
 import structureAndBehaviour.StructureAndBehaviourPackage;
 import structureAndBehaviour.if_;
@@ -29,14 +26,14 @@ import structureAndBehaviour.if_;
  */
 public class if_Impl extends ConditionalStatementImpl implements if_ {
 	/**
-	 * The cached value of the '{@link #getElseBody() <em>Else Body</em>}' containment reference list.
+	 * The cached value of the '{@link #getElseBody() <em>Else Body</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getElseBody()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<BlockOfCode> elseBody;
+	protected BlockOfCode elseBody;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -62,12 +59,49 @@ public class if_Impl extends ConditionalStatementImpl implements if_ {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<BlockOfCode> getElseBody() {
-		if (elseBody == null) {
-			elseBody = new EObjectContainmentEList<BlockOfCode>(BlockOfCode.class, this,
-					StructureAndBehaviourPackage.IF___ELSE_BODY);
-		}
+	public BlockOfCode getElseBody() {
 		return elseBody;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetElseBody(BlockOfCode newElseBody, NotificationChain msgs) {
+		BlockOfCode oldElseBody = elseBody;
+		elseBody = newElseBody;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
+					StructureAndBehaviourPackage.IF___ELSE_BODY, oldElseBody, newElseBody);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setElseBody(BlockOfCode newElseBody) {
+		if (newElseBody != elseBody) {
+			NotificationChain msgs = null;
+			if (elseBody != null)
+				msgs = ((InternalEObject) elseBody).eInverseRemove(this,
+						EOPPOSITE_FEATURE_BASE - StructureAndBehaviourPackage.IF___ELSE_BODY, null, msgs);
+			if (newElseBody != null)
+				msgs = ((InternalEObject) newElseBody).eInverseAdd(this,
+						EOPPOSITE_FEATURE_BASE - StructureAndBehaviourPackage.IF___ELSE_BODY, null, msgs);
+			msgs = basicSetElseBody(newElseBody, msgs);
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, StructureAndBehaviourPackage.IF___ELSE_BODY,
+					newElseBody, newElseBody));
 	}
 
 	/**
@@ -79,7 +113,7 @@ public class if_Impl extends ConditionalStatementImpl implements if_ {
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case StructureAndBehaviourPackage.IF___ELSE_BODY:
-			return ((InternalEList<?>) getElseBody()).basicRemove(otherEnd, msgs);
+			return basicSetElseBody(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -108,8 +142,7 @@ public class if_Impl extends ConditionalStatementImpl implements if_ {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 		case StructureAndBehaviourPackage.IF___ELSE_BODY:
-			getElseBody().clear();
-			getElseBody().addAll((Collection<? extends BlockOfCode>) newValue);
+			setElseBody((BlockOfCode) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -124,7 +157,7 @@ public class if_Impl extends ConditionalStatementImpl implements if_ {
 	public void eUnset(int featureID) {
 		switch (featureID) {
 		case StructureAndBehaviourPackage.IF___ELSE_BODY:
-			getElseBody().clear();
+			setElseBody((BlockOfCode) null);
 			return;
 		}
 		super.eUnset(featureID);
@@ -139,7 +172,7 @@ public class if_Impl extends ConditionalStatementImpl implements if_ {
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 		case StructureAndBehaviourPackage.IF___ELSE_BODY:
-			return elseBody != null && !elseBody.isEmpty();
+			return elseBody != null;
 		}
 		return super.eIsSet(featureID);
 	}

@@ -5,8 +5,13 @@ public class Factory
 	public List<String> workers;
 	public List<char> machine;
 
-	public void  setNameFactory (String nameFactory)
+	public void  evaluate ()
 	{
+			while(b&a)
+			{
+					a=abc;
+			}
+			 
 	}
 
 }

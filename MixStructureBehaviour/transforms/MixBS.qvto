@@ -17,13 +17,14 @@ mapping structure::Program::mapStructure() : BandS::Program {
 }
 
 mapping structure::Class::mapInsideClass() : structureAndBehaviour::Class {
-	//log("mapClass");
+
 	name:=self.name;
 	type:=self.type.toString();
 	accessType:=self.accessType.toString();
-	//TODOOOOO inherated=self.inherated;
-	result.method+= self.method[Method]->mapMethods();
-	//log("mapClass_END");
+	inherated:=tgtBS.objects()[structureAndBehaviour::Class]->selectOne(cl | cl.name=self.inherated.name);
+	variable+=self.variable[VariableC]->mapVariable();
+	method+= self.method[Method]->mapMethods();
+
 }
 
 
@@ -31,11 +32,35 @@ mapping structure::Method::mapMethods() :  BandS::Function {
 	log("mapMethods");
 	name:=self.name;
 	accessType:=self.accessType.toString();
-	//TODOOOOO _return:=self._return;
+	 _return:=self._return->mapVariable()->selectOne(v |true);
 	blockofcode:= srcB.objects()[Function]->select(f | f.name=self.name).blockofcode->mapBlockOfCode();
-	//srcB.objects()[Function]->select(f | f.name=self.name)->forEach(f){result.blockofcode-> f.blockofcode->mapBlockOfCode()};
-	//TODOOOO parameters
+	parameters+=self.parameters->mapVariable();
 	log("mapMethods_END");
+}
+
+mapping structure::VariableC::mapVariable() : structureAndBehaviour::Variable {
+			init{
+			if (self.oclIsKindOf(Complex)) then {
+				//result:=object structureAndBehaviour::Complex{};
+				result:= self.oclAsType(structure::Complex)->mapComplex() ->selectOne(v | true);
+			}endif;
+			if (self.oclIsKindOf(Primative)) then {
+				result:=object structureAndBehaviour::Primative{};
+			}endif;
+			if (self.oclIsKindOf(_List)) then {
+				result:= object structureAndBehaviour::_List{};
+			}endif;
+			}
+
+			name:=self.name;
+			accessType:=srcS.objects()[VariableC]->selectOne(vr | vr.name=self.name).accessType.toString();
+			
+			if (self.oclIsKindOf(Primative)) then {
+				result.type:=self.oclAsType(structure::Primative).type.toString();
+			}endif;
+			if (self.oclIsKindOf(_List)) then {
+				result.type:=self.oclAsType(structure::_List).primative->selectOne(v | true).type.toString();
+			}endif;
 }
 
 mapping behaviour::BlockOfCode::mapBlockOfCode() : structureAndBehaviour::BlockOfCode {
@@ -44,58 +69,66 @@ mapping behaviour::BlockOfCode::mapBlockOfCode() : structureAndBehaviour::BlockO
 	self.things->forEach(t){
 		if (t.oclIsKindOf(while_)) then {
 		 	var w= object structureAndBehaviour::while_{};
-		 	w.body+=t.oclAsType(while_).body->mapBlockOfCode();
-		 	w.condition:=t.oclAsType(while_).condition->mapLogical();
+		 	w.body:=t.oclAsType(while_).body->mapBlockOfCode()->selectOne(v |true);
+		 	w.condition:=t.oclAsType(while_).condition->mapLogical()->selectOne(v |true);
 			things+=w;
 		} endif;
 		if (t.oclIsKindOf(dowhile_)) then {
 			var w= object structureAndBehaviour::dowhile_{};
-		 	w.body+=t.oclAsType(dowhile_).body->mapBlockOfCode();
-		 	w.condition:=t.oclAsType(dowhile_).condition->mapLogical();
+		 	w.body:=t.oclAsType(dowhile_).body->mapBlockOfCode()->selectOne(v |true);
+		 	w.condition:=t.oclAsType(dowhile_).condition->mapLogical()->selectOne(v |true);
 			things+=w;
 		} endif;
 		if (t.oclIsKindOf(if_)) then {
 			var w= object structureAndBehaviour::if_{};
-		 	w.body+=t.oclAsType(if_).body->mapBlockOfCode();
-		 	w.condition:=t.oclAsType(if_).condition->mapLogical();
+		 	w.body:=t.oclAsType(if_).body->mapBlockOfCode()->selectOne(v |true);
+		 	w.condition:=t.oclAsType(if_).condition->mapLogical()->selectOne(v |true);
 			if (not t.oclAsType(if_).elseBody.oclIsUndefined()) then {
-		 		w.elseBody+=t.oclAsType(if_).elseBody->mapBlockOfCode();
+		 		w.elseBody:=t.oclAsType(if_).elseBody->mapBlockOfCode()->selectOne(v |true);
 				
 			}  endif;
 			things+=w;
 		} endif;
 		if (t.oclIsKindOf(for_)) then {
 			var w= object structureAndBehaviour::for_{};
-		 	w.body+=t.oclAsType(for_).body->mapBlockOfCode();
-		 	w.comparation:=t.oclAsType(for_).comparation->mapComparation();
+		 	w.body:=t.oclAsType(for_).body->mapBlockOfCode()->selectOne(v |true);
+		 	w.comparation:=t.oclAsType(for_).comparation->mapComparation()->selectOne(v |true);
 		 	w.inc:=t.oclAsType(for_).inc;
 		 	w.updateValue:=t.oclAsType(for_).updateValue;
-		 //TODOOOO	w.variable:=t.oclAsType(for_).variable;
+		 	w.variable:=t.oclAsType(for_).variable->mapPrimative()->selectOne(v |true);
 			things+=w;
 		} endif;
 		
 		
 		if (t.oclIsKindOf(Operation)) then {
-			var o= object structureAndBehaviour::Operation{};
-			o.assign+=t.oclAsType(Operation).assign->mapVariable();
-			o.leftInput+=t.oclAsType(Operation).leftInput->mapExpression();
-			o.rightInput+=t.oclAsType(Operation).rightInput->mapExpression();
 			if (t.oclIsKindOf(Math)) then {
 				var m:= object structureAndBehaviour::Math{};
-				m:=o.oclAsType(structureAndBehaviour::Math);
+				if(not t.oclAsType(Operation).assign.oclIsUndefined()) then{
+				m.assign:=t.oclAsType(Operation).assign->mapVariable()->selectOne(v |true);
+				}endif;
+				m.leftInput:=t.oclAsType(Operation).leftInput->mapExpression()->selectOne(v |true);
+				m.rightInput:=t.oclAsType(Operation).rightInput->mapExpression()->selectOne(v |true);
 				m.type:=t.oclAsType(Math).type.toString();
 				things+=m;
 			}endif;
 			if (t.oclIsKindOf(Logical)) then {
 				var m:= object structureAndBehaviour::Logical{};
-				m:=o.oclAsType(structureAndBehaviour::Logical);
+				if(not t.oclAsType(Operation).assign.oclIsUndefined()) then{
+				m.assign:=t.oclAsType(Operation).assign->mapVariable()->selectOne(v |true);
+				}endif;
+				m.leftInput:=t.oclAsType(Operation).leftInput->mapExpression()->selectOne(v |true);
+				m.rightInput:=t.oclAsType(Operation).rightInput->mapExpression()->selectOne(v |true);
 				m.type:=t.oclAsType(Logical).type.toString();
 				things+=m;
 			}endif;
 			if (t.oclIsKindOf(Comparation)) then {
 				var m:= object structureAndBehaviour::Comparation{};
-				m:=o.oclAsType(structureAndBehaviour::Comparation);
-				m.type:=t.oclAsType(Comparation).type.toString();
+				if(not t.oclAsType(Operation).assign.oclIsUndefined()) then{
+				m.assign:=t.oclAsType(Operation).assign->mapVariable()->selectOne(v |true);
+				}endif;
+				m.leftInput:=t.oclAsType(Operation).leftInput->mapExpression()->selectOne(v |true);
+				m.rightInput:=t.oclAsType(Operation).rightInput->mapExpression()->selectOne(v |true);
+					m.type:=t.oclAsType(Comparation).type.toString();
 				things+=m;
 			}endif;
 
@@ -106,56 +139,190 @@ mapping behaviour::BlockOfCode::mapBlockOfCode() : structureAndBehaviour::BlockO
 				things+=m;
 			}endif;
 		if (t.oclIsKindOf(Variable)) then {
-			var v:= object structureAndBehaviour::Variable{};
-			v.name:=t.oclAsType(Variable).name;
-			v.initialization:=t.oclAsType(Variable).initialization;
-			v.accessType:=srcS.objects()[VariableC]->selectOne(vr | vr.name=t.oclAsType(Variable).name).accessType.toString();
-			
-			if (t.oclIsKindOf(Complex)) then {
-				var m:= object structureAndBehaviour::Complex{};
-				m:=v.oclAsType(structureAndBehaviour::Complex);
-				m._class:=tgtBS.objects()[structureAndBehaviour::Class]->selectOne(cl | cl.name=t.oclAsType(Complex)._class.name);
-				things+=m;
-			}endif;
-			if (t.oclIsKindOf(Primative)) then {
-				var m:= object structureAndBehaviour::Primative{};
-				m:=v.oclAsType(structureAndBehaviour::Primative);
-				m.type:=srcS.objects()[VariableC]->selectOne(vr | vr.name=t.oclAsType(Variable).name).oclAsType(Primative).type.toString();
-				things+=m;
-			}endif;
-			if (t.oclIsKindOf(_List)) then {
-				var m:= object structureAndBehaviour::_List{};
-				m:=v.oclAsType(structureAndBehaviour::_List);
-				m.type:=t.oclAsType(Variable).type.toString();
-				things+=m;
-			}endif;
+		log("vvvv");
+		things+=t.oclAsType(behaviour::Variable)->mapVariable()->selectOne(vr | true);
 
+		} endif;
+		
+		if (t.oclIsKindOf(System_Input)) then {
+			things+=t.oclAsType(behaviour::System_Input)->mapSysIn()->selectOne(vr | true);
+		} endif;
+		if (t.oclIsKindOf(System_Output)) then {
+			things+=t.oclAsType(behaviour::System_Output)->mapSysOu()->selectOne(vr | true);
+		} endif;
+		if (t.oclIsKindOf(userDefinedFunction)) then {
+			things+=t.oclAsType(behaviour::userDefinedFunction)->mapSysUF()->selectOne(vr | true);
 		} endif;
 		
 	};
 	log("mapBlockOfCode");
 }
 
+mapping behaviour::System_Input::mapSysIn() : structureAndBehaviour::System_Input {
+	assign:=self.assign->mapVariable()->selectOne(v | true);
+}
+
+mapping behaviour::System_Output::mapSysOu() : structureAndBehaviour::System_Output {
+	assign:=self.assign->mapVariable()->selectOne(v | true);
+	parameters+=self.parameters->mapVariable();
+}
+
+mapping behaviour::userDefinedFunction::mapSysUF() : structureAndBehaviour::userDefinedFunction {
+	assign:=self.assign->mapVariable()->selectOne(v | true);
+	function:=tgtBS.objects()[structureAndBehaviour::Function]->selectOne(fl | fl.name=self.function.name);
+}
+
 mapping behaviour::Logical::mapLogical() : structureAndBehaviour::Logical {
-	 
-	
+	type:=self.type.toString();
+	if(not self.assign.oclIsUndefined()) then{
+		assign:=self.assign->mapVariable()->selectOne(v |true);
+	}endif;
+	leftInput:=self.leftInput->mapExpression()->selectOne(v |true);
+	rightInput:=self.rightInput->mapExpression()->selectOne(v |true);
+			
 }
 
 mapping behaviour::Comparation::mapComparation() : structureAndBehaviour::Comparation {
-	 
+	 type:=self.type.toString();
+	if(not self.assign.oclIsUndefined()) then{
+		assign:=self.assign->mapVariable()->selectOne(v |true);
+	}endif;
+	leftInput:=self.leftInput->mapExpression()->selectOne(v |true);
+	rightInput:=self.rightInput->mapExpression()->selectOne(v |true);
 	
 }
 
-mapping behaviour::Logical::mapCondition() : structureAndBehaviour::Logical {
+mapping behaviour::Variable::mapComplex() : structureAndBehaviour::Complex {
+	 type:=self.type.toString();
+		if(not self.oclAsType(Variable).assign.oclIsUndefined()) then{
+				assign:=self.oclAsType(Variable).assign->mapVariable()->selectOne(v |true);
+			}endif;
+			name:=self.name;
+			initialization:=self.initialization;
+			type:=self.type.toString();
+			_class:=tgtBS.objects()[structureAndBehaviour::Class]->selectOne(cl | cl.name=self.oclAsType(Variable).typeNotPrimitive);
 
+	
 }
+
+mapping structure::Complex::mapComplex() : structureAndBehaviour::Complex {
+			if(not self.oclAsType(Variable).assign.oclIsUndefined()) then{
+				assign:=self.oclAsType(Variable).assign->mapVariable()->selectOne(v |true);
+			}endif;
+			name:=self.name;
+			_class:=tgtBS.objects()[structureAndBehaviour::Class]->selectOne(cl | cl.name=self._class.name);
+			log("comp");
+	
+}
+
 
 mapping behaviour::Variable::mapVariable() : structureAndBehaviour::Variable {
+			init{
 
+			if (self.oclAsType(Variable).type.toString() = 'NOTPRIMITIVE') then {
+				result:=object structureAndBehaviour::Complex{};
+			}endif;
+			if (self.oclAsType(Variable).type.toString() <> 'NOTPRIMITIVE') then {
+				result:=object structureAndBehaviour::Primative{};
+			}endif;
+			
+			if(not self.oclAsType(Variable).assign.oclIsUndefined()) then{
+				result.assign:=self.oclAsType(Variable).assign->mapVariable()->selectOne(v |true);
+			}endif;
+			result.name:=self.oclAsType(Variable).name;
+			result.initialization:=self.oclAsType(Variable).initialization;
+			result.type:=self.type.toString();
+			
+			if (self.oclAsType(Variable).type.toString() = 'NOTPRIMITIVE') then {
+				result:=self->mapComplex()->selectOne(z | true);
+			}endif;
+			
+			}
+			result;
 }
 mapping behaviour::Variable::mapPrimative() : structureAndBehaviour::Primative {
-
+			if(not self.assign.oclIsUndefined()) then{
+				assign:=self.assign->mapVariable()->selectOne(v |true);
+			}endif;
+			name:=self.name;
+			initialization:=self.initialization;
+			accessType:=srcS.objects()[VariableC]->selectOne(vr | vr.name=self.name).accessType.toString();
+			type:=srcS.objects()[VariableC]->selectOne(vr | vr.name=self.oclAsType(Variable).name).oclAsType(Primative).type.toString();
 }
 mapping behaviour::Expression::mapExpression() : structureAndBehaviour::Expression {
+	init{
+	if (self.oclIsKindOf(Operation)) then {			
+			if (self.oclIsKindOf(Math)) then {
+				var m:= object structureAndBehaviour::Math{};
+				if(not self.oclAsType(Operation).assign.oclIsUndefined()) then{
+				m.assign:=self.oclAsType(Operation).assign->mapVariable()->selectOne(v |true);
+				}endif;
+				m.leftInput:=self.oclAsType(Operation).leftInput->mapExpression()->selectOne(v |true);
+				m.rightInput:=self.oclAsType(Operation).rightInput->mapExpression()->selectOne(v |true);
+				m.type:=self.oclAsType(Math).type.toString();
+				result:=m;
+			}endif;
+			if (self.oclIsKindOf(Logical)) then {
+				var m:= object structureAndBehaviour::Logical{};
+				if(not self.oclAsType(Operation).assign.oclIsUndefined()) then{
+				m.assign:=self.oclAsType(Operation).assign->mapVariable()->selectOne(v |true);
+				}endif;
+				m.leftInput:=self.oclAsType(Operation).leftInput->mapExpression()->selectOne(v |true);
+				m.rightInput:=self.oclAsType(Operation).rightInput->mapExpression()->selectOne(v |true);
+				m.type:=self.oclAsType(Logical).type.toString();
+				result:=m;
+			}endif;
+			if (self.oclIsKindOf(Comparation)) then {
+				var m:= object structureAndBehaviour::Comparation{};
+				if(not self.oclAsType(Operation).assign.oclIsUndefined()) then{
+				m.assign:=self.oclAsType(Operation).assign->mapVariable()->selectOne(v |true);
+				}endif;
+				m.leftInput:=self.oclAsType(Operation).leftInput->mapExpression()->selectOne(v |true);
+				m.rightInput:=self.oclAsType(Operation).rightInput->mapExpression()->selectOne(v |true);
+				m.type:=self.oclAsType(Comparation).type.toString();
+				result:=m;
+			}endif;
+
+		} endif;
+		if (self.oclIsKindOf(NotOperation)) then {
+				var m:= object structureAndBehaviour::NotOperation{};
+				m.input:=self.oclAsType(NotOperation).input->mapPrimative()->selectOne(v | true);
+				result:=m;
+			}endif;
+	//	if (self.oclIsKindOf(Variable)) then {
+			//var v:= object structureAndBehaviour::Variable{};
+			//if(not self.oclAsType(Variable).assign.oclIsUndefined()) then{
+		//		v.assign+=self.oclAsType(Variable).assign->mapVariable();
+		//	}endif;
+			//v.name:=self.oclAsType(Variable).name;
+		//	v.initialization:=self.oclAsType(Variable).initialization;
+		//	v.accessType:=srcS.objects()[VariableC]->selectOne(vr | vr.name=self.oclAsType(Variable).name).accessType.toString();
+			
+		//	if (self.oclIsKindOf(Complex)) then {
+		//		var m:= object structureAndBehaviour::Complex{};
+		//		m:=v.oclAsType(structureAndBehaviour::Complex);
+		//		m._class:=tgtBS.objects()[structureAndBehaviour::Class]->selectOne(cl | cl.name=self.oclAsType(Complex)._class.name);
+		//		result:=m;
+		//result:=object structureAndBehaviour::Primative{};
+		////	}endif;
+		//	if (self.oclIsKindOf(Primative)) then {
+		//		var m:= object structureAndBehaviour::Primative{};
+		//		m:=v.oclAsType(structureAndBehaviour::Primative);
+		//		m.type:=srcS.objects()[VariableC]->selectOne(vr | vr.name=self.oclAsType(Variable).name).oclAsType(Primative).type.toString();
+		//		result:=m;
+	//		}endif;
+	//		if (self.oclIsKindOf(_List)) then {
+		//		var m:= object structureAndBehaviour::_List{};
+		//		m:=v.oclAsType(structureAndBehaviour::_List);
+		//		m.type:=self.oclAsType(Variable).type.toString();
+		//		result:=m;
+		//	}endif;
+		//	self.oclAsType(Variable)->mapVariable();
+		//} endif;
+		if (self.oclIsKindOf(Variable)) then {
+		result:=self.oclAsType(Variable)->mapVariable()->selectOne(v | true);
+			}endif;
+		}
+		
 
 }

@@ -2,19 +2,12 @@
  */
 package structureAndBehaviour.impl;
 
-import java.util.Collection;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
-import org.eclipse.emf.ecore.util.InternalEList;
 import structureAndBehaviour.Comparation;
 import structureAndBehaviour.Primative;
 import structureAndBehaviour.StructureAndBehaviourPackage;
@@ -38,14 +31,14 @@ import structureAndBehaviour.for_;
  */
 public class for_Impl extends StatementImpl implements for_ {
 	/**
-	 * The cached value of the '{@link #getVariable() <em>Variable</em>}' reference list.
+	 * The cached value of the '{@link #getVariable() <em>Variable</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getVariable()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Primative> variable;
+	protected Primative variable;
 
 	/**
 	 * The default value of the '{@link #isInc() <em>Inc</em>}' attribute.
@@ -88,14 +81,14 @@ public class for_Impl extends StatementImpl implements for_ {
 	protected int updateValue = UPDATE_VALUE_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getComparation() <em>Comparation</em>}' containment reference list.
+	 * The cached value of the '{@link #getComparation() <em>Comparation</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getComparation()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Comparation> comparation;
+	protected Comparation comparation;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -121,12 +114,39 @@ public class for_Impl extends StatementImpl implements for_ {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Primative> getVariable() {
-		if (variable == null) {
-			variable = new EObjectResolvingEList<Primative>(Primative.class, this,
-					StructureAndBehaviourPackage.FOR___VARIABLE);
+	public Primative getVariable() {
+		if (variable != null && variable.eIsProxy()) {
+			InternalEObject oldVariable = (InternalEObject) variable;
+			variable = (Primative) eResolveProxy(oldVariable);
+			if (variable != oldVariable) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
+							StructureAndBehaviourPackage.FOR___VARIABLE, oldVariable, variable));
+			}
 		}
 		return variable;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Primative basicGetVariable() {
+		return variable;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setVariable(Primative newVariable) {
+		Primative oldVariable = variable;
+		variable = newVariable;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, StructureAndBehaviourPackage.FOR___VARIABLE,
+					oldVariable, variable));
 	}
 
 	/**
@@ -177,12 +197,49 @@ public class for_Impl extends StatementImpl implements for_ {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Comparation> getComparation() {
-		if (comparation == null) {
-			comparation = new EObjectContainmentEList<Comparation>(Comparation.class, this,
-					StructureAndBehaviourPackage.FOR___COMPARATION);
-		}
+	public Comparation getComparation() {
 		return comparation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetComparation(Comparation newComparation, NotificationChain msgs) {
+		Comparation oldComparation = comparation;
+		comparation = newComparation;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
+					StructureAndBehaviourPackage.FOR___COMPARATION, oldComparation, newComparation);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setComparation(Comparation newComparation) {
+		if (newComparation != comparation) {
+			NotificationChain msgs = null;
+			if (comparation != null)
+				msgs = ((InternalEObject) comparation).eInverseRemove(this,
+						EOPPOSITE_FEATURE_BASE - StructureAndBehaviourPackage.FOR___COMPARATION, null, msgs);
+			if (newComparation != null)
+				msgs = ((InternalEObject) newComparation).eInverseAdd(this,
+						EOPPOSITE_FEATURE_BASE - StructureAndBehaviourPackage.FOR___COMPARATION, null, msgs);
+			msgs = basicSetComparation(newComparation, msgs);
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, StructureAndBehaviourPackage.FOR___COMPARATION,
+					newComparation, newComparation));
 	}
 
 	/**
@@ -194,7 +251,7 @@ public class for_Impl extends StatementImpl implements for_ {
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case StructureAndBehaviourPackage.FOR___COMPARATION:
-			return ((InternalEList<?>) getComparation()).basicRemove(otherEnd, msgs);
+			return basicSetComparation(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -208,7 +265,9 @@ public class for_Impl extends StatementImpl implements for_ {
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case StructureAndBehaviourPackage.FOR___VARIABLE:
-			return getVariable();
+			if (resolve)
+				return getVariable();
+			return basicGetVariable();
 		case StructureAndBehaviourPackage.FOR___INC:
 			return isInc();
 		case StructureAndBehaviourPackage.FOR___UPDATE_VALUE:
@@ -229,8 +288,7 @@ public class for_Impl extends StatementImpl implements for_ {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 		case StructureAndBehaviourPackage.FOR___VARIABLE:
-			getVariable().clear();
-			getVariable().addAll((Collection<? extends Primative>) newValue);
+			setVariable((Primative) newValue);
 			return;
 		case StructureAndBehaviourPackage.FOR___INC:
 			setInc((Boolean) newValue);
@@ -239,8 +297,7 @@ public class for_Impl extends StatementImpl implements for_ {
 			setUpdateValue((Integer) newValue);
 			return;
 		case StructureAndBehaviourPackage.FOR___COMPARATION:
-			getComparation().clear();
-			getComparation().addAll((Collection<? extends Comparation>) newValue);
+			setComparation((Comparation) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -255,7 +312,7 @@ public class for_Impl extends StatementImpl implements for_ {
 	public void eUnset(int featureID) {
 		switch (featureID) {
 		case StructureAndBehaviourPackage.FOR___VARIABLE:
-			getVariable().clear();
+			setVariable((Primative) null);
 			return;
 		case StructureAndBehaviourPackage.FOR___INC:
 			setInc(INC_EDEFAULT);
@@ -264,7 +321,7 @@ public class for_Impl extends StatementImpl implements for_ {
 			setUpdateValue(UPDATE_VALUE_EDEFAULT);
 			return;
 		case StructureAndBehaviourPackage.FOR___COMPARATION:
-			getComparation().clear();
+			setComparation((Comparation) null);
 			return;
 		}
 		super.eUnset(featureID);
@@ -279,13 +336,13 @@ public class for_Impl extends StatementImpl implements for_ {
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 		case StructureAndBehaviourPackage.FOR___VARIABLE:
-			return variable != null && !variable.isEmpty();
+			return variable != null;
 		case StructureAndBehaviourPackage.FOR___INC:
 			return inc != INC_EDEFAULT;
 		case StructureAndBehaviourPackage.FOR___UPDATE_VALUE:
 			return updateValue != UPDATE_VALUE_EDEFAULT;
 		case StructureAndBehaviourPackage.FOR___COMPARATION:
-			return comparation != null && !comparation.isEmpty();
+			return comparation != null;
 		}
 		return super.eIsSet(featureID);
 	}

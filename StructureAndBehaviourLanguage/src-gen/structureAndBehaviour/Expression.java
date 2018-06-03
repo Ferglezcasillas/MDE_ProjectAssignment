@@ -2,8 +2,6 @@
  */
 package structureAndBehaviour;
 
-import org.eclipse.emf.common.util.EList;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Expression</b></em>'.
@@ -22,19 +20,29 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface Expression extends generalItem {
 	/**
-	 * Returns the value of the '<em><b>Assign</b></em>' reference list.
-	 * The list contents are of type {@link structureAndBehaviour.Variable}.
+	 * Returns the value of the '<em><b>Assign</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Assign</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Assign</em>' reference list.
+	 * @return the value of the '<em>Assign</em>' reference.
+	 * @see #setAssign(Variable)
 	 * @see structureAndBehaviour.StructureAndBehaviourPackage#getExpression_Assign()
 	 * @model
 	 * @generated
 	 */
-	EList<Variable> getAssign();
+	Variable getAssign();
+
+	/**
+	 * Sets the value of the '{@link structureAndBehaviour.Expression#getAssign <em>Assign</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Assign</em>' reference.
+	 * @see #getAssign()
+	 * @generated
+	 */
+	void setAssign(Variable value);
 
 } // Expression

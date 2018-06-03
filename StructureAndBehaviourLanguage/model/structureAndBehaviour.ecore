@@ -2,9 +2,7 @@
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="structureAndBehaviour" nsURI="http://www.example.org/structureAndBehaviour"
     nsPrefix="structureAndBehaviour">
-  <eClassifiers xsi:type="ecore:EClass" name="Primative" eSuperTypes="#//Variable">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Primative" eSuperTypes="#//Variable"/>
   <eClassifiers xsi:type="ecore:EClass" name="Interface">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="method" upperBound="-1"
@@ -28,45 +26,22 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="inherated" eType="#//Class"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="implements" eType="#//Interface"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="AccessType">
-    <eLiterals name="PUBLIC" literal="public"/>
-    <eLiterals name="PROTECTED" value="1" literal="protected"/>
-    <eLiterals name="PRIVATE" value="2" literal="private"/>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Complex" eSuperTypes="#//Variable">
     <eStructuralFeatures xsi:type="ecore:EReference" name="class" lowerBound="1" eType="#//Class"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="ClassType">
-    <eLiterals name="ABSTRACT"/>
-    <eLiterals name="ENUMERATE" value="1"/>
-    <eLiterals name="STANDARD" value="2"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CallFunction" eSuperTypes="#//Expression"/>
   <eClassifiers xsi:type="ecore:EClass" name="ConditionalStatement" eSuperTypes="#//Statement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="condition" lowerBound="1"
-        upperBound="-1" eType="#//Logical" containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="PrimitiveType">
-    <eLiterals name="BYTE" literal="byte"/>
-    <eLiterals name="SHORT" value="1" literal="short"/>
-    <eLiterals name="INT" value="2" literal="int"/>
-    <eLiterals name="LONG" value="3" literal="long"/>
-    <eLiterals name="FLOAT" value="4" literal="float"/>
-    <eLiterals name="DOUBLE" value="5" literal="double"/>
-    <eLiterals name="BOOLEAN" value="6" literal="boolean"/>
-    <eLiterals name="CHAR" value="7" literal="char"/>
-    <eLiterals name="STRING" value="8" literal="string"/>
-    <eLiterals name="NOTPRIMITIVE" value="9"/>
+        eType="#//Logical" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="dowhile_" eSuperTypes="#//ConditionalStatement"/>
   <eClassifiers xsi:type="ecore:EClass" name="generalItem"/>
   <eClassifiers xsi:type="ecore:EClass" name="for_" eSuperTypes="#//Statement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="variable" upperBound="-1"
-        eType="#//Primative"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="variable" eType="#//Primative"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="inc" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Boolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="updateValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="comparation" lowerBound="1"
-        upperBound="-1" eType="#//Comparation" containment="true"/>
+        eType="#//Comparation" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Function">
     <eStructuralFeatures xsi:type="ecore:EReference" name="blockofcode" upperBound="-1"
@@ -78,25 +53,20 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="return" eType="#//Variable"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Operation" eSuperTypes="#//Expression">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="rightInput" upperBound="-1"
-        eType="#//Expression" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="leftInput" upperBound="-1"
-        eType="#//Expression" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rightInput" eType="#//Expression"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="leftInput" eType="#//Expression"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Statement" eSuperTypes="#//generalItem">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="body" lowerBound="1" upperBound="-1"
-        eType="#//BlockOfCode" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="body" lowerBound="1" eType="#//BlockOfCode"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Variable" eSuperTypes="#//Expression">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="initialization" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="accessType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="MathOperator">
-    <eLiterals name="Addition" literal="+"/>
-    <eLiterals name="Moltiplication" value="1" literal="*"/>
-    <eLiterals name="Division" value="2" literal="/"/>
-    <eLiterals name="Substraction" value="3" literal="-"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="System_Output" eSuperTypes="#//CallFunction">
     <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"
@@ -105,20 +75,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="NotOperation" eSuperTypes="#//Expression">
     <eStructuralFeatures xsi:type="ecore:EReference" name="input" lowerBound="1" eType="#//Primative"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="ComparationOperator">
-    <eLiterals name="Minor" literal="&lt;"/>
-    <eLiterals name="Major" value="1" literal=">"/>
-    <eLiterals name="Equal" value="2" literal="=="/>
-    <eLiterals name="MajorEqual" value="3" literal=">="/>
-    <eLiterals name="MinorEqual" value="4" literal="&lt;="/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="LogicalOperator">
-    <eLiterals name="AND" value="5" literal="&amp;"/>
-    <eLiterals name="OR" value="6" literal="|"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="List" eSuperTypes="#//Variable">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="List" eSuperTypes="#//Variable"/>
   <eClassifiers xsi:type="ecore:EClass" name="Logical" eSuperTypes="#//Operation">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
@@ -129,8 +86,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Expression" eSuperTypes="#//generalItem">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="assign" upperBound="-1"
-        eType="#//Variable"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="assign" eType="#//Variable"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="while_" eSuperTypes="#//ConditionalStatement"/>
   <eClassifiers xsi:type="ecore:EClass" name="userDefinedFunction" eSuperTypes="#//CallFunction">
@@ -138,8 +94,8 @@
         eType="#//Function"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="if_" eSuperTypes="#//ConditionalStatement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="elseBody" upperBound="-1"
-        eType="#//BlockOfCode" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elseBody" eType="#//BlockOfCode"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="System_Input" eSuperTypes="#//CallFunction"/>
   <eClassifiers xsi:type="ecore:EClass" name="BlockOfCode">

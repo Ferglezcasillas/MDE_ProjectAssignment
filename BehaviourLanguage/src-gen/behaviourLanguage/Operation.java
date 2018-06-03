@@ -2,8 +2,6 @@
  */
 package behaviourLanguage;
 
-import org.eclipse.emf.common.util.EList;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Operation</b></em>'.
@@ -23,35 +21,55 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface Operation extends Expression {
 	/**
-	 * Returns the value of the '<em><b>Left Input</b></em>' containment reference list.
-	 * The list contents are of type {@link behaviourLanguage.Expression}.
+	 * Returns the value of the '<em><b>Left Input</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Left Input</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Left Input</em>' containment reference list.
+	 * @return the value of the '<em>Left Input</em>' containment reference.
+	 * @see #setLeftInput(Expression)
 	 * @see behaviourLanguage.BehaviourLanguagePackage#getOperation_LeftInput()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<Expression> getLeftInput();
+	Expression getLeftInput();
 
 	/**
-	 * Returns the value of the '<em><b>Right Input</b></em>' containment reference list.
-	 * The list contents are of type {@link behaviourLanguage.Expression}.
+	 * Sets the value of the '{@link behaviourLanguage.Operation#getLeftInput <em>Left Input</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Left Input</em>' containment reference.
+	 * @see #getLeftInput()
+	 * @generated
+	 */
+	void setLeftInput(Expression value);
+
+	/**
+	 * Returns the value of the '<em><b>Right Input</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Right Input</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Right Input</em>' containment reference list.
+	 * @return the value of the '<em>Right Input</em>' containment reference.
+	 * @see #setRightInput(Expression)
 	 * @see behaviourLanguage.BehaviourLanguagePackage#getOperation_RightInput()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<Expression> getRightInput();
+	Expression getRightInput();
+
+	/**
+	 * Sets the value of the '{@link behaviourLanguage.Operation#getRightInput <em>Right Input</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Right Input</em>' containment reference.
+	 * @see #getRightInput()
+	 * @generated
+	 */
+	void setRightInput(Expression value);
 
 } // Operation
