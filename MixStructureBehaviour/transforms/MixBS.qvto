@@ -10,10 +10,8 @@ main() {
 }
 
 mapping structure::Program::mapStructure() : BandS::Program {
-	//log("mapStructure");
 	name:=self.name;
 	result._class+= self._class[Class]->mapInsideClass();
-	//log("mapStructure_END");
 }
 
 mapping structure::Class::mapInsideClass() : structureAndBehaviour::Class {
@@ -135,6 +133,9 @@ mapping behaviour::BlockOfCode::mapBlockOfCode() : structureAndBehaviour::BlockO
 		} endif;
 		if (t.oclIsKindOf(NotOperation)) then {
 				var m:= object structureAndBehaviour::NotOperation{};
+				if(not t.oclAsType(NotOperation).assign.oclIsUndefined()) then{
+				m.assign:=t.oclAsType(NotOperation).assign->mapVariable()->selectOne(v |true);
+				}endif;
 				m.input:=t.oclAsType(NotOperation).input->mapPrimative()->selectOne(v | true);
 				things+=m;
 			}endif;
@@ -289,36 +290,6 @@ mapping behaviour::Expression::mapExpression() : structureAndBehaviour::Expressi
 				m.input:=self.oclAsType(NotOperation).input->mapPrimative()->selectOne(v | true);
 				result:=m;
 			}endif;
-	//	if (self.oclIsKindOf(Variable)) then {
-			//var v:= object structureAndBehaviour::Variable{};
-			//if(not self.oclAsType(Variable).assign.oclIsUndefined()) then{
-		//		v.assign+=self.oclAsType(Variable).assign->mapVariable();
-		//	}endif;
-			//v.name:=self.oclAsType(Variable).name;
-		//	v.initialization:=self.oclAsType(Variable).initialization;
-		//	v.accessType:=srcS.objects()[VariableC]->selectOne(vr | vr.name=self.oclAsType(Variable).name).accessType.toString();
-			
-		//	if (self.oclIsKindOf(Complex)) then {
-		//		var m:= object structureAndBehaviour::Complex{};
-		//		m:=v.oclAsType(structureAndBehaviour::Complex);
-		//		m._class:=tgtBS.objects()[structureAndBehaviour::Class]->selectOne(cl | cl.name=self.oclAsType(Complex)._class.name);
-		//		result:=m;
-		//result:=object structureAndBehaviour::Primative{};
-		////	}endif;
-		//	if (self.oclIsKindOf(Primative)) then {
-		//		var m:= object structureAndBehaviour::Primative{};
-		//		m:=v.oclAsType(structureAndBehaviour::Primative);
-		//		m.type:=srcS.objects()[VariableC]->selectOne(vr | vr.name=self.oclAsType(Variable).name).oclAsType(Primative).type.toString();
-		//		result:=m;
-	//		}endif;
-	//		if (self.oclIsKindOf(_List)) then {
-		//		var m:= object structureAndBehaviour::_List{};
-		//		m:=v.oclAsType(structureAndBehaviour::_List);
-		//		m.type:=self.oclAsType(Variable).type.toString();
-		//		result:=m;
-		//	}endif;
-		//	self.oclAsType(Variable)->mapVariable();
-		//} endif;
 		if (self.oclIsKindOf(Variable)) then {
 		result:=self.oclAsType(Variable)->mapVariable()->selectOne(v | true);
 			}endif;

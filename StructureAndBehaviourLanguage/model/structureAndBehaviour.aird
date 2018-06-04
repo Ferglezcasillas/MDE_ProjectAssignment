@@ -652,17 +652,17 @@
         </edges>
         <edges xmi:type="notation:Edge" xmi:id="_bJYDbGZEEeivWfrf1QIyIg" type="4001" element="_bJVAEGZEEeivWfrf1QIyIg" source="_bJW1QGZEEeivWfrf1QIyIg" target="_pWetPmZCEeivWfrf1QIyIg">
           <children xmi:type="notation:Node" xmi:id="_bJYDcGZEEeivWfrf1QIyIg" type="6001">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_bJYDcWZEEeivWfrf1QIyIg" x="-6" y="-10"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_bJYDcWZEEeivWfrf1QIyIg" x="10" y="-10"/>
           </children>
           <children xmi:type="notation:Node" xmi:id="_bJYDcmZEEeivWfrf1QIyIg" type="6002">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_bJYDc2ZEEeivWfrf1QIyIg" x="-25" y="10"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_bJYDc2ZEEeivWfrf1QIyIg" x="-18" y="10"/>
           </children>
           <children xmi:type="notation:Node" xmi:id="_bJYDdGZEEeivWfrf1QIyIg" type="6003">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_bJYDdWZEEeivWfrf1QIyIg" x="11" y="10"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_bJYDdWZEEeivWfrf1QIyIg" x="14" y="8"/>
           </children>
           <styles xmi:type="notation:ConnectorStyle" xmi:id="_bJYDbWZEEeivWfrf1QIyIg" routing="Tree"/>
           <styles xmi:type="notation:FontStyle" xmi:id="_bJYDbmZEEeivWfrf1QIyIg" fontName="Noto Sans" fontHeight="8"/>
-          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_bJYDb2ZEEeivWfrf1QIyIg" points="[0, -49, 456, 57]$[0, -50, 456, 56]$[-455, -50, 1, 56]$[-455, -106, 1, 0]"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_bJYDb2ZEEeivWfrf1QIyIg" points="[0, -49, 449, 70]$[0, -65, 449, 54]$[-448, -65, 1, 54]$[-448, -119, 1, 0]"/>
           <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_bJYqcGZEEeivWfrf1QIyIg" id="(0.5,0.5)"/>
           <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_bJYqcWZEEeivWfrf1QIyIg" id="(0.5,1.0)"/>
         </edges>

@@ -9,10 +9,11 @@
     <variable xsi:type="structureLanguage:List" name="machine">
       <primative type="char"/>
     </variable>
-    <method name="setNameFactory">
-      <parameters xsi:type="structureLanguage:Primative" name="nameFactory" type="String"/>
-    </method>
     <method name="evaluate"/>
+    <method name="setId" return="//@class.3/@variable.1">
+      <parameters xsi:type="structureLanguage:Primative" name="name" type="String"/>
+      <parameters xsi:type="structureLanguage:Primative" name="age" type="int"/>
+    </method>
   </class>
   <class name="Person">
     <variable xsi:type="structureLanguage:Primative" name="name" type="String"/>

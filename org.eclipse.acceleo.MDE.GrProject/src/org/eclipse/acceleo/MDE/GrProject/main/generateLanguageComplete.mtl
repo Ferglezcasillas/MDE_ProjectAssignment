@@ -1,15 +1,15 @@
 [comment encoding = UTF-8 /]
 [**
- * The documentation of the module generate.
+ * The documentation of the module generateLanguageComplete.
  */]
-[module generate('http://www.example.org/structureAndBehaviour')]
+[module generateLanguageComplete('http://www.example.org/structureAndBehaviour')]
 
 
 [**
- * The documentation of the template generateLan.
+ * The documentation of the template generateLanguageComplete.
  * @param aClass
  */]
-[template public generateLan(structure : structureAndBehaviour::Program)]
+[template public generateLanguageComplete(structure : structureAndBehaviour::Program)]
 [comment @main/]
 [for (c : Class | structure.class)][generateClass(c)/][/for]
 [/template]
@@ -59,7 +59,7 @@
 [/template]
 
 [template public getExternalExpression(e : Expression)]
-[if (e.oclIsTypeOf(Variable) and not e.oclAsType(Variable).initialization.oclIsUndefined())]
+[if (e.oclIsKindOf(Variable) and not e.oclAsType(Variable).initialization.oclIsUndefined())]
 [getVariableType(e.oclAsType(Variable))/] [e.oclAsType(Variable).name/]=[e.oclAsType(Variable).initialization/][else]
 [if (not e.assign.oclIsUndefined())]
 [e.assign.name/]=[/if]
@@ -70,7 +70,7 @@
 [if (not e.assign.oclIsUndefined())]
 [e.assign.name/]=
 [/if]
-[if (e.oclIsKindOf(Operation))][getOperation(e.oclAsType(Operation))/][/if][if (e.oclIsTypeOf(CallFunction))][getFunction(e.oclAsType(CallFunction))/][/if][if (e.oclIsTypeOf(Variable))][e.oclAsType(Variable).name/][/if][if (e.oclIsTypeOf(NotOperation))]![e.oclAsType(NotOperation).input.name/][/if]
+[if (e.oclIsKindOf(Operation))][getOperation(e.oclAsType(Operation))/][/if][if (e.oclIsKindOf(CallFunction))][getFunction(e.oclAsType(CallFunction))/][/if][if (e.oclIsKindOf(Variable))][e.oclAsType(Variable).name/][/if][if (e.oclIsTypeOf(NotOperation))]![e.oclAsType(NotOperation).input.name/][/if]
 [/template]
 
 
@@ -79,22 +79,22 @@
 for([s.oclAsType(for_).variable.name/]=[s.oclAsType(for_).variable.initialization/];[getOperation(s.oclAsType(for_).comparation)/];[s.oclAsType(for_).variable.name/][if (s.oclAsType(for_).inc)]++[else]--[/if])
 [getBlackOfCode(s._body)/]
 	[else]
-	[if (s.oclIsKindOf(while_))]
-while([s.oclAsType(ConditionalStatement).condition.leftInput.oclAsType(Variable).name/][s.oclAsType(ConditionalStatement).condition.type/][s.oclAsType(ConditionalStatement).condition.rightInput.oclAsType(Variable).name/]   [comment][getOperation(s.oclAsType(ConditionalStatement).condition)/][/comment])
+		[if (s.oclIsKindOf(while_))]
+while([getOperation(s.oclAsType(ConditionalStatement).condition)/])
 [getBlackOfCode(s._body)/]
-	[/if]
-	[if (s.oclIsKindOf(dowhile_))]
+		[/if]
+		[if (s.oclIsKindOf(dowhile_))]
 do
 [getBlackOfCode(s._body)/]
 while([getOperation(s.oclAsType(ConditionalStatement).condition)/])
-	[/if]
-	[if (s.oclIsKindOf(if_))]
+		[/if]
+		[if (s.oclIsKindOf(if_))]
 if([getOperation(s.oclAsType(ConditionalStatement).condition)/])
 [getBlackOfCode(s._body)/][if (not s.oclAsType(if_).elseBody.oclIsUndefined())]
 else
 [getBlackOfCode(s.oclAsType(if_).elseBody)/]
-	[/if]
-	[/if]
+							[/if]
+		[/if]
 	[/if]
 [/template]
 
@@ -106,15 +106,15 @@ else
 [/template]
 
 [template public getOperation(l : Logical)]
-([getExpression(l.leftInput)/][l.type/][getExpression(l.rightInput)/])
+([getExpression(l.leftInput)/] [l.type/] [getExpression(l.rightInput)/])
 [/template]
 
 [template public getOperation(c : Comparation)]
-([getExpression(c.leftInput)/][c.type/][getExpression(c.rightInput)/])
+([getExpression(c.leftInput)/] [c.type/] [getExpression(c.rightInput)/])
 [/template]
 
 [template public getOperation(m : Math)]
-([getExpression(m.leftInput)/][m.type/][getExpression(m.rightInput)/])
+([getExpression(m.leftInput)/] [m.type/] [getExpression(m.rightInput)/])
 [/template]
 
 [template public getFunction(f : CallFunction)]

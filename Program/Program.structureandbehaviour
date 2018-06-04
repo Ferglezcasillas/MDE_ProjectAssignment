@@ -1,35 +1,76 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<structureAndBehaviour:Program xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:structureAndBehaviour="http://www.example.org/structureAndBehaviour" name="FactoryManagement">
-  <class name="Factory" type="STANDARD" accessType="public">
-    <variable xsi:type="structureAndBehaviour:Primative" name="nameFactory" accessType="public" type="String"/>
-    <variable xsi:type="structureAndBehaviour:Primative" name="addressFactory" accessType="public" type="String"/>
-    <variable xsi:type="structureAndBehaviour:List" name="workers" accessType="public" type="String"/>
-    <variable xsi:type="structureAndBehaviour:List" name="machine" accessType="public" type="char"/>
-    <method name="evaluate" accessType="public">
-      <blockofcode>
-        <things xsi:type="structureAndBehaviour:while_">
-          <body>
-            <things xsi:type="structureAndBehaviour:Primative" assign="//@class.0/@method.0/@blockofcode.0/@things.0/@condition/@rightInput" name="abc" type="int"/>
-          </body>
-          <condition type="&amp;">
-            <rightInput xsi:type="structureAndBehaviour:Primative" name="a" initialization="3" type="byte"/>
-            <leftInput xsi:type="structureAndBehaviour:Primative" name="b" initialization="" type="byte"/>
-          </condition>
-        </things>
-      </blockofcode>
-    </method>
-  </class>
-  <class name="Person" type="ABSTRACT" accessType="public">
-    <variable xsi:type="structureAndBehaviour:Primative" name="name" accessType="public" type="String"/>
-    <variable xsi:type="structureAndBehaviour:Primative" name="surname" accessType="public" type="String"/>
-  </class>
-  <class name="Machine" type="STANDARD" accessType="public">
-    <variable xsi:type="structureAndBehaviour:Primative" name="name" accessType="public" type="String"/>
-    <variable xsi:type="structureAndBehaviour:Primative" name="MinWorkersNeed" accessType="public" type="int"/>
-  </class>
-  <class name="Worker" type="STANDARD" accessType="public" inherated="//@class.1">
-    <variable xsi:type="structureAndBehaviour:Primative" name="position" accessType="public" type="String"/>
-    <variable xsi:type="structureAndBehaviour:Primative" name="id" accessType="public" type="byte"/>
-    <variable xsi:type="structureAndBehaviour:Complex" name="machineAssigned" accessType="public" class="//@class.2"/>
-  </class>
-</structureAndBehaviour:Program>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:structureAndBehaviour="http://www.example.org/structureAndBehaviour">
+  <structureAndBehaviour:Program name="FactoryManagement">
+    <class name="Factory" type="STANDARD" accessType="public">
+      <variable xsi:type="structureAndBehaviour:Primative" name="nameFactory" accessType="public" type="String"/>
+      <variable xsi:type="structureAndBehaviour:Primative" name="addressFactory" accessType="public" type="String"/>
+      <variable xsi:type="structureAndBehaviour:List" name="workers" accessType="public" type="String"/>
+      <variable xsi:type="structureAndBehaviour:List" name="machine" accessType="public" type="char"/>
+      <method name="evaluate" accessType="public">
+        <blockofcode>
+          <things xsi:type="structureAndBehaviour:Primative" name="b" initialization="42" type="int"/>
+          <things xsi:type="structureAndBehaviour:while_">
+            <body>
+              <things xsi:type="structureAndBehaviour:Primative" name="ae" initialization="true" type="boolean"/>
+              <things xsi:type="structureAndBehaviour:Primative" name="erf" initialization="true" type="byte"/>
+              <things xsi:type="structureAndBehaviour:Primative" name="a" initialization="42" type="int"/>
+              <things xsi:type="structureAndBehaviour:if_">
+                <body>
+                  <things xsi:type="structureAndBehaviour:NotOperation" assign="/0/@class.0/@method.0/@blockofcode.0/@things.1/@body/@things.2" input="/1"/>
+                </body>
+                <condition type="&amp;">
+                  <rightInput xsi:type="structureAndBehaviour:Primative" name="ae" initialization="" type="boolean"/>
+                  <leftInput xsi:type="structureAndBehaviour:Primative" name="erf" type="byte"/>
+                </condition>
+                <elseBody>
+                  <things xsi:type="structureAndBehaviour:System_Input" assign="/0/@class.0/@method.0/@blockofcode.0/@things.1/@body/@things.3/@condition/@rightInput"/>
+                </elseBody>
+              </things>
+              <things xsi:type="structureAndBehaviour:System_Output" parameters="/0/@class.0/@method.0/@blockofcode.0/@things.1/@body/@things.2"/>
+            </body>
+            <condition type="&amp;">
+              <rightInput xsi:type="structureAndBehaviour:Primative" name="a" type="byte"/>
+              <leftInput xsi:type="structureAndBehaviour:Primative" name="b" type="byte"/>
+            </condition>
+          </things>
+        </blockofcode>
+      </method>
+      <method name="setId" accessType="public" parameters="/3 /4" return="/0/@class.3/@variable.1">
+        <blockofcode>
+          <things xsi:type="structureAndBehaviour:Primative" name="i" initialization="0" type="int"/>
+          <things xsi:type="structureAndBehaviour:Primative" name="id" initialization="0" type="byte"/>
+          <things xsi:type="structureAndBehaviour:for_" variable="/2" inc="true" updateValue="1">
+            <body>
+              <things xsi:type="structureAndBehaviour:Math" assign="/0/@class.0/@method.1/@blockofcode.0/@things.1" type="+">
+                <rightInput xsi:type="structureAndBehaviour:Primative" name="age" type="byte"/>
+                <leftInput xsi:type="structureAndBehaviour:Primative" name="id" initialization="" type="byte"/>
+              </things>
+            </body>
+            <comparation type="&lt;">
+              <rightInput xsi:type="structureAndBehaviour:Primative" name="age" type="byte"/>
+              <leftInput xsi:type="structureAndBehaviour:Primative" name="i" type="byte"/>
+            </comparation>
+          </things>
+          <things xsi:type="structureAndBehaviour:System_Output" parameters="/0/@class.0/@method.1/@blockofcode.0/@things.1"/>
+        </blockofcode>
+      </method>
+    </class>
+    <class name="Person" type="ABSTRACT" accessType="public">
+      <variable xsi:type="structureAndBehaviour:Primative" name="name" accessType="public" type="String"/>
+      <variable xsi:type="structureAndBehaviour:Primative" name="surname" accessType="public" type="String"/>
+    </class>
+    <class name="Machine" type="STANDARD" accessType="public">
+      <variable xsi:type="structureAndBehaviour:Primative" name="name" accessType="public" type="String"/>
+      <variable xsi:type="structureAndBehaviour:Primative" name="MinWorkersNeed" accessType="public" type="int"/>
+    </class>
+    <class name="Worker" type="STANDARD" accessType="public" inherated="/0/@class.1">
+      <variable xsi:type="structureAndBehaviour:Primative" name="position" accessType="public" type="String"/>
+      <variable xsi:type="structureAndBehaviour:Primative" name="id" accessType="public" type="byte"/>
+      <variable xsi:type="structureAndBehaviour:Complex" name="machineAssigned" accessType="public" class="/0/@class.2"/>
+    </class>
+  </structureAndBehaviour:Program>
+  <structureAndBehaviour:Primative name="a" initialization="42" accessType="invalid" type="invalid"/>
+  <structureAndBehaviour:Primative name="i" initialization="0" accessType="invalid" type="invalid"/>
+  <structureAndBehaviour:Primative name="name" accessType="public" type="String"/>
+  <structureAndBehaviour:Primative name="age" accessType="public" type="int"/>
+</xmi:XMI>

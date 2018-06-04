@@ -8,7 +8,7 @@
  * Contributors:
  *     Obeo - initial API and implementation
  *******************************************************************************/
-package org.eclipse.acceleo.MDE.LangGenerator;
+package org.eclipse.acceleo.MDE.GrProject;
 
 import org.eclipse.core.runtime.Plugin;
 import org.osgi.framework.BundleContext;
@@ -21,7 +21,7 @@ public class Activator extends Plugin {
     /**
      * The plug-in ID.
      */
-    public static final String PLUGIN_ID = "org.eclipse.acceleo.MDE.LangGenerator";
+    public static final String PLUGIN_ID = "org.eclipse.acceleo.MDE.GrProject";
 
     /**
      * The shared instance.

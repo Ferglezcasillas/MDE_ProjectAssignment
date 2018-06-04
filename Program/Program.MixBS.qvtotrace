@@ -127,11 +127,29 @@
     </result>
   </traceRecords>
   <traceRecords>
+    <mappingOperation name="mapBlockOfCode" package="MixBS" module="MixBS"/>
+    <context>
+      <context name="self" type="BlockOfCode">
+        <value>
+          <modelElement href="../MixStructureBehaviour/models/ProgramBehaviour.behaviourlanguage#//@function.0/@blockofcode"/>
+        </value>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="BlockOfCode">
+        <value>
+          <modelElement href="Program.structureandbehaviour#/0/@class.0/@method.0/@blockofcode.0"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
     <mappingOperation name="mapVariable" package="MixBS" module="MixBS"/>
     <context>
-      <context name="self" type="VariableC">
+      <context name="self" type="Variable">
         <value>
-          <modelElement href="../MixStructureBehaviour/models/ProgramElements.structurelanguage#//@class.0/@method.0/@parameters.0"/>
+          <modelElement href="../MixStructureBehaviour/models/ProgramBehaviour.behaviourlanguage#//@function.0/@blockofcode/@things.0"/>
         </value>
       </context>
     </context>
@@ -139,7 +157,349 @@
     <result>
       <result kind="OUT" name="result" type="Variable">
         <value>
+          <modelElement href="Program.structureandbehaviour#/0/@class.0/@method.0/@blockofcode.0/@things.0"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="mapBlockOfCode" package="MixBS" module="MixBS"/>
+    <context>
+      <context name="self" type="BlockOfCode">
+        <value>
+          <modelElement href="../MixStructureBehaviour/models/ProgramBehaviour.behaviourlanguage#//@function.0/@blockofcode/@things.1/@body"/>
+        </value>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="BlockOfCode">
+        <value>
+          <modelElement href="Program.structureandbehaviour#/0/@class.0/@method.0/@blockofcode.0/@things.1/@body"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="mapVariable" package="MixBS" module="MixBS"/>
+    <context>
+      <context name="self" type="Variable">
+        <value>
+          <modelElement href="../MixStructureBehaviour/models/ProgramBehaviour.behaviourlanguage#//@function.0/@blockofcode/@things.1/@body/@things.0"/>
+        </value>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="Variable">
+        <value>
+          <modelElement href="Program.structureandbehaviour#/0/@class.0/@method.0/@blockofcode.0/@things.1/@body/@things.0"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="mapVariable" package="MixBS" module="MixBS"/>
+    <context>
+      <context name="self" type="Variable">
+        <value>
+          <modelElement href="../MixStructureBehaviour/models/ProgramBehaviour.behaviourlanguage#//@function.0/@blockofcode/@things.1/@body/@things.1"/>
+        </value>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="Variable">
+        <value>
+          <modelElement href="Program.structureandbehaviour#/0/@class.0/@method.0/@blockofcode.0/@things.1/@body/@things.1"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="mapVariable" package="MixBS" module="MixBS"/>
+    <context>
+      <context name="self" type="Variable">
+        <value>
+          <modelElement href="../MixStructureBehaviour/models/ProgramBehaviour.behaviourlanguage#//@function.0/@blockofcode/@things.1/@body/@things.2"/>
+        </value>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="Variable">
+        <value>
+          <modelElement href="Program.structureandbehaviour#/0/@class.0/@method.0/@blockofcode.0/@things.1/@body/@things.2"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="mapBlockOfCode" package="MixBS" module="MixBS"/>
+    <context>
+      <context name="self" type="BlockOfCode">
+        <value>
+          <modelElement href="../MixStructureBehaviour/models/ProgramBehaviour.behaviourlanguage#//@function.0/@blockofcode/@things.1/@body/@things.3/@body"/>
+        </value>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="BlockOfCode">
+        <value>
+          <modelElement href="Program.structureandbehaviour#/0/@class.0/@method.0/@blockofcode.0/@things.1/@body/@things.3/@body"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="mapPrimative" package="MixBS" module="MixBS"/>
+    <context>
+      <context name="self" type="Variable">
+        <value>
+          <modelElement href="../MixStructureBehaviour/models/ProgramBehaviour.behaviourlanguage#//@function.0/@blockofcode/@things.1/@body/@things.2"/>
+        </value>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="Primative">
+        <value>
           <modelElement href="Program.structureandbehaviour#/1"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="mapLogical" package="MixBS" module="MixBS"/>
+    <context>
+      <context name="self" type="Logical">
+        <value>
+          <modelElement href="../MixStructureBehaviour/models/ProgramBehaviour.behaviourlanguage#//@function.0/@blockofcode/@things.1/@body/@things.3/@condition"/>
+        </value>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="Logical">
+        <value>
+          <modelElement href="Program.structureandbehaviour#/0/@class.0/@method.0/@blockofcode.0/@things.1/@body/@things.3/@condition"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="mapVariable" package="MixBS" module="MixBS"/>
+    <context>
+      <context name="self" type="Variable">
+        <value>
+          <modelElement href="../MixStructureBehaviour/models/ProgramBehaviour.behaviourlanguage#//@function.0/@blockofcode/@things.1/@body/@things.3/@condition/@leftInput"/>
+        </value>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="Variable">
+        <value>
+          <modelElement href="Program.structureandbehaviour#/0/@class.0/@method.0/@blockofcode.0/@things.1/@body/@things.3/@condition/@leftInput"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="mapExpression" package="MixBS" module="MixBS"/>
+    <context>
+      <context name="self" type="Expression">
+        <value>
+          <modelElement href="../MixStructureBehaviour/models/ProgramBehaviour.behaviourlanguage#//@function.0/@blockofcode/@things.1/@body/@things.3/@condition/@leftInput"/>
+        </value>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="Expression">
+        <value>
+          <modelElement href="Program.structureandbehaviour#/0/@class.0/@method.0/@blockofcode.0/@things.1/@body/@things.3/@condition/@leftInput"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="mapVariable" package="MixBS" module="MixBS"/>
+    <context>
+      <context name="self" type="Variable">
+        <value>
+          <modelElement href="../MixStructureBehaviour/models/ProgramBehaviour.behaviourlanguage#//@function.0/@blockofcode/@things.1/@body/@things.3/@condition/@rightInput"/>
+        </value>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="Variable">
+        <value>
+          <modelElement href="Program.structureandbehaviour#/0/@class.0/@method.0/@blockofcode.0/@things.1/@body/@things.3/@condition/@rightInput"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="mapExpression" package="MixBS" module="MixBS"/>
+    <context>
+      <context name="self" type="Expression">
+        <value>
+          <modelElement href="../MixStructureBehaviour/models/ProgramBehaviour.behaviourlanguage#//@function.0/@blockofcode/@things.1/@body/@things.3/@condition/@rightInput"/>
+        </value>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="Expression">
+        <value>
+          <modelElement href="Program.structureandbehaviour#/0/@class.0/@method.0/@blockofcode.0/@things.1/@body/@things.3/@condition/@rightInput"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="mapBlockOfCode" package="MixBS" module="MixBS"/>
+    <context>
+      <context name="self" type="BlockOfCode">
+        <value>
+          <modelElement href="../MixStructureBehaviour/models/ProgramBehaviour.behaviourlanguage#//@function.0/@blockofcode/@things.1/@body/@things.3/@elseBody"/>
+        </value>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="BlockOfCode">
+        <value>
+          <modelElement href="Program.structureandbehaviour#/0/@class.0/@method.0/@blockofcode.0/@things.1/@body/@things.3/@elseBody"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="mapSysIn" package="MixBS" module="MixBS"/>
+    <context>
+      <context name="self" type="System_Input">
+        <value>
+          <modelElement href="../MixStructureBehaviour/models/ProgramBehaviour.behaviourlanguage#//@function.0/@blockofcode/@things.1/@body/@things.3/@elseBody/@things.0"/>
+        </value>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="System_Input">
+        <value>
+          <modelElement href="Program.structureandbehaviour#/0/@class.0/@method.0/@blockofcode.0/@things.1/@body/@things.3/@elseBody/@things.0"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="mapSysOu" package="MixBS" module="MixBS"/>
+    <context>
+      <context name="self" type="System_Output">
+        <value>
+          <modelElement href="../MixStructureBehaviour/models/ProgramBehaviour.behaviourlanguage#//@function.0/@blockofcode/@things.1/@body/@things.4"/>
+        </value>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="System_Output">
+        <value>
+          <modelElement href="Program.structureandbehaviour#/0/@class.0/@method.0/@blockofcode.0/@things.1/@body/@things.4"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="mapLogical" package="MixBS" module="MixBS"/>
+    <context>
+      <context name="self" type="Logical">
+        <value>
+          <modelElement href="../MixStructureBehaviour/models/ProgramBehaviour.behaviourlanguage#//@function.0/@blockofcode/@things.1/@condition"/>
+        </value>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="Logical">
+        <value>
+          <modelElement href="Program.structureandbehaviour#/0/@class.0/@method.0/@blockofcode.0/@things.1/@condition"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="mapVariable" package="MixBS" module="MixBS"/>
+    <context>
+      <context name="self" type="Variable">
+        <value>
+          <modelElement href="../MixStructureBehaviour/models/ProgramBehaviour.behaviourlanguage#//@function.0/@blockofcode/@things.1/@condition/@leftInput"/>
+        </value>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="Variable">
+        <value>
+          <modelElement href="Program.structureandbehaviour#/0/@class.0/@method.0/@blockofcode.0/@things.1/@condition/@leftInput"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="mapExpression" package="MixBS" module="MixBS"/>
+    <context>
+      <context name="self" type="Expression">
+        <value>
+          <modelElement href="../MixStructureBehaviour/models/ProgramBehaviour.behaviourlanguage#//@function.0/@blockofcode/@things.1/@condition/@leftInput"/>
+        </value>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="Expression">
+        <value>
+          <modelElement href="Program.structureandbehaviour#/0/@class.0/@method.0/@blockofcode.0/@things.1/@condition/@leftInput"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="mapVariable" package="MixBS" module="MixBS"/>
+    <context>
+      <context name="self" type="Variable">
+        <value>
+          <modelElement href="../MixStructureBehaviour/models/ProgramBehaviour.behaviourlanguage#//@function.0/@blockofcode/@things.1/@condition/@rightInput"/>
+        </value>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="Variable">
+        <value>
+          <modelElement href="Program.structureandbehaviour#/0/@class.0/@method.0/@blockofcode.0/@things.1/@condition/@rightInput"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="mapExpression" package="MixBS" module="MixBS"/>
+    <context>
+      <context name="self" type="Expression">
+        <value>
+          <modelElement href="../MixStructureBehaviour/models/ProgramBehaviour.behaviourlanguage#//@function.0/@blockofcode/@things.1/@condition/@rightInput"/>
+        </value>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="Expression">
+        <value>
+          <modelElement href="Program.structureandbehaviour#/0/@class.0/@method.0/@blockofcode.0/@things.1/@condition/@rightInput"/>
         </value>
       </result>
     </result>
@@ -163,11 +523,29 @@
     </result>
   </traceRecords>
   <traceRecords>
+    <mappingOperation name="mapVariable" package="MixBS" module="MixBS"/>
+    <context>
+      <context name="self" type="VariableC">
+        <value>
+          <modelElement href="../MixStructureBehaviour/models/ProgramElements.structurelanguage#//@class.3/@variable.1"/>
+        </value>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="Variable">
+        <value>
+          <modelElement href="Program.structureandbehaviour#/0/@class.3/@variable.1"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
     <mappingOperation name="mapBlockOfCode" package="MixBS" module="MixBS"/>
     <context>
       <context name="self" type="BlockOfCode">
         <value>
-          <modelElement href="../MixStructureBehaviour/models/ProgramBehaviour.behaviourlanguage#//@function.0/@blockofcode"/>
+          <modelElement href="../MixStructureBehaviour/models/ProgramBehaviour.behaviourlanguage#//@function.1/@blockofcode"/>
         </value>
       </context>
     </context>
@@ -181,11 +559,47 @@
     </result>
   </traceRecords>
   <traceRecords>
+    <mappingOperation name="mapVariable" package="MixBS" module="MixBS"/>
+    <context>
+      <context name="self" type="Variable">
+        <value>
+          <modelElement href="../MixStructureBehaviour/models/ProgramBehaviour.behaviourlanguage#//@function.1/@blockofcode/@things.0"/>
+        </value>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="Variable">
+        <value>
+          <modelElement href="Program.structureandbehaviour#/0/@class.0/@method.1/@blockofcode.0/@things.0"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="mapVariable" package="MixBS" module="MixBS"/>
+    <context>
+      <context name="self" type="Variable">
+        <value>
+          <modelElement href="../MixStructureBehaviour/models/ProgramBehaviour.behaviourlanguage#//@function.1/@blockofcode/@things.1"/>
+        </value>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="Variable">
+        <value>
+          <modelElement href="Program.structureandbehaviour#/0/@class.0/@method.1/@blockofcode.0/@things.1"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
     <mappingOperation name="mapBlockOfCode" package="MixBS" module="MixBS"/>
     <context>
       <context name="self" type="BlockOfCode">
         <value>
-          <modelElement href="../MixStructureBehaviour/models/ProgramBehaviour.behaviourlanguage#//@function.0/@blockofcode/@things.0/@body"/>
+          <modelElement href="../MixStructureBehaviour/models/ProgramBehaviour.behaviourlanguage#//@function.1/@blockofcode/@things.2/@body"/>
         </value>
       </context>
     </context>
@@ -193,7 +607,7 @@
     <result>
       <result kind="OUT" name="result" type="BlockOfCode">
         <value>
-          <modelElement href="Program.structureandbehaviour#/0/@class.0/@method.1/@blockofcode.0/@things.0/@body"/>
+          <modelElement href="Program.structureandbehaviour#/0/@class.0/@method.1/@blockofcode.0/@things.2/@body"/>
         </value>
       </result>
     </result>
@@ -203,7 +617,7 @@
     <context>
       <context name="self" type="Variable">
         <value>
-          <modelElement href="../MixStructureBehaviour/models/ProgramBehaviour.behaviourlanguage#//@function.0/@blockofcode/@things.0/@body/@things.0"/>
+          <modelElement href="../MixStructureBehaviour/models/ProgramBehaviour.behaviourlanguage#//@function.1/@blockofcode/@things.2/@body/@things.0/@leftInput"/>
         </value>
       </context>
     </context>
@@ -211,43 +625,7 @@
     <result>
       <result kind="OUT" name="result" type="Variable">
         <value>
-          <modelElement href="Program.structureandbehaviour#/0/@class.0/@method.1/@blockofcode.0/@things.0/@body/@things.0"/>
-        </value>
-      </result>
-    </result>
-  </traceRecords>
-  <traceRecords>
-    <mappingOperation name="mapLogical" package="MixBS" module="MixBS"/>
-    <context>
-      <context name="self" type="Logical">
-        <value>
-          <modelElement href="../MixStructureBehaviour/models/ProgramBehaviour.behaviourlanguage#//@function.0/@blockofcode/@things.0/@body/@things.1/@condition"/>
-        </value>
-      </context>
-    </context>
-    <parameters/>
-    <result>
-      <result kind="OUT" name="result" type="Logical">
-        <value>
-          <modelElement href="Program.structureandbehaviour#/0/@class.0/@method.1/@blockofcode.0/@things.0/@body/@things.1/@condition"/>
-        </value>
-      </result>
-    </result>
-  </traceRecords>
-  <traceRecords>
-    <mappingOperation name="mapVariable" package="MixBS" module="MixBS"/>
-    <context>
-      <context name="self" type="Variable">
-        <value>
-          <modelElement href="../MixStructureBehaviour/models/ProgramBehaviour.behaviourlanguage#//@function.0/@blockofcode/@things.0/@body/@things.1/@condition/@leftInput"/>
-        </value>
-      </context>
-    </context>
-    <parameters/>
-    <result>
-      <result kind="OUT" name="result" type="Variable">
-        <value>
-          <modelElement href="Program.structureandbehaviour#/0/@class.0/@method.1/@blockofcode.0/@things.0/@body/@things.1/@condition/@leftInput"/>
+          <modelElement href="Program.structureandbehaviour#/0/@class.0/@method.1/@blockofcode.0/@things.2/@body/@things.0/@leftInput"/>
         </value>
       </result>
     </result>
@@ -257,7 +635,7 @@
     <context>
       <context name="self" type="Expression">
         <value>
-          <modelElement href="../MixStructureBehaviour/models/ProgramBehaviour.behaviourlanguage#//@function.0/@blockofcode/@things.0/@body/@things.1/@condition/@leftInput"/>
+          <modelElement href="../MixStructureBehaviour/models/ProgramBehaviour.behaviourlanguage#//@function.1/@blockofcode/@things.2/@body/@things.0/@leftInput"/>
         </value>
       </context>
     </context>
@@ -265,7 +643,7 @@
     <result>
       <result kind="OUT" name="result" type="Expression">
         <value>
-          <modelElement href="Program.structureandbehaviour#/0/@class.0/@method.1/@blockofcode.0/@things.0/@body/@things.1/@condition/@leftInput"/>
+          <modelElement href="Program.structureandbehaviour#/0/@class.0/@method.1/@blockofcode.0/@things.2/@body/@things.0/@leftInput"/>
         </value>
       </result>
     </result>
@@ -275,7 +653,7 @@
     <context>
       <context name="self" type="Variable">
         <value>
-          <modelElement href="../MixStructureBehaviour/models/ProgramBehaviour.behaviourlanguage#//@function.0/@blockofcode/@things.0/@body/@things.1/@condition/@rightInput"/>
+          <modelElement href="../MixStructureBehaviour/models/ProgramBehaviour.behaviourlanguage#//@function.1/@blockofcode/@things.2/@body/@things.0/@rightInput"/>
         </value>
       </context>
     </context>
@@ -283,7 +661,7 @@
     <result>
       <result kind="OUT" name="result" type="Variable">
         <value>
-          <modelElement href="Program.structureandbehaviour#/0/@class.0/@method.1/@blockofcode.0/@things.0/@body/@things.1/@condition/@rightInput"/>
+          <modelElement href="Program.structureandbehaviour#/0/@class.0/@method.1/@blockofcode.0/@things.2/@body/@things.0/@rightInput"/>
         </value>
       </result>
     </result>
@@ -293,7 +671,7 @@
     <context>
       <context name="self" type="Expression">
         <value>
-          <modelElement href="../MixStructureBehaviour/models/ProgramBehaviour.behaviourlanguage#//@function.0/@blockofcode/@things.0/@body/@things.1/@condition/@rightInput"/>
+          <modelElement href="../MixStructureBehaviour/models/ProgramBehaviour.behaviourlanguage#//@function.1/@blockofcode/@things.2/@body/@things.0/@rightInput"/>
         </value>
       </context>
     </context>
@@ -301,7 +679,115 @@
     <result>
       <result kind="OUT" name="result" type="Expression">
         <value>
-          <modelElement href="Program.structureandbehaviour#/0/@class.0/@method.1/@blockofcode.0/@things.0/@body/@things.1/@condition/@rightInput"/>
+          <modelElement href="Program.structureandbehaviour#/0/@class.0/@method.1/@blockofcode.0/@things.2/@body/@things.0/@rightInput"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="mapComparation" package="MixBS" module="MixBS"/>
+    <context>
+      <context name="self" type="Comparation">
+        <value>
+          <modelElement href="../MixStructureBehaviour/models/ProgramBehaviour.behaviourlanguage#//@function.1/@blockofcode/@things.2/@comparation"/>
+        </value>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="Comparation">
+        <value>
+          <modelElement href="Program.structureandbehaviour#/0/@class.0/@method.1/@blockofcode.0/@things.2/@comparation"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="mapVariable" package="MixBS" module="MixBS"/>
+    <context>
+      <context name="self" type="Variable">
+        <value>
+          <modelElement href="../MixStructureBehaviour/models/ProgramBehaviour.behaviourlanguage#//@function.1/@blockofcode/@things.2/@comparation/@leftInput"/>
+        </value>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="Variable">
+        <value>
+          <modelElement href="Program.structureandbehaviour#/0/@class.0/@method.1/@blockofcode.0/@things.2/@comparation/@leftInput"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="mapExpression" package="MixBS" module="MixBS"/>
+    <context>
+      <context name="self" type="Expression">
+        <value>
+          <modelElement href="../MixStructureBehaviour/models/ProgramBehaviour.behaviourlanguage#//@function.1/@blockofcode/@things.2/@comparation/@leftInput"/>
+        </value>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="Expression">
+        <value>
+          <modelElement href="Program.structureandbehaviour#/0/@class.0/@method.1/@blockofcode.0/@things.2/@comparation/@leftInput"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="mapVariable" package="MixBS" module="MixBS"/>
+    <context>
+      <context name="self" type="Variable">
+        <value>
+          <modelElement href="../MixStructureBehaviour/models/ProgramBehaviour.behaviourlanguage#//@function.1/@blockofcode/@things.2/@comparation/@rightInput"/>
+        </value>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="Variable">
+        <value>
+          <modelElement href="Program.structureandbehaviour#/0/@class.0/@method.1/@blockofcode.0/@things.2/@comparation/@rightInput"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="mapExpression" package="MixBS" module="MixBS"/>
+    <context>
+      <context name="self" type="Expression">
+        <value>
+          <modelElement href="../MixStructureBehaviour/models/ProgramBehaviour.behaviourlanguage#//@function.1/@blockofcode/@things.2/@comparation/@rightInput"/>
+        </value>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="Expression">
+        <value>
+          <modelElement href="Program.structureandbehaviour#/0/@class.0/@method.1/@blockofcode.0/@things.2/@comparation/@rightInput"/>
+        </value>
+      </result>
+    </result>
+  </traceRecords>
+  <traceRecords>
+    <mappingOperation name="mapPrimative" package="MixBS" module="MixBS"/>
+    <context>
+      <context name="self" type="Variable">
+        <value>
+          <modelElement href="../MixStructureBehaviour/models/ProgramBehaviour.behaviourlanguage#//@function.1/@blockofcode/@things.0"/>
+        </value>
+      </context>
+    </context>
+    <parameters/>
+    <result>
+      <result kind="OUT" name="result" type="Primative">
+        <value>
+          <modelElement href="Program.structureandbehaviour#/2"/>
         </value>
       </result>
     </result>
@@ -311,7 +797,7 @@
     <context>
       <context name="self" type="System_Output">
         <value>
-          <modelElement href="../MixStructureBehaviour/models/ProgramBehaviour.behaviourlanguage#//@function.0/@blockofcode/@things.0/@body/@things.2"/>
+          <modelElement href="../MixStructureBehaviour/models/ProgramBehaviour.behaviourlanguage#//@function.1/@blockofcode/@things.3"/>
         </value>
       </context>
     </context>
@@ -319,25 +805,7 @@
     <result>
       <result kind="OUT" name="result" type="System_Output">
         <value>
-          <modelElement href="Program.structureandbehaviour#/0/@class.0/@method.1/@blockofcode.0/@things.0/@body/@things.2"/>
-        </value>
-      </result>
-    </result>
-  </traceRecords>
-  <traceRecords>
-    <mappingOperation name="mapLogical" package="MixBS" module="MixBS"/>
-    <context>
-      <context name="self" type="Logical">
-        <value>
-          <modelElement href="../MixStructureBehaviour/models/ProgramBehaviour.behaviourlanguage#//@function.0/@blockofcode/@things.0/@condition"/>
-        </value>
-      </context>
-    </context>
-    <parameters/>
-    <result>
-      <result kind="OUT" name="result" type="Logical">
-        <value>
-          <modelElement href="Program.structureandbehaviour#/0/@class.0/@method.1/@blockofcode.0/@things.0/@condition"/>
+          <modelElement href="Program.structureandbehaviour#/0/@class.0/@method.1/@blockofcode.0/@things.3"/>
         </value>
       </result>
     </result>
@@ -345,9 +813,9 @@
   <traceRecords>
     <mappingOperation name="mapVariable" package="MixBS" module="MixBS"/>
     <context>
-      <context name="self" type="Variable">
+      <context name="self" type="VariableC">
         <value>
-          <modelElement href="../MixStructureBehaviour/models/ProgramBehaviour.behaviourlanguage#//@function.0/@blockofcode/@things.0/@condition/@leftInput"/>
+          <modelElement href="../MixStructureBehaviour/models/ProgramElements.structurelanguage#//@class.0/@method.1/@parameters.0"/>
         </value>
       </context>
     </context>
@@ -355,25 +823,7 @@
     <result>
       <result kind="OUT" name="result" type="Variable">
         <value>
-          <modelElement href="Program.structureandbehaviour#/0/@class.0/@method.1/@blockofcode.0/@things.0/@condition/@leftInput"/>
-        </value>
-      </result>
-    </result>
-  </traceRecords>
-  <traceRecords>
-    <mappingOperation name="mapExpression" package="MixBS" module="MixBS"/>
-    <context>
-      <context name="self" type="Expression">
-        <value>
-          <modelElement href="../MixStructureBehaviour/models/ProgramBehaviour.behaviourlanguage#//@function.0/@blockofcode/@things.0/@condition/@leftInput"/>
-        </value>
-      </context>
-    </context>
-    <parameters/>
-    <result>
-      <result kind="OUT" name="result" type="Expression">
-        <value>
-          <modelElement href="Program.structureandbehaviour#/0/@class.0/@method.1/@blockofcode.0/@things.0/@condition/@leftInput"/>
+          <modelElement href="Program.structureandbehaviour#/3"/>
         </value>
       </result>
     </result>
@@ -381,9 +831,9 @@
   <traceRecords>
     <mappingOperation name="mapVariable" package="MixBS" module="MixBS"/>
     <context>
-      <context name="self" type="Variable">
+      <context name="self" type="VariableC">
         <value>
-          <modelElement href="../MixStructureBehaviour/models/ProgramBehaviour.behaviourlanguage#//@function.0/@blockofcode/@things.0/@condition/@rightInput"/>
+          <modelElement href="../MixStructureBehaviour/models/ProgramElements.structurelanguage#//@class.0/@method.1/@parameters.1"/>
         </value>
       </context>
     </context>
@@ -391,25 +841,7 @@
     <result>
       <result kind="OUT" name="result" type="Variable">
         <value>
-          <modelElement href="Program.structureandbehaviour#/0/@class.0/@method.1/@blockofcode.0/@things.0/@condition/@rightInput"/>
-        </value>
-      </result>
-    </result>
-  </traceRecords>
-  <traceRecords>
-    <mappingOperation name="mapExpression" package="MixBS" module="MixBS"/>
-    <context>
-      <context name="self" type="Expression">
-        <value>
-          <modelElement href="../MixStructureBehaviour/models/ProgramBehaviour.behaviourlanguage#//@function.0/@blockofcode/@things.0/@condition/@rightInput"/>
-        </value>
-      </context>
-    </context>
-    <parameters/>
-    <result>
-      <result kind="OUT" name="result" type="Expression">
-        <value>
-          <modelElement href="Program.structureandbehaviour#/0/@class.0/@method.1/@blockofcode.0/@things.0/@condition/@rightInput"/>
+          <modelElement href="Program.structureandbehaviour#/4"/>
         </value>
       </result>
     </result>
@@ -554,24 +986,6 @@
       <result kind="OUT" name="result" type="Variable">
         <value>
           <modelElement href="Program.structureandbehaviour#/0/@class.3/@variable.0"/>
-        </value>
-      </result>
-    </result>
-  </traceRecords>
-  <traceRecords>
-    <mappingOperation name="mapVariable" package="MixBS" module="MixBS"/>
-    <context>
-      <context name="self" type="VariableC">
-        <value>
-          <modelElement href="../MixStructureBehaviour/models/ProgramElements.structurelanguage#//@class.3/@variable.1"/>
-        </value>
-      </context>
-    </context>
-    <parameters/>
-    <result>
-      <result kind="OUT" name="result" type="Variable">
-        <value>
-          <modelElement href="Program.structureandbehaviour#/0/@class.3/@variable.1"/>
         </value>
       </result>
     </result>

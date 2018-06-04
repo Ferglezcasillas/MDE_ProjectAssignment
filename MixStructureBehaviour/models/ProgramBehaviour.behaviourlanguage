@@ -2,22 +2,50 @@
 <behaviourLanguage:Container xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:behaviourLanguage="http://www.example.org/behaviourLanguage">
   <function name="evaluate">
     <blockofcode>
+      <things xsi:type="behaviourLanguage:Variable" name="b" type="int" initialization="42"/>
       <things xsi:type="behaviourLanguage:while_">
         <body>
-          <things xsi:type="behaviourLanguage:Variable" name="abc" type="int"/>
+          <things xsi:type="behaviourLanguage:Variable" name="ae" type="boolean" initialization="true"/>
+          <things xsi:type="behaviourLanguage:Variable" name="erf" initialization="true"/>
+          <things xsi:type="behaviourLanguage:Variable" name="a" type="int" initialization="42"/>
           <things xsi:type="behaviourLanguage:if_">
+            <body>
+              <things xsi:type="behaviourLanguage:NotOperation" assign="//@function.0/@blockofcode/@things.1/@body/@things.2" input="//@function.0/@blockofcode/@things.1/@body/@things.2"/>
+            </body>
             <condition>
               <rightInput xsi:type="behaviourLanguage:Variable" name="ae" type="boolean" initialization=""/>
               <leftInput xsi:type="behaviourLanguage:Variable" name="erf"/>
             </condition>
+            <elseBody>
+              <things xsi:type="behaviourLanguage:System_Input" assign="//@function.0/@blockofcode/@things.1/@body/@things.3/@condition/@rightInput"/>
+            </elseBody>
           </things>
-          <things xsi:type="behaviourLanguage:System_Output" parameters="//@function.0/@blockofcode/@things.0/@body/@things.0"/>
+          <things xsi:type="behaviourLanguage:System_Output" parameters="//@function.0/@blockofcode/@things.1/@body/@things.2"/>
         </body>
         <condition>
           <rightInput xsi:type="behaviourLanguage:Variable" name="a"/>
           <leftInput xsi:type="behaviourLanguage:Variable" name="b"/>
         </condition>
       </things>
+    </blockofcode>
+  </function>
+  <function name="setId">
+    <blockofcode>
+      <things xsi:type="behaviourLanguage:Variable" name="i" type="int" initialization="0"/>
+      <things xsi:type="behaviourLanguage:Variable" name="id" initialization="0"/>
+      <things xsi:type="behaviourLanguage:for_" variable="//@function.1/@blockofcode/@things.0" inc="true" updateValue="1">
+        <body>
+          <things xsi:type="behaviourLanguage:Math" assign="//@function.1/@blockofcode/@things.1">
+            <rightInput xsi:type="behaviourLanguage:Variable" name="age"/>
+            <leftInput xsi:type="behaviourLanguage:Variable" name="id" initialization=""/>
+          </things>
+        </body>
+        <comparation>
+          <rightInput xsi:type="behaviourLanguage:Variable" name="age"/>
+          <leftInput xsi:type="behaviourLanguage:Variable" name="i"/>
+        </comparation>
+      </things>
+      <things xsi:type="behaviourLanguage:System_Output" parameters="//@function.1/@blockofcode/@things.1"/>
     </blockofcode>
   </function>
 </behaviourLanguage:Container>
